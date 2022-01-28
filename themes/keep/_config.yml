@@ -172,7 +172,7 @@ comment:
   # See: https://github.com/gitalk/gitalk
   gitalk:
     github_id: HowarZheng
-    repository: howarzheng.github.io_comments
+    repository: howarzheng
     client_id: 567d3a6bb56a062489e1
     client_secret: 63d1798b829b6c76d61f7eb9e7165180e8431852
 
