@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="HowarZheng">
+    
+    <title>
+        
+            宝塔面板安装Cloudreve——自建不限容量的在线网盘 |
+        
+        HowarZheng&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="https://vip2.loli.io/2022/01/28/8bTLXSIoDckrjfz.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"howarzheng.com","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#203A43","avatar":"https://vip2.loli.io/2022/01/28/8bTLXSIoDckrjfz.png","favicon":"https://vip2.loli.io/2022/01/28/8bTLXSIoDckrjfz.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Stay Hungry, Stay Foolish"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="HowarZheng's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                HowarZheng&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">宝塔面板安装Cloudreve——自建不限容量的在线网盘</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="https://vip2.loli.io/2022/01/28/8bTLXSIoDckrjfz.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">HowarZheng</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-01-19 14:32:13</span>
+        <span class="mobile">2022-01-19 14:32</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/">网站建设</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E5%AE%9D%E5%A1%94/">宝塔</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/clouddreve/">clouddreve</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E7%BD%91%E7%9B%98/">网盘</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>995 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>Github：<a class="link"   target="_blank" rel="noopener" href="https://github.com/cloudreve/Cloudreve" >https://github.com/cloudreve/Cloudreve<i class="fas fa-external-link-alt"></i></a></p>
+<blockquote>
+<p>官方文档：<a class="link"   target="_blank" rel="noopener" href="https://docs.cloudreve.org/" >https://docs.cloudreve.org/<i class="fas fa-external-link-alt"></i></a></p>
+<p><strong>部署环境：CentOS 7.6/Nginx -Tengine2.2.4/MySQL 5.7.30</strong></p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>1.Releases下载程序到本地：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/cloudreve/Cloudreve/releases/download/3.1.1/cloudreve_3.1.1_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>在 /home 目录新建一个程序文件夹，方便日后文件管理：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/cloudreve</span><br></pre></td></tr></table></figure>
+
+<p>将下载的程序解压到 /home/cloudreve 目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -C /home/cloudreve -xzf cloudreve_3.1.1_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>进入程序目录赋予执行权限，并启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入程序目录</span></span><br><span class="line"><span class="built_in">cd</span> /home/cloudreve</span><br><span class="line"><span class="comment"># 赋予执行权限</span></span><br><span class="line">chmod +x ./cloudreve</span><br><span class="line"><span class="comment"># 启动 Cloudreve</span></span><br><span class="line">./cloudreve</span><br></pre></td></tr></table></figure>
+
+<p>不出意外的话会跳出程序初始化界面，记得保存账号密码。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://vip2.loli.io/2022/01/27/8ISaRh5cDn7LtNY.jpg"
+                      alt="image"
+                ></p>
+<p>放行 5212 端口（我是宝塔，后台添加放行端口即可 )。访问 <a class="link"   target="_blank" rel="noopener" href="http://ip:5212/" >http://ip:5212<i class="fas fa-external-link-alt"></i></a> 看看程序是否正常开启，同时 Shell 也会跑出记录。<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://vip2.loli.io/2022/01/27/P1oWftS8Uv2u7dD.jpg"
+                      alt="image"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://vip2.loli.io/2022/01/27/vHADRozQXK8ShP4.jpg"
+                      alt="image"
+                ></p>
+<p>确认无误后，Shell 面板 Ctrl+ C 结束程序运行, 配置 Systemd 进程守  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/lib/systemd/system/cloudreve.service</span><br></pre></td></tr></table></figure>
+
+<p>根据实际情况填写以下内容并保存：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Cloudreve</span><br><span class="line">Documentation=https://docs.cloudreve.org</span><br><span class="line">After=network.target</span><br><span class="line">Wants=network.target</span><br><span class="line">[Service]</span><br><span class="line">WorkingDirectory=/home/cloudreve</span><br><span class="line">ExecStart=/home/cloudreve/cloudreve</span><br><span class="line">Restart=on-abnormal</span><br><span class="line">RestartSec=5s</span><br><span class="line">KillMode=mixed</span><br><span class="line">StandardOutput=null</span><br><span class="line">StandardError=syslog</span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>其中以下配置项需要根据实际情况更改：</p>
+<ul>
+<li><p><strong>WorkingDirectory</strong> 主程序所在目录</p>
+</li>
+<li><p>设置开机启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> cloudreve</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>日后你可以通过以下指令管理 Cloudreve 进程：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line">systemctl start cloudreve</span><br><span class="line"><span class="comment"># 停止服务 </span></span><br><span class="line">systemctl stop cloudreve</span><br><span class="line"><span class="comment"># 重启服务 </span></span><br><span class="line">systemctl restart cloudreve</span><br><span class="line"><span class="comment"># 查看状态 </span></span><br><span class="line">systemctl status cloudreve</span><br></pre></td></tr></table></figure>
+
+<p>最后 Nginx 反代一波，宝塔添加一个站点，解析好域名, 站点修改添加反向代理:</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://vip2.loli.io/2022/01/27/8ISaRh5cDn7LtNY.jpg"
+                      alt="image"
+                ></p>
+<p>添加完反代后便可以通过自己的域名访问了，程序的部署到这里也算基本完成了。</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>接下来进行一些小调整，Cloudreve 默认数据库内置的 SQLite，个人还是喜欢 Mysql。</p>
+<p>Tips: 更换数据库配置后，Cloudreve 会重新初始化数据库，原有的数据将会丢失。</p>
+<p>宝塔创建一个数据库，然后编辑 Cloudreve 的配置文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /home/cloudreve/conf.ini</span><br></pre></td></tr></table></figure>
+
+<p>添加以下配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[Database]</span><br><span class="line">; 数据库类型，目前支持 sqlite | mysql</span><br><span class="line">Type = mysql</span><br><span class="line">; 用户名</span><br><span class="line">User = root</span><br><span class="line">; 密码</span><br><span class="line">Password = root</span><br><span class="line">; 数据库地址</span><br><span class="line">Host = 127.0.0.1</span><br><span class="line">; 数据库名称</span><br><span class="line">Name = v3</span><br><span class="line">; 数据表前缀</span><br><span class="line">TablePrefix = Cloudreve</span><br></pre></td></tr></table></figure>
+
+<p>保存后，进程序目录重新初始化，生成新的账号密码，之后再用 systemctl 管理，完事了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#进程序目录</span></span><br><span class="line"><span class="built_in">cd</span> /home/cloudreve</span><br><span class="line"><span class="comment">#启动程序</span></span><br><span class="line">./cloudreve</span><br></pre></td></tr></table></figure>
+
+<p>另外提一嘴，程序默认监听端口也是在该文件修改。</p>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p><strong>V3 版本内升级步骤较为简单，总体流程如下：</strong></p>
+<ol>
+<li><p>备份数据库；</p>
+</li>
+<li><p>下载或构建最新版本的 Cloudreve；</p>
+</li>
+<li><p>停止正在运行的 Cloudreve；</p>
+</li>
+<li><p>将老版本的 Cloudreve 主程序替换为新版本；</p>
+</li>
+<li><p>启动 Cloudreve；</p>
+</li>
+<li><p>清空浏览器缓存。</p>
+<blockquote>
+<p>如果你在老版本使用了自行构建的前端静态资源文件，请使用新版对应的前端仓库代码重新构建。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="对接OneDrive"><a href="#对接OneDrive" class="headerlink" title="对接OneDrive"></a>对接OneDrive</h2><p>1、前往<a class="link"   target="_blank" rel="noopener" href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview" >Azure Active Directory 控制台 (国际版账号)<i class="fas fa-external-link-alt"></i></a> 或者 <a class="link"   target="_blank" rel="noopener" href="https://portal.azure.cn/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview" >Azure Active Directory 控制台 (世纪互联账号)<i class="fas fa-external-link-alt"></i></a>并登录，登录后进入<code>Azure Active Directory</code>管理面板。</p>
+<p>2、进入左侧 <code>应用注册</code> 菜单，并点击 <code>新注册</code> 按钮。</p>
+<p>3、填写应用注册表单。其中，名称可任取；<code>受支持的帐户类型</code> 选择为<code>任何组织目录(任何 Azure AD 目录 - 多租户)中的帐户</code>；<code>重定向 URI (可选)</code>请选择<code>Web</code>，并填写<code>https://drive.codebaby.com.cn/api/v3/callback/onedrive/auth</code>； 其他保持默认即可</p>
+<p>4、创建秘钥。</p>
+<p>5、复制秘钥和ID到OneDrive存储策略页面，并填写相关资料，授权登陆即可。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p><strong>更多安装方式和程序配置添加详见官方文档</strong> （作者文档也咕了不少：</p>
+<blockquote>
+<p><a class="link"   target="_blank" rel="noopener" href="https://docs.cloudreve.org/getting-started/config" >https://docs.cloudreve.org/getting-started/config<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<h2 id="附一个自己搭建的网盘"><a href="#附一个自己搭建的网盘" class="headerlink" title="附一个自己搭建的网盘"></a>附一个自己搭建的网盘</h2><p>网址：<a class="link"   target="_blank" rel="noopener" href="https://drive.codebaby.com.cn/" >https://drive.codebaby.com.cn/<i class="fas fa-external-link-alt"></i></a><br>欢迎大家注册使用，<strong>不限容量！！！</strong>文件用OneDrive存储。【暂停使用！！！】</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a class="link"   target="_blank" rel="noopener" href="https://www.feiyubk.com/archives/8.html" >https://www.feiyubk.com/archives/8.html<i class="fas fa-external-link-alt"></i></a></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：宝塔面板安装Cloudreve——自建不限容量的在线网盘</li>
+        <li>本文作者：HowarZheng</li>
+        <li>创建时间：2022-01-19 14:32:13</li>
+        <li>
+            本文链接：https://howarzheng.com/2022/01/19/宝塔面板安装Cloudreve——自建不限容量的在线网盘/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E5%AE%9D%E5%A1%94/">#宝塔</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/clouddreve/">#clouddreve</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E7%BD%91%E7%9B%98/">#网盘</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/01/19/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E9%83%A8%E7%BD%B2Hexo/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">宝塔面板部署Hexo</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/01/09/python%E4%B8%AD%E5%87%BD%E6%95%B0%E5%92%8C%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Python中函数和方法的区别</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script data-pjax
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script data-pjax>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: '567d3a6bb56a062489e1',
+                    clientSecret: '63d1798b829b6c76d61f7eb9e7165180e8431852',
+                    repo: 'howarzheng.github.io_comments',
+                    owner: 'HowarZheng',
+                    admin: ['HowarZheng'],
+                    id: __gitalk__pathname,
+                    language: 'zh-CN'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2015</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">HowarZheng</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-text">补充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0"><span class="nav-text">更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%8E%A5OneDrive"><span class="nav-text">对接OneDrive</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E"><span class="nav-text">最后</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E6%90%AD%E5%BB%BA%E7%9A%84%E7%BD%91%E7%9B%98"><span class="nav-text">附一个自己搭建的网盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

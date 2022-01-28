@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="HowarZheng">
+    
+    <title>
+        
+            Python中正则表达式的基本使用 |
+        
+        HowarZheng&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="https://vip2.loli.io/2022/01/28/8bTLXSIoDckrjfz.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"howarzheng.com","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#203A43","avatar":"https://vip2.loli.io/2022/01/28/8bTLXSIoDckrjfz.png","favicon":"https://vip2.loli.io/2022/01/28/8bTLXSIoDckrjfz.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Stay Hungry, Stay Foolish"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="HowarZheng's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                HowarZheng&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Python中正则表达式的基本使用</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="https://vip2.loli.io/2022/01/28/8bTLXSIoDckrjfz.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">HowarZheng</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-01-25 17:22:09</span>
+        <span class="mobile">2022-01-25 17:22</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/">编程笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/Python/">Python</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Python/">Python</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.7k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>6 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p><strong>字符串</strong>是编程时涉及到的最多的一种<strong>数据结构</strong>，对字符串进行操作的需求几乎无处不在。比如判断一个字符串是否是合法的Email地址，虽然可以编程提取@前后的子串，再分别判断是否是单词和域名，但这样做不但麻烦，而且代码难以复用。<br />正则表达式是一种用来匹配字符串的强有力的武器。它的设计思想是用一种描述性的语言来给字符串定义一个规则，凡是符合规则的字符串，我们就认为它<strong>“匹配”</strong>了，否则，该字符串就是不合法的。<br />所以我们判断一个字符串是否是合法的Email的方法是：<br /><strong>创建一个匹配Email的正则表达式；</strong></p>
+<ol>
+<li>用该正则表达式去匹配用户的输入来判断是否合法。</li>
+<li>因为正则表达式也是用字符串表示的，所以，我们要首先了解如何用字符来描述字符。</li>
+</ol>
+<p>正则表达式的大致匹配过程是：依次拿出表达式和文本中的字符比较，如果每一个字符都能匹配，则匹配成功；一旦有匹配不成功的字符则匹配失败。</p>
+<blockquote>
+<p>官方文档：<br>中文：<a class="link"   target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/re.html" >https://docs.python.org/zh-cn/3/library/re.html<i class="fas fa-external-link-alt"></i></a><br>英文：<a class="link"   target="_blank" rel="noopener" href="https://docs.python.org/3/library/re.html" >https://docs.python.org/3/library/re.html<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>使用之前，需要引入正则模块(Regular Expression)：<br /><code>import re #引入正则表达式</code><br />主要使用的方法 match(), 从左到右进行匹配：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#pattern 为要校验的规则</span></span><br><span class="line"><span class="comment">#str 为要进行校验的字符串</span></span><br><span class="line">result = re.match(pattern, <span class="built_in">str</span>) </span><br><span class="line"><span class="comment">#如果result不为None,则group方法则对result进行数据提取</span></span><br><span class="line">result.group()</span><br></pre></td></tr></table></figure>
+<p>匹配规则：<br />1️⃣单字符匹配规则：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">字符    功能</span><br><span class="line">.       匹配任意<span class="number">1</span>个字符(除了\n)</span><br><span class="line">[]      匹配[]中列举的字符</span><br><span class="line">\d      匹配数字,也就是<span class="number">0</span>-<span class="number">9</span></span><br><span class="line">\D      匹配非数字,也就是匹配不是数字的字符</span><br><span class="line">\s      匹配空白符,也就是 空格\tab</span><br><span class="line">\S      匹配非空白符,\s取反</span><br><span class="line">\w      陪陪单词字符, a-z, A-Z, <span class="number">0</span>-<span class="number">9</span>, _</span><br><span class="line">\W      匹配非单词字符, \w取反</span><br></pre></td></tr></table></figure>
+<p>2️⃣表示数量的规则：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">字符    功能</span><br><span class="line">*       匹配前一个字符出现<span class="number">0</span>次多次或者无限次,可有可无,可多可少</span><br><span class="line">+       匹配前一个字符出现<span class="number">1</span>次多次或则无限次,直到出现一次</span><br><span class="line">?       匹配前一个字符出现<span class="number">1</span>次或者<span class="number">0</span>次,要么有<span class="number">1</span>次,要么没有</span><br><span class="line">&#123;m&#125;     匹配前一个字符出现m次</span><br><span class="line">&#123;m,&#125;    匹配前一个字符至少出现m次</span><br><span class="line">&#123;m,n&#125;   匹配前一个字符出现m到n次</span><br></pre></td></tr></table></figure>
+<p>下表列出了正则表达式模式语法中的特殊元素。如果你使用模式的同时提供了可选的标志参数，某些模式元素的含义会改变。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">模式    描述</span><br><span class="line">^    匹配字符串的开头</span><br><span class="line">$    匹配字符串的末尾。</span><br><span class="line">.    匹配任意字符，除了换行符，当re.DOTALL标记被指定时，则可以匹配包括换行符的任意字符。</span><br><span class="line">[...]    用来表示一组字符,单独列出：[amk] 匹配 <span class="string">&#x27;a&#x27;</span>，<span class="string">&#x27;m&#x27;</span>或<span class="string">&#x27;k&#x27;</span></span><br><span class="line">[^...]    不在[]中的字符：[^abc] 匹配除了a,b,c之外的字符。</span><br><span class="line">re*    匹配<span class="number">0</span>个或多个的表达式。</span><br><span class="line">re+    匹配<span class="number">1</span>个或多个的表达式。</span><br><span class="line">re?    匹配<span class="number">0</span>个或<span class="number">1</span>个由前面的正则表达式定义的片段，非贪婪方式</span><br><span class="line">re&#123; n&#125;     </span><br><span class="line">re&#123; n,&#125;    精确匹配n个前面表达式。</span><br><span class="line">re&#123; n, m&#125;    匹配 n 到 m 次由前面的正则表达式定义的片段，贪婪方式</span><br><span class="line">a| b    匹配a或b</span><br><span class="line">(re)    G匹配括号内的表达式，也表示一个组</span><br><span class="line">(?imx)    正则表达式包含三种可选标志：i, m, 或 x 。只影响括号中的区域。</span><br><span class="line">(?-imx)    正则表达式关闭 i, m, 或 x 可选标志。只影响括号中的区域。</span><br><span class="line">(?: re)    类似 (...), 但是不表示一个组</span><br><span class="line">(?imx: re)    在括号中使用i, m, 或 x 可选标志</span><br><span class="line">(?-imx: re)    在括号中不使用i, m, 或 x 可选标志</span><br><span class="line">(?<span class="comment">#...)    注释.</span></span><br><span class="line">(?= re)    前向肯定界定符。如果所含正则表达式，以 ... 表示，在当前位置成功匹配时成功，否则失败。但一旦所含表达式已经尝试，匹配引擎根本没有提高；模式的剩余部分还要尝试界定符的右边。</span><br><span class="line">(?! re)    前向否定界定符。与肯定界定符相反；当所含表达式不能在字符串当前位置匹配时成功</span><br><span class="line">(?&gt; re)    匹配的独立模式，省去回溯。</span><br><span class="line">\w    匹配字母数字</span><br><span class="line">\W    匹配非字母数字</span><br><span class="line">\s    匹配任意空白字符，等价于 [\t\n\r\f].</span><br><span class="line">\S    匹配任意非空字符</span><br><span class="line">\d    匹配任意数字，等价于 [<span class="number">0</span>-<span class="number">9</span>].</span><br><span class="line">\D    匹配任意非数字</span><br><span class="line">\A    匹配字符串开始</span><br><span class="line">\Z    匹配字符串结束，如果是存在换行，只匹配到换行前的结束字符串。c</span><br><span class="line">\z    匹配字符串结束</span><br><span class="line">\G    匹配最后匹配完成的位置。</span><br><span class="line">\b    匹配一个单词边界，也就是指单词和空格间的位置。例如， <span class="string">&#x27;er\b&#x27;</span> 可以匹配<span class="string">&quot;never&quot;</span> 中的 <span class="string">&#x27;er&#x27;</span>，但不能匹配 <span class="string">&quot;verb&quot;</span> 中的 <span class="string">&#x27;er&#x27;</span>。</span><br><span class="line">\B    匹配非单词边界。<span class="string">&#x27;er\B&#x27;</span> 能匹配 <span class="string">&quot;verb&quot;</span> 中的 <span class="string">&#x27;er&#x27;</span>，但不能匹配 <span class="string">&quot;never&quot;</span> 中的 <span class="string">&#x27;er&#x27;</span>。</span><br><span class="line">\n, \t, 等.    匹配一个换行符。匹配一个制表符。等</span><br><span class="line">\<span class="number">1.</span>..\<span class="number">9</span>    匹配第n个分组的子表达式。</span><br><span class="line">\<span class="number">10</span>    匹配第n个分组的子表达式，如果它经匹配。否则指的是八进制字符码的表达式。</span><br></pre></td></tr></table></figure>
+<p><a name="toc-heading-1"></a></p>
+<h3 id="re库中常用方法"><a href="#re库中常用方法" class="headerlink" title="re库中常用方法"></a>re库中常用方法</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://vip2.loli.io/2022/01/25/83mX7AGTEdpNVry.png"
+                      alt="image.png"
+                ><br><a name="toc-heading-2"></a></p>
+<h3 id="修饰符总结"><a href="#修饰符总结" class="headerlink" title="修饰符总结"></a>修饰符总结</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://vip2.loli.io/2022/01/25/oik8KEGm6nbaVfC.png"
+                      alt="image.png"
+                ><br><a name="toc-heading-3"></a></p>
+<h3 id="常用正则表达式"><a href="#常用正则表达式" class="headerlink" title="常用正则表达式"></a>常用正则表达式</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、匹配email地址:</span><br><span class="line">[\w!<span class="comment">#$%&amp;&#x27;*+/=?^_`&#123;|&#125;~-]+(?:\.[\w!#$%&amp;&#x27;*+/=?^_`&#123;|&#125;~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?</span></span><br><span class="line"><span class="number">2</span>、匹配网址URL：</span><br><span class="line">[a-zA-z]+://[^\s]*</span><br><span class="line"><span class="number">3</span>、匹配<span class="number">18</span>位身份证号：</span><br><span class="line">^(\d&#123;<span class="number">6</span>&#125;)(\d&#123;<span class="number">4</span>&#125;)(\d&#123;<span class="number">2</span>&#125;)(\d&#123;<span class="number">2</span>&#125;)(\d&#123;<span class="number">3</span>&#125;)([<span class="number">0</span>-<span class="number">9</span>]|X)$</span><br><span class="line"><span class="number">4</span>、匹配年月日格式：</span><br><span class="line">([<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">3</span>&#125;[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">2</span>&#125;[<span class="number">1</span>-<span class="number">9</span>][<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">1</span>&#125;|[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">1</span>&#125;[<span class="number">1</span>-<span class="number">9</span>][<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">2</span>&#125;|[<span class="number">1</span>-<span class="number">9</span>][<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">3</span>&#125;)-(((<span class="number">0</span>[<span class="number">13578</span>]|<span class="number">1</span>[02])-(<span class="number">0</span>[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">12</span>][<span class="number">0</span>-<span class="number">9</span>]|<span class="number">3</span>[01]))|((<span class="number">0</span>[<span class="number">469</span>]|<span class="number">11</span>)-(<span class="number">0</span>[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">12</span>][<span class="number">0</span>-<span class="number">9</span>]|<span class="number">30</span>))|(02-(<span class="number">0</span>[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">1</span>][<span class="number">0</span>-<span class="number">9</span>]|<span class="number">2</span>[<span class="number">0</span>-<span class="number">8</span>])))</span><br><span class="line"><span class="number">5</span>、匹配整数：</span><br><span class="line">^-?[<span class="number">1</span>-<span class="number">9</span>]\d*$</span><br><span class="line"><span class="number">6</span>、匹配正整数：</span><br><span class="line">^[<span class="number">1</span>-<span class="number">9</span>]\d*$</span><br><span class="line"><span class="number">7</span>、匹配负整数：</span><br><span class="line">^-[<span class="number">1</span>-<span class="number">9</span>]\d*$</span><br><span class="line"><span class="number">8</span>、匹配空白行：</span><br><span class="line">\n\s*\r</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考文献：</p>
+</blockquote>
+<ol>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/7fa6fe0b39af" >https://www.jianshu.com/p/7fa6fe0b39af<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/773c32dcd254" >https://www.jianshu.com/p/773c32dcd254<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_40136018/article/details/81183504" >https://blog.csdn.net/weixin_40136018/article/details/81183504<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_40907382/article/details/79654372" >https://blog.csdn.net/weixin_40907382/article/details/79654372<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：Python中正则表达式的基本使用</li>
+        <li>本文作者：HowarZheng</li>
+        <li>创建时间：2022-01-25 17:22:09</li>
+        <li>
+            本文链接：https://howarzheng.com/2022/01/25/Python中正则表达式的基本使用/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Python/">#Python</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">#正则表达式</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/01/25/Get%E5%92%8CPost%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8C%BA%E5%88%AB/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Get和Post请求的区别</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/01/25/%E5%85%8D%E8%B4%B9%E5%8F%8A%E6%94%B6%E8%B4%B9%E5%9B%BE%E5%BA%8A%E6%8E%A8%E8%8D%90/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">免费及收费图床推荐</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script data-pjax
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script data-pjax>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: '567d3a6bb56a062489e1',
+                    clientSecret: '63d1798b829b6c76d61f7eb9e7165180e8431852',
+                    repo: 'howarzheng.github.io_comments',
+                    owner: 'HowarZheng',
+                    admin: ['HowarZheng'],
+                    id: __gitalk__pathname,
+                    language: 'zh-CN'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2015</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">HowarZheng</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#re%E5%BA%93%E4%B8%AD%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-text">re库中常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E9%A5%B0%E7%AC%A6%E6%80%BB%E7%BB%93"><span class="nav-text">修饰符总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">常用正则表达式</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
