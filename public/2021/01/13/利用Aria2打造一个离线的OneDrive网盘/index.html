@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="HowarZheng">
+    
+    <title>
+        
+            利用Aria2打造一个离线的OneDrive网盘 |
+        
+        HowarZheng&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="https://vip2.loli.io/2022/01/28/8bTLXSIoDckrjfz.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"howarzheng.com","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#203A43","avatar":"https://vip2.loli.io/2022/01/28/8bTLXSIoDckrjfz.png","favicon":"https://vip2.loli.io/2022/01/28/8bTLXSIoDckrjfz.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Stay Hungry, Stay Foolish"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="HowarZheng's Blog" type="application/atom+xml">
+</head>
+
+
+<script data-ad-client="ca-pub-7835998003747351" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                HowarZheng&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">利用Aria2打造一个离线的OneDrive网盘</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="https://vip2.loli.io/2022/01/28/8bTLXSIoDckrjfz.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">HowarZheng</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2021-01-13 15:32:26</span>
+        <span class="mobile">2021-01-13 15:32</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/">网站建设</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Aria2/">Aria2</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Rclone/">Rclone</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>2k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>9 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p><a name="toc-heading-1"></a></p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>Aria2 有一个配置项<code>on-download-complete</code>，在下载完后执行一个脚本。当下载完成后 Aria2 会给脚本传递3个变量 <code>$1</code>、<code>$2</code>、<code>$3</code> 分别为 gid 、文件数量、文件路径。利用这个配置项和这些变量就可以实现很多功能，比如下载完成后调用 Rclone 进行上传操作。整个过程简单来说就是，Aria2 下载文件到 VPS ，完成后告诉 Rclone 将这个文件上传到网盘。理论上只要是 Rclone 支持的网盘，都可以按照这个思路来实现<del>伪</del>离线下载。并且还可实现下载完成上传OneDrive后自动本地删除，不占用VPS空间。<br><a name="toc-heading-2"></a></p>
+<h2 id="安装-Aria2"><a href="#安装-Aria2" class="headerlink" title="安装 Aria2"></a>安装 Aria2</h2><p>这里使用 Aria2 一键安装管理脚本，执行下面的代码下载并运行脚本，出现脚本操作菜单输入 <code>1</code>开始安装。<br /><code>wget -N https://git.io/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; bash aria2.sh</code><br><a name="toc-heading-3"></a></p>
+<h2 id="安装和配置-Rclone"><a href="#安装和配置-Rclone" class="headerlink" title="安装和配置 Rclone"></a>安装和配置 Rclone</h2><p><code>curl https://rclone.org/install.sh | sudo bash</code><br />安装完后，输入 <code>rclone config</code> 命令进入交互式配置选项，按照提示一步一步来进行操作即可。<br><a name="toc-heading-4"></a></p>
+<h3 id="Rclone配置教程"><a href="#Rclone配置教程" class="headerlink" title="Rclone配置教程"></a>Rclone配置教程</h3><p><strong>获取Token</strong><br />在本地 Windows 电脑上<a class="link"   target="_blank" rel="noopener" href="https://rclone.org/downloads/" >下载 rclone<i class="fas fa-external-link-alt"></i></a>，然后解压出来，解压后进入文件夹，在资源管理器地址栏输入<code>cmd</code>，回车就会在当前路径打开命令提示符。输入以下命令：<br /><code>rclone authorize &quot;onedrive&quot;</code><br />接下来会弹出浏览器，要求你登录账号进行授权。授权完后命令提示符窗口会出现以下信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">If your browser doesn<span class="string">&#x27;t open automatically go to the following link: http://127.0.0.1:53682/auth</span></span><br><span class="line"><span class="string">Log in and authorize rclone for access</span></span><br><span class="line"><span class="string">Waiting for code...</span></span><br><span class="line"><span class="string">Got code</span></span><br><span class="line"><span class="string">Paste the following into your remote machine ---&gt;</span></span><br><span class="line"><span class="string">&#123;&quot;access_token&quot;:&quot;xxxxxxxx&quot;&#125;  # 注意!复制&#123;xxxxxxxx&#125;整个内容，并保存好，后面需要用到</span></span><br><span class="line"><span class="string">&lt;---End paste</span></span><br></pre></td></tr></table></figure>
+<p>配置Rclone<br />输入 <code>rclone config</code> 命令，会出现以下信息，参照下面的注释进行操作。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line">e) Edit existing remote</span><br><span class="line">n) New remote</span><br><span class="line">d) Delete remote</span><br><span class="line">r) Rename remote</span><br><span class="line">c) Copy remote</span><br><span class="line">s) Set configuration password</span><br><span class="line">q) Quit config</span><br><span class="line">e/n/d/r/c/s/q&gt; n  <span class="comment"># 选择n，新建</span></span><br><span class="line">name&gt; P3TERX   <span class="comment"># 输入名称，类似于标签，用于区分不同的网盘。</span></span><br><span class="line">Type of storage to configure.</span><br><span class="line">Enter a string value. Press Enter <span class="keyword">for</span> the default (<span class="string">&quot;&quot;</span>).</span><br><span class="line">Choose a number from below, or <span class="built_in">type</span> <span class="keyword">in</span> your own value</span><br><span class="line"> 1 / A stackable unification remote, <span class="built_in">which</span> can appear to merge the contents of several remotes</span><br><span class="line">   \ <span class="string">&quot;union&quot;</span></span><br><span class="line"> 2 / Alias <span class="keyword">for</span> a existing remote</span><br><span class="line">   \ <span class="string">&quot;alias&quot;</span></span><br><span class="line"> 3 / Amazon Drive</span><br><span class="line">   \ <span class="string">&quot;amazon cloud drive&quot;</span></span><br><span class="line"> 4 / Amazon S3 Compliant Storage Providers (AWS, Ceph, Dreamhost, IBM COS, Minio)</span><br><span class="line">   \ <span class="string">&quot;s3&quot;</span></span><br><span class="line"> 5 / Backblaze B2</span><br><span class="line">   \ <span class="string">&quot;b2&quot;</span></span><br><span class="line"> 6 / Box</span><br><span class="line">   \ <span class="string">&quot;box&quot;</span></span><br><span class="line"> 7 / Cache a remote</span><br><span class="line">   \ <span class="string">&quot;cache&quot;</span></span><br><span class="line"> 8 / Dropbox</span><br><span class="line">   \ <span class="string">&quot;dropbox&quot;</span></span><br><span class="line"> 9 / Encrypt/Decrypt a remote</span><br><span class="line">   \ <span class="string">&quot;crypt&quot;</span></span><br><span class="line">10 / FTP Connection</span><br><span class="line">   \ <span class="string">&quot;ftp&quot;</span></span><br><span class="line">11 / Google Cloud Storage (this is not Google Drive)</span><br><span class="line">   \ <span class="string">&quot;google cloud storage&quot;</span></span><br><span class="line">12 / Google Drive</span><br><span class="line">   \ <span class="string">&quot;drive&quot;</span></span><br><span class="line">13 / Hubic</span><br><span class="line">   \ <span class="string">&quot;hubic&quot;</span></span><br><span class="line">14 / JottaCloud</span><br><span class="line">   \ <span class="string">&quot;jottacloud&quot;</span></span><br><span class="line">15 / Local Disk</span><br><span class="line">   \ <span class="string">&quot;local&quot;</span></span><br><span class="line">16 / Mega</span><br><span class="line">   \ <span class="string">&quot;mega&quot;</span></span><br><span class="line">17 / Microsoft Azure Blob Storage</span><br><span class="line">   \ <span class="string">&quot;azureblob&quot;</span></span><br><span class="line">18 / Microsoft OneDrive</span><br><span class="line">   \ <span class="string">&quot;onedrive&quot;</span></span><br><span class="line">19 / OpenDrive</span><br><span class="line">   \ <span class="string">&quot;opendrive&quot;</span></span><br><span class="line">20 / Openstack Swift (Rackspace Cloud Files, Memset Memstore, OVH)</span><br><span class="line">   \ <span class="string">&quot;swift&quot;</span></span><br><span class="line">21 / Pcloud</span><br><span class="line">   \ <span class="string">&quot;pcloud&quot;</span></span><br><span class="line">22 / QingCloud Object Storage</span><br><span class="line">   \ <span class="string">&quot;qingstor&quot;</span></span><br><span class="line">23 / SSH/SFTP Connection</span><br><span class="line">   \ <span class="string">&quot;sftp&quot;</span></span><br><span class="line">24 / Webdav</span><br><span class="line">   \ <span class="string">&quot;webdav&quot;</span></span><br><span class="line">25 / Yandex Disk</span><br><span class="line">   \ <span class="string">&quot;yandex&quot;</span></span><br><span class="line">26 / http Connection</span><br><span class="line">   \ <span class="string">&quot;http&quot;</span></span><br><span class="line">Storage&gt; 18  <span class="comment"># 选择18，Microsoft OneDrive</span></span><br><span class="line">** See <span class="built_in">help</span> <span class="keyword">for</span> onedrive backend at: https://rclone.org/onedrive/ **</span><br><span class="line">Microsoft App Client Id</span><br><span class="line">Leave blank normally.</span><br><span class="line">Enter a string value. Press Enter <span class="keyword">for</span> the default (<span class="string">&quot;&quot;</span>).</span><br><span class="line">client_id&gt;   <span class="comment"># 留空，回车</span></span><br><span class="line">Microsoft App Client Secret</span><br><span class="line">Leave blank normally.</span><br><span class="line">Enter a string value. Press Enter <span class="keyword">for</span> the default (<span class="string">&quot;&quot;</span>).</span><br><span class="line">client_secret&gt;   <span class="comment"># 留空，回车</span></span><br><span class="line">Edit advanced config? (y/n)</span><br><span class="line">y) Yes</span><br><span class="line">n) No</span><br><span class="line">y/n&gt; n  <span class="comment"># 选n</span></span><br><span class="line">Remote config</span><br><span class="line">Use auto config?</span><br><span class="line"> * Say Y <span class="keyword">if</span> not sure</span><br><span class="line"> * Say N <span class="keyword">if</span> you are working on a remote or headless machine</span><br><span class="line">y) Yes</span><br><span class="line">n) No</span><br><span class="line">y/n&gt; n  <span class="comment"># 选n</span></span><br><span class="line">For this to work, you will need rclone available on a machine that has a web browser available.</span><br><span class="line">Execute the following on your machine:</span><br><span class="line">    rclone authorize <span class="string">&quot;onedrive&quot;</span></span><br><span class="line">Then paste the result below:</span><br><span class="line">result&gt; &#123;<span class="string">&quot;XXXXXXXX&quot;</span>&#125;  <span class="comment"># 上面保存的token复制到这里</span></span><br><span class="line">2018/10/31 19:54:06 ERROR : Failed to save new token <span class="keyword">in</span> config file: section <span class="string">&#x27;P3TERX&#x27;</span> not found</span><br><span class="line">Choose a number from below, or <span class="built_in">type</span> <span class="keyword">in</span> an existing value</span><br><span class="line"> 1 / OneDrive Personal or Business</span><br><span class="line">   \ <span class="string">&quot;onedrive&quot;</span></span><br><span class="line"> 2 / Root Sharepoint site</span><br><span class="line">   \ <span class="string">&quot;sharepoint&quot;</span></span><br><span class="line"> 3 / Type <span class="keyword">in</span> driveID</span><br><span class="line">   \ <span class="string">&quot;driveid&quot;</span></span><br><span class="line"> 4 / Type <span class="keyword">in</span> SiteID</span><br><span class="line">   \ <span class="string">&quot;siteid&quot;</span></span><br><span class="line"> 5 / Search a Sharepoint site</span><br><span class="line">   \ <span class="string">&quot;search&quot;</span></span><br><span class="line">Your choice&gt; 1  <span class="comment"># 这里问你要选择的类型，选1</span></span><br><span class="line">Found 1 drives, please select the one you want to use:</span><br><span class="line">0: OneDrive (business) </span><br><span class="line">Chose drive to use:&gt; 0  <span class="comment"># 程序找到网盘，这里编号是0，就选择0</span></span><br><span class="line">Found drive <span class="string">&#x27;root&#x27;</span> of <span class="built_in">type</span> <span class="string">&#x27;business&#x27;</span>, URL: https://xxxxxx-my.sharepoint.com/personal/xxxxxxx/Documents</span><br><span class="line">Is that okay?</span><br><span class="line">y) Yes</span><br><span class="line">n) No</span><br><span class="line">y/n&gt; y  <span class="comment"># 选y</span></span><br><span class="line">--------------------</span><br><span class="line">[P3TERX]</span><br><span class="line"><span class="built_in">type</span> = onedrive</span><br><span class="line">token = &#123;<span class="string">&quot;XXXXXXXX&quot;</span>&#125;</span><br><span class="line">drive_id = XXXXXXXXX</span><br><span class="line">drive_type = business</span><br><span class="line">--------------------</span><br><span class="line">y) Yes this is OK</span><br><span class="line">e) Edit this remote</span><br><span class="line">d) Delete this remote</span><br><span class="line">y/e/d&gt; y  <span class="comment"># 选y</span></span><br><span class="line">Current remotes:</span><br><span class="line">Name                 Type</span><br><span class="line">====                 ====</span><br><span class="line">P3TERX               onedrive</span><br><span class="line">e) Edit existing remote</span><br><span class="line">n) New remote</span><br><span class="line">d) Delete remote</span><br><span class="line">r) Rename remote</span><br><span class="line">c) Copy remote</span><br><span class="line">s) Set configuration password</span><br><span class="line">q) Quit config</span><br><span class="line">e/n/d/r/c/s/q&gt; q  <span class="comment"># 选q，退出</span></span><br></pre></td></tr></table></figure>
+<p>至此，Rclone 已成功连接到了 OneDrive 网盘。<br><a name="toc-heading-5"></a></p>
+<h2 id="配置自动上传脚本"><a href="#配置自动上传脚本" class="headerlink" title="配置自动上传脚本"></a>配置自动上传脚本</h2><p>Aria2 一键安装管理脚本整合了 Aria2 完美配置 ，安装时会下载自动上传脚本。考虑到不是所有人都需要上传，默认不启用，需要手动启用。<br />输入<code>nano /root/.aria2/autoupload.sh</code>打开自动上传脚本进行编辑，脚本中有中文注释，按照自己的实际情况进行修改，一般只需要修改下面2个部分。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name=<span class="string">&#x27;Onedrive&#x27;</span> <span class="comment">#配置Rclone时的name</span></span><br><span class="line">folder=<span class="string">&#x27;/DRIVEX/Download&#x27;</span> <span class="comment">#网盘里的文件夹，留空为网盘根目录。</span></span><br></pre></td></tr></table></figure>
+<p>输入<code>nano /root/.aria2/aria2.conf</code>打开 Aria2 配置文件进行修改。或使用Aria2 一键安装管理脚本中的手动修改选项打开配置文件进行修改。找到“下载完成后执行的命令”，修改成下面的这样。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 下载完成后执行的命令</span><br><span class="line"># 删除.aria2文件</span><br><span class="line">#on-download-complete=/root/.aria2/delete.aria2.sh</span><br><span class="line"># 调用 rclone 上传(move)到网盘</span><br><span class="line">on-download-complete=/root/.aria2/autoupload.sh</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>在<code>on-download-complete=/root/.aria2/delete.aria2.sh</code>前加上<code>#</code></li>
+<li>去掉<code>#on-download-complete=/root/.aria2/autoupload.sh</code>前面的<code>#</code></li>
+</ul>
+</blockquote>
+<p><strong>重启 Aria2</strong><br /><code>service aria2 restart</code><br /><strong>当你进行完以上所有操作，现在下载文件就会自动上传至相应的网盘。</strong><br><a name="toc-heading-6"></a></p>
+<h2 id="前端面板使用"><a href="#前端面板使用" class="headerlink" title="前端面板使用"></a>前端面板使用</h2><p>现在，你可用通过命令行利用Aria2下载，不过比较繁琐，可以用一个前端面板进行远程连接下载。<br><a name="toc-heading-7"></a></p>
+<h3 id="安装-AriaNg"><a href="#安装-AriaNg" class="headerlink" title="安装 AriaNg"></a>安装 AriaNg</h3><p>AriaNg是个 Web 前端，在项目的 releases页面下载后，上传至 VPS 进行部署，这里不做过多说明。<del>作者直接提供了一个演示页面，是可以直接使用的。</del></p>
+<blockquote>
+<p><strong>Q：使用他人提供的页面会不会不安全？</strong><br>A：设置是缓存在本地的，所填写的 RPC 地址和 RPC 密钥是不会上传的。如果不放心，可以使用本地程序或者自己部署。建议萌新学习一些建站经验后再尝试自己部署。</p>
+</blockquote>
+<p><a name="toc-heading-8"></a></p>
+<h3 id="本地程序"><a href="#本地程序" class="headerlink" title="本地程序"></a>本地程序</h3><p><a class="link"   target="_blank" rel="noopener" href="https://github.com/mayswind/AriaNg-Native/releases/tag/1.1.3" >AriaNg Native<i class="fas fa-external-link-alt"></i></a> 是 Web 前端的本地化程序，比起网页端它功能会多一些，且不需要复杂的部署过程，下载安装后打开就可以使用，支持 Windows 和 macOS<br />另外，手机也有对应的Aria2客户端，例如<a class="link"   target="_blank" rel="noopener" href="https://github.com/devgianlu/Aria2App" >Aria2App<i class="fas fa-external-link-alt"></i></a>。<br><a name="toc-heading-9"></a></p>
+<h2 id="前后端连接"><a href="#前后端连接" class="headerlink" title="前后端连接"></a>前后端连接</h2><p>在<code>AriaNg 设置</code>中填写相关 RPC 信息。<code>RPC 地址</code>对应 IP 或域名， <code>RPC 秘钥</code>对应配置文件中<code>rpc-secret</code>选项后面的参数。如果没有过修改端口，就只需要填写<code>RPC 地址</code>和<code>RPC 密钥</code>两项。使用 Aria2 一键安装管理脚本安装后会显示这些信息，设置起来更简单。<br /><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://vip1.loli.io/2022/01/27/BAwglq9jT1dyohv.jpg"
+                      alt="image"
+                ><br /><br><br />在你没有完全了解 Aria2 的情况下，不建议去修改设置，保持默认即可。</p>
+<ul>
+<li>在 AriaNg （或其它前端面板）中修改设置项，只有在运行中才有效，属于临时设置，它不会修改配置文件。重启或关闭 Aria2 后端程序后，会重新读取配置文件。所以必要的设置，需写入配置文件中。</li>
+<li>如果在修改配置文件后，重启 Aria2 的过程中没有关闭 AriaNg ，AriaNg 可能会给服务端传递之前缓存的配置，这就导致修改的配置没有生效（理论上其它前端面板也是这样）<blockquote>
+<p>参考文献：</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li><a class="link"   target="_blank" rel="noopener" href="https://p3terx.com/archives/aria2-frontend-ariang-tutorial.html" >Aria2 前端面板(GUI) AriaNg 使用教程<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://p3terx.com/archives/offline-download-of-onedrive-gdrive.html" >Aria2 + Rclone 实现 OneDrive、Google Drive 等网盘离线下载<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://p3terx.com/archives/aria2-oneclick-installation-management-script.html" >Aria2 一键安装管理脚本<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://rclone.org/install/#script-installation" >https://rclone.org/install/#script-installation<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/P3TERX/aria2_perfect_config" >https://github.com/P3TERX/aria2_perfect_config<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://aria2.github.io/manual/en/html/aria2c.html" >Aria2 官方手册<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://rclone.org/docs/" >Rclone 官方手册<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：利用Aria2打造一个离线的OneDrive网盘</li>
+        <li>本文作者：HowarZheng</li>
+        <li>创建时间：2021-01-13 15:32:26</li>
+        <li>
+            本文链接：https://howarzheng.com/2021/01/13/利用Aria2打造一个离线的OneDrive网盘/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Aria2/">#Aria2</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/Rclone/">#Rclone</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/01/09/python%E4%B8%AD%E5%87%BD%E6%95%B0%E5%92%8C%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Python中函数和方法的区别</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2020/09/13/Python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E2%80%94%E2%80%94virtualenv/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Python虚拟环境——virtualenv</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script data-pjax
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script data-pjax>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: '567d3a6bb56a062489e1',
+                    clientSecret: '63d1798b829b6c76d61f7eb9e7165180e8431852',
+                    repo: 'howarzheng.github.io_comments',
+                    owner: 'HowarZheng',
+                    admin: ['HowarZheng'],
+                    id: __gitalk__pathname,
+                    language: 'zh-CN'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2015</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">HowarZheng</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Aria2"><span class="nav-text">安装 Aria2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE-Rclone"><span class="nav-text">安装和配置 Rclone</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Rclone%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B"><span class="nav-text">Rclone配置教程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC"><span class="nav-text">配置自动上传脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E9%9D%A2%E6%9D%BF%E4%BD%BF%E7%94%A8"><span class="nav-text">前端面板使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-AriaNg"><span class="nav-text">安装 AriaNg</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E7%A8%8B%E5%BA%8F"><span class="nav-text">本地程序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E5%90%8E%E7%AB%AF%E8%BF%9E%E6%8E%A5"><span class="nav-text">前后端连接</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

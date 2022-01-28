@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="HowarZheng">
+    
+    <title>
+        
+            前后端同学必会的Linux基础命令 |
+        
+        HowarZheng&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="https://vip2.loli.io/2022/01/28/8bTLXSIoDckrjfz.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"howarzheng.com","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#203A43","avatar":"https://vip2.loli.io/2022/01/28/8bTLXSIoDckrjfz.png","favicon":"https://vip2.loli.io/2022/01/28/8bTLXSIoDckrjfz.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Stay Hungry, Stay Foolish"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="HowarZheng's Blog" type="application/atom+xml">
+</head>
+
+
+<script data-ad-client="ca-pub-7835998003747351" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                HowarZheng&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">前后端同学必会的Linux基础命令</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="https://vip2.loli.io/2022/01/28/8bTLXSIoDckrjfz.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">HowarZheng</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2018-08-13 13:34:46</span>
+        <span class="mobile">2018-08-13 13:34</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/">编程笔记</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Linux/">Linux</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>4 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p><a name="toc-heading-1"></a></p>
+<h2 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h2><p><a name="toc-heading-2"></a></p>
+<h3 id="1、进入目录"><a href="#1、进入目录" class="headerlink" title="1、进入目录"></a>1、进入目录</h3><p><code>cd 目录名</code><br><a name="toc-heading-3"></a></p>
+<h3 id="2、显示当前路径"><a href="#2、显示当前路径" class="headerlink" title="2、显示当前路径"></a>2、显示当前路径</h3><p><code>pwd</code><br><a name="toc-heading-4"></a></p>
+<h3 id="3、显示路径下的文件"><a href="#3、显示路径下的文件" class="headerlink" title="3、显示路径下的文件"></a>3、显示路径下的文件</h3><p><code>ls</code><br /><code>ls -a 显示隐藏文件。隐藏文件以 . 开头命名</code><br><a name="toc-heading-5"></a></p>
+<h3 id="4、查看创建文本"><a href="#4、查看创建文本" class="headerlink" title="4、查看创建文本"></a>4、查看创建文本</h3><p><code>touch abc.txt 查看abc.txt 如果不存在则自动创建</code><br><a name="toc-heading-6"></a></p>
+<h3 id="5、创建文件夹"><a href="#5、创建文件夹" class="headerlink" title="5、创建文件夹"></a>5、创建文件夹</h3><p><code>mkdir 文件名 当前目录创建一个文件夹</code><br /><code>mkdir -p name1/name2 当期目录递归创建name1/name2文件，如 提示 mkdir: xxx: Permission denied，则需要admin账号 sudo -i 输入密码 即可</code><br><a name="toc-heading-7"></a></p>
+<h3 id="6、重命名操作"><a href="#6、重命名操作" class="headerlink" title="6、重命名操作"></a>6、重命名操作</h3><p><code>mv test test1 把test文件的名字修改为test1</code><br /><code>mv test1 /home/wechat/ 将test1文件 移动到/home/wechat 目录下</code><br><a name="toc-heading-8"></a></p>
+<h3 id="7、删除操作"><a href="#7、删除操作" class="headerlink" title="7、删除操作"></a>7、删除操作</h3><p><code>rm file 删除file文件(存在子文件时不可删除)</code><br /><code>rm -r /file 删除file文件下的所有目录文件</code><br /><code>rm -rf ./* 删库跑路专用命令</code><br><a name="toc-heading-9"></a></p>
+<h3 id="8、复制"><a href="#8、复制" class="headerlink" title="8、复制"></a>8、复制</h3><p><code>cp file /home 复制file命令至home目录下</code><br /><code>cp -r test /home/wechat 复制test文件夹和其所有子文件 至 /home/wechat目录下</code><br /><code>cp -r test /home/wechat/test2 复制test文件夹和其所有子文件 至 /home/wechat目录下并重命名为test2</code><br><a name="toc-heading-10"></a></p>
+<h3 id="9、压缩、解压"><a href="#9、压缩、解压" class="headerlink" title="9、压缩、解压"></a>9、压缩、解压</h3><p>解压tar<br /><code>tar xvf test.tar</code><br />压缩tar<br /><code>tar cvf test1.tar name 将name文件夹压缩为test1.tar</code><br />解压tar.gz<br /><code>tar zxvf test.tar.gz</code><br />压缩<br /><code>tar zxvf test.tar.gz name</code><br><a name="toc-heading-11"></a></p>
+<h2 id="查找-amp-amp-日志"><a href="#查找-amp-amp-日志" class="headerlink" title="查找 &amp;&amp; 日志"></a>查找 &amp;&amp; 日志</h2><p><a name="toc-heading-12"></a></p>
+<h3 id="1、cat、more、less命令"><a href="#1、cat、more、less命令" class="headerlink" title="1、cat、more、less命令"></a>1、cat、more、less命令</h3><p><code>cat test.log 查看test.log 的文件内容</code><br /><code>cat -n test.log 查看test.log的文件内容并显示行号</code><br />more、less和cat作用基本相同，只不过more可以按页码来查看。 都是按q退出查看使用命令时，空格键翻页(显示下一屏内容)<br />回车：显示下一行内容<br><a name="toc-heading-13"></a></p>
+<h3 id="2、find命令"><a href="#2、find命令" class="headerlink" title="2、find命令"></a>2、find命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.代表当前目录</span><br><span class="line">find . -name <span class="string">&#x27;*.txt&#x27;</span>          查找当前目录及其子目录下扩展名为txt的文件</span><br><span class="line">find . -mtime -2             列出两天内修改过的文件</span><br><span class="line">find . -atime -3             列出三天内被存取的文件</span><br><span class="line">find . -mmin +30             半个小时内被修改过的文件</span><br><span class="line">find . -amin +40              四十分钟内被存取过的文件</span><br><span class="line">find . -size +1M              查找当前目录超过1M的文件</span><br><span class="line">find .  -size -1M              查找当前目录小于1M的文件</span><br><span class="line">find .  -size   +512k          超过512k的文件</span><br><span class="line">find . -empty                  查找当前目录为空的文件或者文件夹</span><br></pre></td></tr></table></figure>
+<p><a name="toc-heading-14"></a></p>
+<h3 id="3、whereis命令"><a href="#3、whereis命令" class="headerlink" title="3、whereis命令"></a>3、whereis命令</h3><p><code>whereis name/ 搜索name文件的路径</code><br><a name="toc-heading-15"></a></p>
+<h3 id="4、grep命令"><a href="#4、grep命令" class="headerlink" title="4、grep命令"></a>4、grep命令</h3><p><code>ps -ef|grep nginx 查看nginx的进程</code><br /><code>ps -ef|grep nginx -c 查看nginx的进程个数</code><br /><code>cat test.log | grep ^a 查找test.log 中以o开头的内容</code><br /><code>cat test.log | grep $k 查找test.log中以K结尾的内容</code><br /><code>cat test.log | grep &#39;bd4f63cc918611e8a14f7c04d0d7fdcc&#39; --color 在test.log中搜索bd4f63cc918611e8a14f7c04d0d7fdcc并高亮，等同于 grep &#39;bd4f63cc918611e8a14f7c04d0d7fdcc&#39; test.log --color</code><br /><code>grep -n &#39;abc&#39; test.log 搜索结果显示行数</code><br /><code>grep &#39;abc&#39; test1.log test2.log 从多个文件中查找abc</code><br><a name="toc-heading-16"></a></p>
+<h3 id="5、tail命令"><a href="#5、tail命令" class="headerlink" title="5、tail命令"></a>5、tail命令</h3><p><code>tail -f xxx.log 查看xxx.log 默认显示最后10行</code><br /><code>tail -f 100 xx.log /tail -100f xx.log 查看100行</code><br><a name="toc-heading-17"></a></p>
+<h3 id="6、vim命令"><a href="#6、vim命令" class="headerlink" title="6、vim命令"></a>6、vim命令</h3><p><code>vim</code><br /><code>vim file 查看文本</code><br /><code>vim file1 file2 ... 查看多个文本</code><br />正常模式/vim模式 通过<strong>ESC</strong>进行切换<br />vim模式下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">i：在当前位置插入</span><br><span class="line">dd： 删除光标所在行</span><br><span class="line">D:删除光标所在行</span><br><span class="line">2dd: 删除光标之后的2行</span><br><span class="line">G：切换光标至末尾</span><br><span class="line">w! 强制写入</span><br><span class="line">wq 保存并退出</span><br><span class="line">q！ 强制退出 不保存</span><br><span class="line">/abc  在文本中查找abc</span><br><span class="line"><span class="built_in">set</span> nu 显示文本行数</span><br><span class="line">移动光标 k(上)、j(下)、h(左)、l(右)</span><br><span class="line">yy 复制光标所在行</span><br><span class="line">p粘贴复制的</span><br><span class="line">o:另起一行</span><br></pre></td></tr></table></figure>
+<p><a name="toc-heading-18"></a></p>
+<h2 id="其他常用操作"><a href="#其他常用操作" class="headerlink" title="其他常用操作"></a>其他常用操作</h2><p><a name="toc-heading-19"></a></p>
+<h3 id="1、查看用户信息"><a href="#1、查看用户信息" class="headerlink" title="1、查看用户信息"></a>1、查看用户信息</h3><p><code>w</code><br /><code>who</code><br><a name="toc-heading-20"></a></p>
+<h3 id="2、修改文件权限"><a href="#2、修改文件权限" class="headerlink" title="2、修改文件权限"></a>2、修改文件权限</h3><p><code>chmod 777 file1 每个人都可以对file文件进行读写和执行的权限</code><br /><code>chmod 666 file1 每个人都可以对file文件进行读写操作</code><br><a name="toc-heading-21"></a></p>
+<h3 id="3、系统级别"><a href="#3、系统级别" class="headerlink" title="3、系统级别"></a>3、系统级别</h3><p><code>top 实时显示系统资源使用情况</code><br /><code>dh -h 查看当前那磁盘使用情况</code><br /><code>du -sh /usr 计算usr文件大小</code><br /><code>netstat –a 列出 tcp, udp 和 unix 协议下所有套接字的所有连接</code><br /><code>kill 端口号 终止该端口</code><br /><code>kill -9 端口 立即强制终止端口</code><br /><code>rz lz 上传 和下载文件</code></p>
+<blockquote>
+<p>参考文献：</p>
+</blockquote>
+<ol>
+<li><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/51796190" >前后端同学必会的Linux基础命令<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：前后端同学必会的Linux基础命令</li>
+        <li>本文作者：HowarZheng</li>
+        <li>创建时间：2018-08-13 13:34:46</li>
+        <li>
+            本文链接：https://howarzheng.com/2018/08/13/前后端同学必会的Linux基础命令/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Linux/">#Linux</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2019/05/23/Vue%20%E6%96%87%E6%A1%A3%E9%A3%8E%E6%A0%BC%E7%9A%84%20Typora%20%E4%B8%BB%E9%A2%98/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Vue文档风格的Typora主题</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2018/06/13/%E4%B8%80%E6%AC%BE%E9%AB%98%E6%95%88%E5%8E%BB%E9%99%A4PDF%E6%B0%B4%E5%8D%B0%E7%9A%84%E8%BD%AF%E4%BB%B6/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">一款高效去除PDF水印的软件</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script data-pjax
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script data-pjax>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: '567d3a6bb56a062489e1',
+                    clientSecret: '63d1798b829b6c76d61f7eb9e7165180e8431852',
+                    repo: 'howarzheng.github.io_comments',
+                    owner: 'HowarZheng',
+                    admin: ['HowarZheng'],
+                    id: __gitalk__pathname,
+                    language: 'zh-CN'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2015</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">HowarZheng</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%AF%87"><span class="nav-text">基础篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E8%BF%9B%E5%85%A5%E7%9B%AE%E5%BD%95"><span class="nav-text">1、进入目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E8%B7%AF%E5%BE%84"><span class="nav-text">2、显示当前路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E6%98%BE%E7%A4%BA%E8%B7%AF%E5%BE%84%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6"><span class="nav-text">3、显示路径下的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81%E6%9F%A5%E7%9C%8B%E5%88%9B%E5%BB%BA%E6%96%87%E6%9C%AC"><span class="nav-text">4、查看创建文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%E3%80%81%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-text">5、创建文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6%E3%80%81%E9%87%8D%E5%91%BD%E5%90%8D%E6%93%8D%E4%BD%9C"><span class="nav-text">6、重命名操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7%E3%80%81%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C"><span class="nav-text">7、删除操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8%E3%80%81%E5%A4%8D%E5%88%B6"><span class="nav-text">8、复制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9%E3%80%81%E5%8E%8B%E7%BC%A9%E3%80%81%E8%A7%A3%E5%8E%8B"><span class="nav-text">9、压缩、解压</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE-amp-amp-%E6%97%A5%E5%BF%97"><span class="nav-text">查找 &amp;&amp; 日志</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81cat%E3%80%81more%E3%80%81less%E5%91%BD%E4%BB%A4"><span class="nav-text">1、cat、more、less命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81find%E5%91%BD%E4%BB%A4"><span class="nav-text">2、find命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81whereis%E5%91%BD%E4%BB%A4"><span class="nav-text">3、whereis命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81grep%E5%91%BD%E4%BB%A4"><span class="nav-text">4、grep命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%E3%80%81tail%E5%91%BD%E4%BB%A4"><span class="nav-text">5、tail命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6%E3%80%81vim%E5%91%BD%E4%BB%A4"><span class="nav-text">6、vim命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="nav-text">其他常用操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E6%9F%A5%E7%9C%8B%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF"><span class="nav-text">1、查看用户信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="nav-text">2、修改文件权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E7%B3%BB%E7%BB%9F%E7%BA%A7%E5%88%AB"><span class="nav-text">3、系统级别</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
