@@ -9,7 +9,7 @@ comment: true
 name: HowarZheng
 link: https://howarzheng.com/
 description: Stay Hungry, Stay Foolish
-avatar: https://cdn.jsdelivr.net/gh/HowarZheng/howarzheng.github.io@Figure_Bed/20220120/头像.5zculxb5qso.jpg
+avatar: https://vip2.loli.io/2022/01/28/8bTLXSIoDckrjfz.png
 ```
 
 
