@@ -37,7 +37,7 @@ style:
   # First screen
   first_screen:
     enable: true
-    background_img: https://vip2.loli.io/2022/01/30/MjEVgK395Namxdo.png
+    background_img: /images/bg.svg
     description: Stay Hungry, Stay Foolish
 
   # Scroll style settings
