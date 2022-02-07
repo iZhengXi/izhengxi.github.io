@@ -2,9 +2,9 @@
 #  Your basic info
 # ---------------------------------------------------------------------------------------
 base_info:
-  title: HowarZheng's Blog
-  author: HowarZheng
-  url: https://howarzheng.com/
+  title: ZhengXi's Blog
+  author: ZhengXi
+  url: https://blog.zhengxi.io/
   # Logo image (You can use local image, image external link or don’t fill)
   logo_img:
 
@@ -53,14 +53,14 @@ style:
 social_contact:
   enable: true
   links:
-    github: https://github.com/HowarZheng
-    weixin: https://vip1.loli.io/2022/01/28/LbISjUWNP2ak8u5.png
-    qq: http://wpa.qq.com/msgrd?v=3&uin=482399281&site=qq&menu=yes
+    github: https://github.com/iZhengXi
+    weixin: #https://vip1.loli.io/2022/01/28/LbISjUWNP2ak8u5.png
+    qq: # http://wpa.qq.com/msgrd?v=3&uin=482399281&site=qq&menu=yes
     weibo: # your WeiBo URL
-    zhihu: https://www.zhihu.com/people/howarzheng
+    zhihu: # https://www.zhihu.com/people/howarzheng
     twitter: # your twitter URL
     facebook: # your facebook URL
-    email: mailto:howar.zheng@gmail.com
+    email: mailto:me@zhengxi.io
 
 # ---------------------------------------------------------------------------------------
 # Navigation menu
@@ -171,10 +171,10 @@ comment:
   # Gitalk
   # See: https://github.com/gitalk/gitalk
   gitalk:
-    github_id: HowarZheng
-    repository: howarzheng
-    client_id: 567d3a6bb56a062489e1
-    client_secret: b7b8b10cea2fd78ae28ef082b6179190d2bc9ad0
+    github_id: iZhengXi
+    repository: blog.zhengxi.io.comments
+    client_id: 1b319e23348b3a7c7953
+    client_secret: eea64f2e6eafe1e5a67e4fcc3cbf6f8369b1121b
 
   # Twikoo
   # See: https://github.com/imaegoo/twikoo
