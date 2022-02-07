@@ -6,4 +6,4 @@ comment: true
 ---
 # 个人简历
 小镇做题家。
-联系方式：howar.zheng#gmail.com(#替换为@)
+联系方式：me#zhengxi.io(#替换为@)
