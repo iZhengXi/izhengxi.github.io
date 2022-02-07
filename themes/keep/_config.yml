@@ -4,7 +4,7 @@
 base_info:
   title: ZhengXi's Blog
   author: ZhengXi
-  url: https://blog.zhengxi.io/
+  url: https://zhengxi.io/
   # Logo image (You can use local image, image external link or don’t fill)
   logo_img:
 
@@ -172,7 +172,7 @@ comment:
   # See: https://github.com/gitalk/gitalk
   gitalk:
     github_id: iZhengXi
-    repository: blog.zhengxi.io.comments
+    repository: zhengxi.io.comments
     client_id: 1b319e23348b3a7c7953
     client_secret: eea64f2e6eafe1e5a67e4fcc3cbf6f8369b1121b
 
