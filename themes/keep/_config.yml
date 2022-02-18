@@ -58,9 +58,9 @@ social_contact:
     qq: # http://wpa.qq.com/msgrd?v=3&uin=482399281&site=qq&menu=yes
     weibo: # your WeiBo URL
     zhihu: # https://www.zhihu.com/people/howarzheng
-    twitter: # your twitter URL
+    twitter: https://twitter.com/realZhengXi # your twitter URL
     facebook: # your facebook URL
-    email: mailto:me@zhengxi.io
+    email: mailto:i@zhengxi.me
 
 # ---------------------------------------------------------------------------------------
 # Navigation menu
