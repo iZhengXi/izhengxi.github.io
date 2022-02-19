@@ -38,7 +38,7 @@ style:
   first_screen:
     enable: true
     background_img: https://vip1.loli.io/2022/02/19/pBrVFIq1fXSs9Yi.jpg #/images/bg.svg
-    description: 你的时间有限，不要为别人而活
+    description: 你的时间有限，不要为了别人而活
 
   # Scroll style settings
   scroll:
