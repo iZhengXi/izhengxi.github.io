@@ -38,7 +38,7 @@ style:
   first_screen:
     enable: true
     background_img: https://vip1.loli.io/2022/02/19/pBrVFIq1fXSs9Yi.jpg #/images/bg.svg
-    description: Stay Hungry, Stay Foolish
+    description: 你的时间有限，不要为别人而活
 
   # Scroll style settings
   scroll:
@@ -54,8 +54,8 @@ social_contact:
   enable: true
   links:
     github: https://github.com/iZhengXi
-    weixin: #https://vip1.loli.io/2022/01/28/LbISjUWNP2ak8u5.png
-    qq: # http://wpa.qq.com/msgrd?v=3&uin=482399281&site=qq&menu=yes
+    weixin: https://vip1.loli.io/2022/01/28/LbISjUWNP2ak8u5.png
+    qq: http://wpa.qq.com/msgrd?v=3&uin=482399281&site=qq&menu=yes
     weibo: # your WeiBo URL
     zhihu: # https://www.zhihu.com/people/howarzheng
     twitter: https://twitter.com/realZhengXi # your twitter URL
