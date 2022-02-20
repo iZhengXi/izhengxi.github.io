@@ -24,6 +24,13 @@ categories:
     <iframe src="//player.bilibili.com/player.html?aid=82937960&bvid=BV1KJ411p7WN&cid=141890422&page=1"  scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
 </div>
 ```
+**具体效果如下：**   
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="//player.bilibili.com/player.html?aid=82937960&bvid=BV1KJ411p7WN&cid=141890422&page=1"  scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
+</div>
+
+
 **参考文献：**
 
 1. [Hexo中插入Bilibili视频。](https://liuzhihang.com/2019/09/14/hexo-inserts-bilibili-video.html)
