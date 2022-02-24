@@ -8,7 +8,7 @@ comment: true
 ```yml
 name: ZhengXi
 link: https://zhengxi.io/
-description: Stay Hungry, Stay Foolish
+description: 你的时间有限，不要为了别人而活
 avatar: https://vip2.loli.io/2022/01/28/8bTLXSIoDckrjfz.png
 ```
 
