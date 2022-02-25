@@ -27,6 +27,11 @@ categories:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MnYppmstxIs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+**为了使视频的长宽自适应，可将代码修改为如下这样：**  
+```html
+<iframe width="760" height="427" src="https://www.youtube.com/embed/MnYppmstxIs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
+<iframe width="760" height="427" src="https://www.youtube.com/embed/MnYppmstxIs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 **参考资料：**
