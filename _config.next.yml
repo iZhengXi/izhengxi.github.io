@@ -604,7 +604,7 @@ disqusjs:
   # Leave api empty if you are able to connect to Disqus API. Otherwise you need a reverse proxy for it.
   # For example:
   # api: https://disqus.skk.moe/disqus/
-  api: https://disqus.zhengxi.io/api/
+  api: https://disqus-api.howar-zheng.workers.dev/api/
   apikey: t7Z1rE1zR5bydcxpLSKVFUkP6QVG7NlQ1ZDtqLxvpQMsM35tbrE5URVC2rSoegrj # Register new application from https://disqus.com/api/applications/
   shortname: zhengxiblog # See: https://disqus.com/admin/settings/general/
 
