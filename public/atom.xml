@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>ZhengXi&#39;s Blog</title>
+  
+  
+  <link href="https://zhengxi.io/atom.xml" rel="self"/>
+  
+  <link href="https://zhengxi.io/"/>
+  <updated>2022-02-26T09:02:51.552Z</updated>
+  <id>https://zhengxi.io/</id>
+  
+  <author>
+    <name>ZhengXi</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在Hexo博客中插入YouTube视频和哔哩哔哩视频</title>
+    <link href="https://zhengxi.io/2022/02/25/%E5%9C%A8Hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5YouTube%E8%A7%86%E9%A2%91%E5%92%8C%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E8%A7%86%E9%A2%91/"/>
+    <id>https://zhengxi.io/2022/02/25/%E5%9C%A8Hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5YouTube%E8%A7%86%E9%A2%91%E5%92%8C%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E8%A7%86%E9%A2%91/</id>
+    <published>2022-02-25T13:32:06.000Z</published>
+    <updated>2022-02-26T09:02:51.552Z</updated>
+    
+    <content type="html"><![CDATA[<p>在Hexo博客中可以插入哔哩哔哩视频和YouTube视频。并且相比哔哩哔哩视频，插入的YouTube视频可以调节清晰度。</p><span id="more"></span><p>在这里我们以插入YouTube博主<a href="https://www.youtube.com/channel/UCEik-U3T6u6JA0XiHLbNbOw">Bozeman Science</a>的一个科普视频为例：</p><p><strong>首先复制视频的分享代码：</strong></p><p><img data-src="https://vip2.loli.io/2022/02/25/GgidB6Se4zRLTx7.png" alt="image-20220225214429976"></p><p><strong>这是复制的视频分享代码：</strong></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">width</span>=<span class="string">&quot;560&quot;</span> <span class="attr">height</span>=<span class="string">&quot;315&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://www.youtube.com/embed/MnYppmstxIs&quot;</span> <span class="attr">title</span>=<span class="string">&quot;YouTube video player&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;0&quot;</span> <span class="attr">allow</span>=<span class="string">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="attr">allowfullscreen</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure><iframe width="560" height="315" src="https://www.youtube.com/embed/MnYppmstxIs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p><strong>为了使视频的长宽自适应，可将代码修改为如下这样：</strong>  </p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;position: relative; width: 100%; height: 0; padding-bottom: 75%;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;https://www.youtube.com/embed/MnYppmstxIs&quot;</span>  <span class="attr">scrolling</span>=<span class="string">&quot;no&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;no&quot;</span> <span class="attr">framespacing</span>=<span class="string">&quot;0&quot;</span> <span class="attr">allowfullscreen</span>=<span class="string">&quot;true&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position: absolute; width: 100%; height: 100%; left: 0; top: 0;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">    <iframe src="https://www.youtube.com/embed/MnYppmstxIs"  scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe></div><p><strong>参考资料：</strong></p><ol><li><a href="https://xmuli.tech/posts/c0c8973/">hexo博客插入视频bilibili 和 youtube的mv视频《take me hand 》。</a></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;在Hexo博客中可以插入哔哩哔哩视频和YouTube视频。并且相比哔哩哔哩视频，插入的YouTube视频可以调节清晰度。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="网站建设" scheme="https://zhengxi.io/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"/>
+    
+    <category term="Hexo" scheme="https://zhengxi.io/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/Hexo/"/>
+    
+    
+    <category term="Hexo" scheme="https://zhengxi.io/tags/Hexo/"/>
+    
+    <category term="博客" scheme="https://zhengxi.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="YouTube" scheme="https://zhengxi.io/tags/YouTube/"/>
+    
+    <category term="哔哩哔哩" scheme="https://zhengxi.io/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微视频作业：都江堰与加尔水道桥</title>
+    <link href="https://zhengxi.io/2022/02/24/%E5%BE%AE%E8%A7%86%E9%A2%91%E4%BD%9C%E4%B8%9A%EF%BC%9A%E9%83%BD%E6%B1%9F%E5%A0%B0%E4%B8%8E%E5%8A%A0%E5%B0%94%E6%B0%B4%E9%81%93%E6%A1%A5/"/>
+    <id>https://zhengxi.io/2022/02/24/%E5%BE%AE%E8%A7%86%E9%A2%91%E4%BD%9C%E4%B8%9A%EF%BC%9A%E9%83%BD%E6%B1%9F%E5%A0%B0%E4%B8%8E%E5%8A%A0%E5%B0%94%E6%B0%B4%E9%81%93%E6%A1%A5/</id>
+    <published>2022-02-24T03:32:06.000Z</published>
+    <updated>2022-02-26T07:53:28.557Z</updated>
+    
+    <content type="html"><![CDATA[<p>英语选修课《欧洲文化概况》的课程作业。</p><span id="more"></span><h1 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h1><p>Dujiangyan is located on the Min River, the longest tributary of the Yangtze, in the west of Chengdu Plain in Sichuan Province. It is the oldest and only surviving large-scale hydraulic engineering in the world and is still in use today. The Pont du Gardon, located on the northeast of Nimes, is the largest and the highest elevated surviving Roman aqueduct in the world. Dujiangyan and Pont du Gard are the world-famous Water Projects in a period of human history. The first one is the classic of Oriental traditional agricultural society and the second one is the pattern of intelligence of western civilization. The collision and fusion between the China and the West in farming culture emphasis on the point of harmony with nature and avatar the sagacity of the ancient labouring people.<br />More than 2,000 years ago, Li Bing, the governor of Shu County in the Qin Dynasty, and his son, mobilized working people to build Dujiangyan Water Project with the basis of its predecessor meeting the farm water needs. Dujiangyan Water Project exploited the potential of striking terrain. It is long and narrow, higher in the northwestern part, lower in the southeastern region. With the benefits of special terrain and flow of water, it could guarantee the dominance of flood alert, irrigation, water transport and drinking water.<br />Both in design and construction, Dujiangyan Water Project embodies the wisdom of the ancient Chinese working people. Although the Spring and Autumn Period is a term which is absent in modern science, Dujiangyan Water Project’s layout and style are exquisite and reasonable, successfully solving the matter for irrigation. The Fish Mouth Levee, named for its conical head that is said to resemble the mouth of a fish, is the key part of the construction. It is an artificial levee that divides the water into inner and outer streams. While during flood, this amount decreases to 40% to protect the people from flooding. The Flying Sand Weir has a 200-meter-wide opening that connects the inner and outer streams. This ensures against flooding by allowing the natural swirling flow of the water to drain out excess water from the inner to the outer stream. The Bottle-Neck Channel, which was gouged through the mountain, is the final part of the system. The channel distributes the water to the farmlands in the Chengdu Plain, whilst the narrow entrance, that gives it its name, works as a check gate. <br />Thus, it not only controlled the Min River floods, but also made full use of the water resources. These are highly reflected the wisdom of ancient Chinese water conservancy ecological civilization. Dujiangyan Water Project has been playing a role in flood control and irrigation for many years, making Chengdu plain a “god’s country “. <br />The writer Qiuyu YU was conquered by Dujiangyan: “If the Great Wall occupied vast space, then Dujiangyan actually occupied a vast distance in time.”  Originally constructed around 256 BC, Dujiangyan Water Project, transcending time and space, is still standing on the Ming River wholeheartedly serving the people. It is a apotheosis of human-water harmony, composing the eternal glorious chapter of river civilization. <br />More than 100 years after the Dujiangyan Water Project was built and come on     stream, Roman architects built the Pont du Gard in where is now called Nimes, the region of Southern France. The Pont du Gard comprises three layers, with water flowing through the ground floor and people passing through the top floor. The bridge is made from Shelly limestone and stands 48.8 meters high. Its structure is rigorous and imposing, which is the crystallization of the wisdom of ancient Roman. Utilizing modern bridge construction technology, it would take years to build such a 50-kilometer aqua bridge. However, the construction of the Pont du Gard took only five years, which shows that the Romans were skilled in hydraulic engineering at that time.<br />As a high-altitude aqueduct during the Roman Empire, it bridged the Kal River and conveyed water to Nimes, where it is distributed to public bathhouses and private residences. It is said that about 20,000 cubic meters of water was supplied to Nimes every day, giving its inhabitants tap water 2,000 years ago and up to five centuries. It has made an important contribution to Roman civilization and healthy living conditions.<br />The bridge symbolizes the wisdom of the entire ancient Roman and reflects the extraordinary workmanship of the ancient Roman architects and hydraulic engineers. It is not only a technology, but also an art and a milestone of Roman culture.<br />Both Dujiangyan and Pont du Gard embody the ancient highly prosperous water conservancy engineering technology and the wisdom of the working people. Looking back to the past, we should learn from the ancients’ illumination of the” harmony of heaven and man” and attach great importance to the protection of the ecological environment, respect nature, conform to nature, protect nature, and positively realize the harmonious coexistence between man and nature.<br><a name="cQ5OS"></a></p><h1 id="视频成片"><a href="#视频成片" class="headerlink" title="视频成片"></a>视频成片</h1><p><strong>视频已上传到哔哩哔哩：</strong>  </p><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">    <iframe src="//player.bilibili.com/player.html?aid=551757114&bvid=BV1qi4y127Da&cid=515766576&page=1"  scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>  </div> <p>本视频由小组合作完成。</p><blockquote><p>视频的素材来源于哔哩哔哩和Youtube等。剪辑软件使用Pr、瞄影工厂。使用<a href="https://arctime.org/">Arctime Pro</a>添加字幕。</p></blockquote>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;英语选修课《欧洲文化概况》的课程作业。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="课程作业" scheme="https://zhengxi.io/categories/%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/"/>
+    
+    
+    <category term="加尔水道桥" scheme="https://zhengxi.io/tags/%E5%8A%A0%E5%B0%94%E6%B0%B4%E9%81%93%E6%A1%A5/"/>
+    
+    <category term="都江堰" scheme="https://zhengxi.io/tags/%E9%83%BD%E6%B1%9F%E5%A0%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2022年学习计划</title>
+    <link href="https://zhengxi.io/2022/02/20/2022%E5%B9%B4%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/"/>
+    <id>https://zhengxi.io/2022/02/20/2022%E5%B9%B4%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</id>
+    <published>2022-02-20T03:32:06.000Z</published>
+    <updated>2022-02-26T08:56:17.899Z</updated>
+    
+    <content type="html"><![CDATA[<p>2021年也许是我人生的一个转折点。这一年本科毕业，考过了四六级，考上了研究生。</p><span id="more"></span><blockquote><p>我也纳闷了，考四级考了7次，考六级怎么一次就过了，难道真的是上天眷顾我？运气爆棚？</p></blockquote><p><strong>2022年，我希望能够做到以下几个Tasks：</strong></p><ul><li>完成3篇综述。</li><li>健身，养成晨跑的习惯。</li><li>养成早期的习惯。</li><li>严格控制饮食，低盐、低油。</li><li>睡觉前，保证手机、iPad等电子设备不在床上。</li><li>多总结，多思考，多记录。</li><li>坚持每天学习英语。【每日英语外刊打卡】。【有空多记单词】。</li><li>每天晚上列出第二天的任务清单。</li><li>有问题，多问how to？多Google。能自己解决的问题不问别人。</li><li>使用语雀小记，记下小灵感。</li><li>多发挥出ipad pro的学术价值。【不能总是爱奇艺吧！】</li><li>有意识地练习普通话。注意说话的语速。</li><li>在presentation时，声音洪亮，自信！</li><li>平时注意身体站姿和坐姿，不要当驼背！！</li><li>欲为大树，莫与草争！</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;2021年也许是我人生的一个转折点。这一年本科毕业，考过了四六级，考上了研究生。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="年度计划" scheme="https://zhengxi.io/categories/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/"/>
+    
+    
+    <category term="计划" scheme="https://zhengxi.io/tags/%E8%AE%A1%E5%88%92/"/>
+    
+    <category term="学习" scheme="https://zhengxi.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>看文献，这些Chrome插件少不了！</title>
+    <link href="https://zhengxi.io/2022/02/18/%E7%9C%8B%E6%96%87%E7%8C%AE%EF%BC%8C%E8%BF%99%E4%BA%9BChrome%E6%8F%92%E4%BB%B6%E5%B0%91%E4%B8%8D%E4%BA%86%EF%BC%81/"/>
+    <id>https://zhengxi.io/2022/02/18/%E7%9C%8B%E6%96%87%E7%8C%AE%EF%BC%8C%E8%BF%99%E4%BA%9BChrome%E6%8F%92%E4%BB%B6%E5%B0%91%E4%B8%8D%E4%BA%86%EF%BC%81/</id>
+    <published>2022-02-18T02:32:06.000Z</published>
+    <updated>2022-02-26T09:05:05.574Z</updated>
+    
+    <content type="html"><![CDATA[<p>看文献，早已成为了研究生的日常，如何更高效的筛选和阅读文献呢？这里分享一些我自己常用的插件。<br><a name="wLEMD"></a></p><span id="more"></span><h2 id="1，-Scholarscope"><a href="#1，-Scholarscope" class="headerlink" title="1， Scholarscope"></a>1， Scholarscope</h2><p>这是我最喜欢的一个插件，使用它之后可以查看Pubmed检索的文献的影响因子、引用数量以及中科院分区。<br /><img data-src="https://vip2.loli.io/2022/02/18/4xUN6XpDTRoH2mh.png"><br><a name="VJ7Ay"></a></p><h2 id="2，-Sci-Hub-Mainland"><a href="#2，-Sci-Hub-Mainland" class="headerlink" title="2， Sci-Hub Mainland"></a>2， Sci-Hub Mainland</h2><p>插件下载：<br />使用它之后，可以一键调用sci-hub下载论文。它可以在论文的题目和DOI处显示sci-hub的小图标，点击即可立刻下载论文。<br><a name="y634W"></a></p><blockquote><p>类似的插件还有<a href="https://chrome.google.com/webstore/detail/sci-hub-x-now/gmmnidkpkgiohfdoenhpghbilmeeagjj?hl=en-US">Sci-Hub X Now !</a></p><p>可以一键调用sci-hub进行下载。</p></blockquote><p>此外，Sci-Hub X Now !插件还支持sci-hub链接检测！</p><p><img data-src="https://vip2.loli.io/2022/02/18/UWsxoK3qCtV75pM.png" alt="image-20220218105208377"></p><h2 id="3，-彩云小译"><a href="#3，-彩云小译" class="headerlink" title="3， 彩云小译_"></a>3， 彩云小译_</h2><p><strong>该插件可以一键翻译网页，并且保持原格式不变。</strong><br /><br><br /><img data-src="https://vip1.loli.io/2022/02/18/Ihv2OUyFA815D3l.png"><br />该插件，需要配合IDM软件使用，可以高速的进行文件下载。<br /><br><a name="3Idmz"></a></p><h2 id="5，Tampermonkey"><a href="#5，Tampermonkey" class="headerlink" title="5，Tampermonkey"></a>5，Tampermonkey</h2><p>这是个万能的插件，通过它可以安装无数的脚本，比如屏蔽广告的脚本。<br><a name="EHjHO"></a></p><h2 id="6，PubMedy"><a href="#6，PubMedy" class="headerlink" title="6，PubMedy"></a>6，PubMedy</h2><p>该插件可以自动识别DOI，一键调用sci-hub下载文献。<br /><br><br /><img data-src="https://vip1.loli.io/2022/02/18/Fd57mpbKfrz4Isw.jpg"><br /></p><p><a name="Wr3vQ"></a></p><h2 id="7，Open-in-Sci-hub"><a href="#7，Open-in-Sci-hub" class="headerlink" title="7，Open in Sci-hub"></a>7，Open in Sci-hub</h2><p>该插件可以一键调用sci-hub下载当前页面文献。<br><a name="3J33f"></a></p><h2 id="8，谷歌访问助手"><a href="#8，谷歌访问助手" class="headerlink" title="8，谷歌访问助手"></a>8，谷歌访问助手</h2><p>飞跃长城的工具。<br><a name="WBgTE"></a></p><h2 id="9，Grammarly"><a href="#9，Grammarly" class="headerlink" title="9，Grammarly"></a>9，Grammarly</h2><p>检查英文输入是否符合语法、词语搭配推荐。<br><a name="z5cou"></a></p><h2 id="10，AdBlock"><a href="#10，AdBlock" class="headerlink" title="10，AdBlock"></a>10，AdBlock</h2><p>广告屏蔽插件，可以屏蔽掉所有谷歌广告、百度广告等等。<br /></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;看文献，早已成为了研究生的日常，如何更高效的筛选和阅读文献呢？这里分享一些我自己常用的插件。&lt;br&gt;&lt;a name=&quot;wLEMD&quot;&gt;&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生物信息学" scheme="https://zhengxi.io/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/"/>
+    
+    <category term="在线资源" scheme="https://zhengxi.io/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9C%A8%E7%BA%BF%E8%B5%84%E6%BA%90/"/>
+    
+    
+    <category term="文献" scheme="https://zhengxi.io/tags/%E6%96%87%E7%8C%AE/"/>
+    
+    <category term="Chrome" scheme="https://zhengxi.io/tags/Chrome/"/>
+    
+    <category term="插件" scheme="https://zhengxi.io/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Hexo博客中插入哔哩哔哩视频</title>
+    <link href="https://zhengxi.io/2022/02/17/%E5%9C%A8Hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E8%A7%86%E9%A2%91/"/>
+    <id>https://zhengxi.io/2022/02/17/%E5%9C%A8Hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E8%A7%86%E9%A2%91/</id>
+    <published>2022-02-17T04:32:06.000Z</published>
+    <updated>2022-02-26T09:03:08.782Z</updated>
+    
+    <content type="html"><![CDATA[<p>博客的图片可以使用图床，例如SM.MS，CloudFlare等。</p><blockquote><p>SM.MS的付费图床速度还是杠杠的，使用了日本和 Premium Global CDN。</p></blockquote><p>那么博客中的视频应该放哪儿呢，答案是哔哩哔哩和YouTube。它们都是理想的视频床。考虑到防火墙原因，推荐使用哔哩哔哩。<br /></p><span id="more"></span><p>由于markdown中是可以直接插入html代码的，因此可以直接复制哔哩哔哩视频的html代码粘贴到博客中。<br /></p><p><img data-src="https://vip1.loli.io/2022/02/20/Y3RFeGBT6MZhjDu.png" alt="image.png"></p><p><br />但默认参数无法实现视频长宽自适应。<br />因此，需要修改参数。<br />以下是屏幕自适应所需要设置的参数，自己跟着改就行：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;position: relative; width: 100%; height: 0; padding-bottom: 75%;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;//player.bilibili.com/player.html?aid=82937960&amp;bvid=BV1KJ411p7WN&amp;cid=141890422&amp;page=1&quot;</span>  <span class="attr">scrolling</span>=<span class="string">&quot;no&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;no&quot;</span> <span class="attr">framespacing</span>=<span class="string">&quot;0&quot;</span> <span class="attr">allowfullscreen</span>=<span class="string">&quot;true&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position: absolute; width: 100%; height: 100%; left: 0; top: 0;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><p><strong>具体效果如下：</strong>   </p><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">    <iframe src="//player.bilibili.com/player.html?aid=82937960&bvid=BV1KJ411p7WN&cid=141890422&page=1"  scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe></div><p><strong>参考文献：</strong></p><ol><li><a href="https://liuzhihang.com/2019/09/14/hexo-inserts-bilibili-video.html">Hexo中插入Bilibili视频。</a></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;博客的图片可以使用图床，例如SM.MS，CloudFlare等。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;SM.MS的付费图床速度还是杠杠的，使用了日本和 Premium Global CDN。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;那么博客中的视频应该放哪儿呢，答案是哔哩哔哩和YouTube。它们都是理想的视频床。考虑到防火墙原因，推荐使用哔哩哔哩。&lt;br /&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="网站建设" scheme="https://zhengxi.io/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"/>
+    
+    <category term="Hexo" scheme="https://zhengxi.io/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/Hexo/"/>
+    
+    
+    <category term="Hexo" scheme="https://zhengxi.io/tags/Hexo/"/>
+    
+    <category term="哔哩哔哩" scheme="https://zhengxi.io/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>你真的会读书吗？我用这个方法，一年读了500本书！</title>
+    <link href="https://zhengxi.io/2022/02/17/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E8%AF%BB%E4%B9%A6%E5%90%97%EF%BC%9F%E6%88%91%E7%94%A8%E8%BF%99%E4%B8%AA%E6%96%B9%E6%B3%95%EF%BC%8C%E4%B8%80%E5%B9%B4%E8%AF%BB%E4%BA%86500%E6%9C%AC%E4%B9%A6%EF%BC%81/"/>
+    <id>https://zhengxi.io/2022/02/17/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E8%AF%BB%E4%B9%A6%E5%90%97%EF%BC%9F%E6%88%91%E7%94%A8%E8%BF%99%E4%B8%AA%E6%96%B9%E6%B3%95%EF%BC%8C%E4%B8%80%E5%B9%B4%E8%AF%BB%E4%BA%86500%E6%9C%AC%E4%B9%A6%EF%BC%81/</id>
+    <published>2022-02-17T03:32:06.000Z</published>
+    <updated>2022-02-26T09:00:06.413Z</updated>
+    
+    <content type="html"><![CDATA[<p>你是否曾经有过关于读书的焦虑？觉得读书没时间，读的慢，不知道读什么书……<br />你是否想过读书其实也有科学、系统的方法，可以让你在坐公交、挤地铁的时候阅读完一本书！提高自己有很多种方法和途径，而阅读无疑是个捷径。今天给大家分享我自己的读书心得。主要包括：我是如何选择阅读的书籍？如何快速阅读？如今做读书笔记？如何做读书后的反馈?<br><a name="toc-heading-1"></a></p><span id="more"></span><h2 id="1-书籍的选择"><a href="#1-书籍的选择" class="headerlink" title="1.书籍的选择"></a>1.书籍的选择</h2><p>我从小就有每天阅读的习惯，但真正系统大量的阅读还是从大一时候开始。大一刚进学校，报到完成后的第一件事就是去看看学校的图书馆。看到琳琅满目的图书，突然间竟然不知道该如何选择，一会觉得这本好看，一会又发现另外一本也不错。就这样东看一本，西看一本，浪费了一上午的时间。<br />之后，我开始意识到事态的严重性，不能再这样看闲书似的看书，这样下去我对很多东西都是似懂非懂，感觉和80岁的大爷看报纸并无区别。<br />于是我开始研究书籍的选择，如何快速找到我需要阅读的书籍。<br />我于是不断向老师和同学请教读书的方法。在这期间，我听了张雪健的知乎Live《北大才子：如何一年读 500 本书》，百度和谷歌了一大堆资料，参考了各种学习方法论，最终形成了自己的独特的方法，现在我将它分享给大家。<br /><strong>第一：找准自己的定位</strong><br />这个定位包括你能力上定位和职业上的定位，毕竟一开始就让你读《史记》《明史》这些你肯定读不下去。书籍的选择是个循序渐进的过程。在一个特定的课题下，比如你对明朝的历史感兴趣，想了解当时的官僚制度和民风民俗，你可以先读一读《朱元璋传》。明朝（1368年―1644年）是一个由朱元璋建立的主要由汉族人统治的王朝，因此你阅读《朱元璋转》可以快速了解明朝是如何建立的，朱元璋是如何一步步掌权，一步步铲除异己，并最终登上权力的顶峰。阅读完这本书之后，你可以读一读网络小说《明朝那些事儿》，这是由当年明月所著，语言比较通俗易懂。经历了前两本书籍的打怪升级，你可以尝试阅读一些稍微有点难度的书籍——《易中天中华史》，里面关于明朝的部分，由很详细的描写。<br />最后，如果你依然对明朝生活很感兴趣，则推荐你阅读《金瓶梅》，这是一本产生于明朝隆庆至万历年间（明朝末期）的书籍，作者是兰陵笑笑生，这本书反应了明朝末期社会生活的方方面面。<br />这个例子表明，书籍的选择和阅读顺序，应该是由简单到复杂，由白话文到古文，是个由点到面的学习顺序。<br />书籍的选择，除了兴趣之外，你还可以考虑一下自己的职业。因为你必须时刻记住，你的阅读是投资，阅读后对你自己能力必须有所提高。<br />那么如何从点到线，较全面的掌握某一领域的知识点呢？<br /><strong>从参考文献入手！</strong><br />这是我在阅读文献的时候，我老师给我传授给我的方法。通常我会阅读一篇最新的行业大牛的综述，然后把该综述后面所有的参考文献都看了，然后在以此类推……。读书其实也一样，很多书籍后面都有参考文献，可以顺着参考文献，了解整个学科或者课题的知识脉络或框架。<br /><strong>第二：听听大佬的推荐</strong><br />豆瓣、亚马逊和当当等上面有很多的书单推荐，但是这些我都不推荐去看，因为很多书籍真的只是单纯的畅销书籍而已，书籍本身并不值得推荐。那要去哪儿找书呢？<br />知乎，得到，樊登读书会这些上面会有很多大佬的课程，会分享自己的读书心得和体会，阅读他们推荐的书籍，是最具性价比的。比如马伯庸，他就在知乎上开了一个读书的私家课《鬼才马伯庸：解读22本你错过的好书》。<br />其实这样做的原因还有一个，现在大家都太忙了，每天QQ微信上面有着太多的10万+文章，人们什么时候能够安静下来抽根烟都是一件享受的事儿。<br><a name="toc-heading-2"></a></p><h2 id="2-如何快速阅读"><a href="#2-如何快速阅读" class="headerlink" title="2.如何快速阅读"></a>2.如何快速阅读</h2><p>阅读应该是快乐的，而不是枯燥乏味的。<br />快速的阅读需要你时刻都带着目的去阅读。首先看一本书籍的目录，我们有一个心理预期，这本书讲的是啥？是如何讲的?采用了什么顺序来写？<br />你可以把书籍想象成你的灵魂伴侣，你的阅读就是在和它进行对话。在对这本书籍做了个简单的“评测”之后，快速以以“意群”的阅读方式浏览书籍，最后以精读的方式补充剩下的细节。精读是在阅读中提取有效文字和内容，加深对这本书的理解范围。<br />那如何训练呢？<br />没有捷径，只有不断阅读，不断练习自己关键字的提取能力。<br><a name="toc-heading-3"></a></p><h2 id="3-如何做读书笔记"><a href="#3-如何做读书笔记" class="headerlink" title="3.如何做读书笔记"></a>3.如何做读书笔记</h2><p>读书笔记可以加深对知识内容的理解，是对知识的二次加工，绝不仅仅是简单的摘抄。<br />什么样的笔记方式值得推荐呢？<br /><strong>第一：知识导图</strong><br />对于知名演说家来说，他们在上台演讲之前，都会反复逐字练习，同时很多人还会把演讲内容给做成知识导图。这样做的好处，最明显的就是知识的结构化框架化，可以快速记忆。读书笔记亦是如此，做笔记目的便是为了加强记忆，因此知识导图是做笔记最好的方式了。<br /><strong>第二：减下书本内容贴到笔记本上</strong><br />我们高中看作文素材的时候，最喜欢的事儿就是把意林、读者这些杂志上面优秀的文章素材给剪下贴到自己笔记本上面，写作文的时候信手拈来。<br />大学生和职场人士其实也可以这样，有一个自己的素材库，需要写什么的时候从自己的素材库中找就好了。这里很多人可能会问：不是有百度吗？<br />这个问题非常好，你可以百度到的，别人百度不到吗？素材最需要的是典型！<br /><strong>第三：巧用记号笔</strong><br />我的笔袋里装了5种不同颜色的荧光笔，会对不同类型的内容做不同颜色的标记，并贴好书签，便于下次寻找。<br><a name="toc-heading-4"></a></p><h2 id="4-如何做读书后的反馈？"><a href="#4-如何做读书后的反馈？" class="headerlink" title="4.如何做读书后的反馈？"></a>4.如何做读书后的反馈？</h2><p>这个问题，我才用的方法比较简单，我找了一个人，我们相互监督，两个人每天把自己看得书的内容将给对方听，就这样，一年下来，我们两个人竟然总共分享了超过1000本书……<br />当然，这个方法若是不具有普遍性，你也可以对着手机录音机分享，然后回听……<br /><strong>最后，实践是最好的办法，以上所讲并非适合所有人。请仅做参考。</strong></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;你是否曾经有过关于读书的焦虑？觉得读书没时间，读的慢，不知道读什么书……&lt;br /&gt;你是否想过读书其实也有科学、系统的方法，可以让你在坐公交、挤地铁的时候阅读完一本书！提高自己有很多种方法和途径，而阅读无疑是个捷径。今天给大家分享我自己的读书心得。主要包括：我是如何选择阅读的书籍？如何快速阅读？如今做读书笔记？如何做读书后的反馈?&lt;br&gt;&lt;a name=&quot;toc-heading-1&quot;&gt;&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="读书笔记" scheme="https://zhengxi.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="读书笔记" scheme="https://zhengxi.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="阅读" scheme="https://zhengxi.io/tags/%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何免费下载知网文献？</title>
+    <link href="https://zhengxi.io/2022/02/16/%E5%A6%82%E4%BD%95%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BD%E7%9F%A5%E7%BD%91%E6%96%87%E7%8C%AE%EF%BC%9F/"/>
+    <id>https://zhengxi.io/2022/02/16/%E5%A6%82%E4%BD%95%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BD%E7%9F%A5%E7%BD%91%E6%96%87%E7%8C%AE%EF%BC%9F/</id>
+    <published>2022-02-16T03:32:06.000Z</published>
+    <updated>2022-02-26T09:03:22.950Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>方法一</strong><br />支付宝芝麻信用分大于550可以免费注册浙江图书馆账号，利用该账号登陆即可免费下载。<br />我的账号：<br />证号：70146207；密码：身份证后六位<br />浙江图书馆官网：<a href="http://www.zjlib.cn/">http://www.zjlib.cn/</a><br /></p><span id="more"></span><p><strong>方法二</strong><br />上海研发公共服务平台<br />登录该平台注册，有600元知网额度可供下载。<br />网址：<a href="http://www.sgst.cn/">http://www.sgst.cn/</a><br /><strong>方法三</strong><br />iData<br />这个是盗版知网，一天可以免费下载2~5篇。<br />网址：<a href="https://www.cn-ki.net/">https://www.cn-ki.net/</a></p><p><strong>方法四</strong>  </p><p><a href="http://www.80lib.com/">80图书馆</a>。</p><blockquote><p>您可以将80图书馆看成是您学校图书馆的增强版。80图书馆不仅仅集成了各类中文资源、Web of Science、ScienceDirect、SpringerLink、IEEE、Pubmed、Embase、Reaxys、OVID、Scopus、ProQuest、Wiley等数百个国内外顶级科研文献数据库，更集成了50+所国内外名校图书馆，包括多所世界TOP10名校，一个80图书馆帐号畅享以上所有数据库，您只需轻轻一点鼠标，无论您身处何地都能随时访问这些名校图书馆，自由查阅并下载文献，从此下载科研文献易如反掌、不再求人。</p></blockquote><p>80图书馆是我一直在长期使用的一个文献下载平台，虽然付费，但真的能下载到绝大部分文献。</p><p><strong>方法五</strong>  </p><p><a href="https://www.ablesci.com/">科研通</a>。</p><blockquote><p>科研通是完全免费的文献互助平台，具备全网最快的应助速度，最高的求助完成率。 对每一个文献求助，科研通都将尽心尽力，给求助人一个满意的交代。</p></blockquote><p><strong>方法六</strong>  </p><p>淘宝代下。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;方法一&lt;/strong&gt;&lt;br /&gt;支付宝芝麻信用分大于550可以免费注册浙江图书馆账号，利用该账号登陆即可免费下载。&lt;br /&gt;我的账号：&lt;br /&gt;证号：70146207；密码：身份证后六位&lt;br /&gt;浙江图书馆官网：&lt;a href=&quot;http://www.zjlib.cn/&quot;&gt;http://www.zjlib.cn/&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生物信息学" scheme="https://zhengxi.io/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/"/>
+    
+    <category term="在线资源" scheme="https://zhengxi.io/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%9C%A8%E7%BA%BF%E8%B5%84%E6%BA%90/"/>
+    
+    
+    <category term="知网" scheme="https://zhengxi.io/tags/%E7%9F%A5%E7%BD%91/"/>
+    
+    <category term="文献" scheme="https://zhengxi.io/tags/%E6%96%87%E7%8C%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博客域名更换啦</title>
+    <link href="https://zhengxi.io/2022/02/15/%E5%8D%9A%E5%AE%A2%E5%9F%9F%E5%90%8D%E6%9B%B4%E6%8D%A2%E5%95%A6/"/>
+    <id>https://zhengxi.io/2022/02/15/%E5%8D%9A%E5%AE%A2%E5%9F%9F%E5%90%8D%E6%9B%B4%E6%8D%A2%E5%95%A6/</id>
+    <published>2022-02-15T03:32:06.000Z</published>
+    <updated>2022-02-26T09:01:58.501Z</updated>
+    
+    <content type="html"><![CDATA[<p>没错，目前博客的域名已经更换为：<a href="https://zhengxi.io/">https://zhengxi.io/</a><br /></p><span id="more"></span><p>之所以更换域名，主要是觉得身为中华儿女应该具有民族自信。直接使用姓名全拼当域名是最强一种自信！域名也是一张个人名片！</p><blockquote><p>之前的博客域名为：<a href="https://howarzheng.com/">https://howarzheng.com/</a><br>目前依然可以访问！</p></blockquote><br />]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;没错，目前博客的域名已经更换为：&lt;a href=&quot;https://zhengxi.io/&quot;&gt;https://zhengxi.io/&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随笔" scheme="https://zhengxi.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="博客" scheme="https://zhengxi.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="域名" scheme="https://zhengxi.io/tags/%E5%9F%9F%E5%90%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搭建基于Github的图床</title>
+    <link href="https://zhengxi.io/2022/01/29/%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8EGithub%E7%9A%84%E5%9B%BE%E5%BA%8A/"/>
+    <id>https://zhengxi.io/2022/01/29/%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8EGithub%E7%9A%84%E5%9B%BE%E5%BA%8A/</id>
+    <published>2022-01-29T04:32:06.000Z</published>
+    <updated>2022-02-26T09:04:32.647Z</updated>
+    
+    <content type="html"><![CDATA[<p>直接fork作者@Xpoet的仓库：<a href="https://github.com/XPoet/picx">https://github.com/XPoet/picx</a><br />之后开启Github Pages即可。<br />也可以使用作者已经搭建好的在线图床网站：<a href="https://picx.xpoet.cn/">https://picx.xpoet.cn/</a><br />PicX图床官方文档 &gt;&gt; <a href="https://picx-docs.xpoet.cn/">https://picx-docs.xpoet.cn</a></p><span id="more"></span><hr><p>我自己fork后搭建的Github图床：<a href="http://picx.howarzheng.com/">https://picx.howarzheng.com/</a><br />​</p><p>之后作者更新了新版本后，只需要点击<code>Fetch  upstream</code>即可同步更新到最新版本。<br /><img data-src="https://vip1.loli.io/2022/01/29/LGDYzxcevQ2nISs.png" alt="image.png"></p><h1 id="PicX图床优点"><a href="#PicX图床优点" class="headerlink" title="PicX图床优点"></a>PicX图床优点</h1><ul><li><input checked="" disabled="" type="checkbox"> 支持 <strong>拖拽</strong>、<strong>复制粘贴</strong>、<strong>选择文件</strong> 等方式进行选择图片</li><li><input checked="" disabled="" type="checkbox"> 支持图片 <strong>重命名</strong>、<strong>哈希化</strong>（确保图片名唯一）和 <strong>设置命名前缀</strong></li><li><input checked="" disabled="" type="checkbox"> 支持 <strong>批量上传图片</strong>、<strong>批量删除图片</strong> 和 <strong>批量复制图片外链</strong></li><li><input checked="" disabled="" type="checkbox"> 支持 <strong>多级目录</strong> 管理 （创建多级目录 / 查看多级目录图片）</li><li><input checked="" disabled="" type="checkbox"> 支持 <strong>一键复制</strong> 图片外链和 <strong>一键转换 Markdown 格式</strong></li><li><input checked="" disabled="" type="checkbox"> 支持 <strong>图床管理</strong>（对仓库图片的 <strong>增删改查</strong>）</li><li><input checked="" disabled="" type="checkbox"> 支持 <strong>图片压缩</strong> (内置三款压缩算法，可在上传前自动压缩，效果极佳)</li><li><input checked="" disabled="" type="checkbox"> 支持 <strong>暗夜模式</strong> (自由切换 / 自动切换)</li><li><input checked="" disabled="" type="checkbox"> 支持 <strong>PWA</strong></li><li><input disabled="" type="checkbox"> i18n</li><li><input disabled="" type="checkbox"> 设置图片水印</li><li><input disabled="" type="checkbox"> 支持其他 Git 厂商 （例如：Gitee / Coding）</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;直接fork作者@Xpoet的仓库：&lt;a href=&quot;https://github.com/XPoet/picx&quot;&gt;https://github.com/XPoet/picx&lt;/a&gt;&lt;br /&gt;之后开启Github Pages即可。&lt;br /&gt;也可以使用作者已经搭建好的在线图床网站：&lt;a href=&quot;https://picx.xpoet.cn/&quot;&gt;https://picx.xpoet.cn/&lt;/a&gt;&lt;br /&gt;PicX图床官方文档 &amp;gt;&amp;gt; &lt;a href=&quot;https://picx-docs.xpoet.cn/&quot;&gt;https://picx-docs.xpoet.cn&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="网站建设" scheme="https://zhengxi.io/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"/>
+    
+    
+    <category term="Github" scheme="https://zhengxi.io/tags/Github/"/>
+    
+    <category term="图床" scheme="https://zhengxi.io/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信公众号排版</title>
+    <link href="https://zhengxi.io/2022/01/29/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%8E%92%E7%89%88/"/>
+    <id>https://zhengxi.io/2022/01/29/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%8E%92%E7%89%88/</id>
+    <published>2022-01-29T03:32:06.000Z</published>
+    <updated>2022-02-26T09:04:07.439Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>一，头图设计</strong>：<a href="https://www.chuangkit.com/">https://www.chuangkit.com</a><br /><strong>二，微信公众号代码块编辑</strong>：<a href="http://md.aclickall.com/">http://md.aclickall.com/</a><br /><strong>三，字体</strong>：微软雅黑（默认） ；<strong>字号</strong>：标题17号，<strong>正文</strong>15号，<strong>标题前数字</strong>20号。<strong>段前距</strong>10，<strong>段后距</strong>10。<strong>字符间距</strong>1.75。<br /></p><span id="more"></span><p><strong>四，配图</strong>高质量，统一大小。图片有出处。<br /><strong>五，风格</strong>统一，<strong>简约</strong>。<br /><strong>六，配色：</strong><br />#50c9c3→ #96deda<br />标题文字背景颜色：#50c9c3<br />普通文字背景颜色：#d7d2cc<br /></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;一，头图设计&lt;/strong&gt;：&lt;a href=&quot;https://www.chuangkit.com/&quot;&gt;https://www.chuangkit.com&lt;/a&gt;&lt;br /&gt;&lt;strong&gt;二，微信公众号代码块编辑&lt;/strong&gt;：&lt;a href=&quot;http://md.aclickall.com/&quot;&gt;http://md.aclickall.com/&lt;/a&gt;&lt;br /&gt;&lt;strong&gt;三，字体&lt;/strong&gt;：微软雅黑（默认） ；&lt;strong&gt;字号&lt;/strong&gt;：标题17号，&lt;strong&gt;正文&lt;/strong&gt;15号，&lt;strong&gt;标题前数字&lt;/strong&gt;20号。&lt;strong&gt;段前距&lt;/strong&gt;10，&lt;strong&gt;段后距&lt;/strong&gt;10。&lt;strong&gt;字符间距&lt;/strong&gt;1.75。&lt;br /&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="新媒体" scheme="https://zhengxi.io/categories/%E6%96%B0%E5%AA%92%E4%BD%93/"/>
+    
+    
+    <category term="微信" scheme="https://zhengxi.io/tags/%E5%BE%AE%E4%BF%A1/"/>
+    
+    <category term="公众号" scheme="https://zhengxi.io/tags/%E5%85%AC%E4%BC%97%E5%8F%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在CloudFlare Pages上部署Hexo博客</title>
+    <link href="https://zhengxi.io/2022/01/28/%E5%9C%A8CloudFlare%20Pages%E4%B8%8A%E9%83%A8%E7%BD%B2Hexo%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://zhengxi.io/2022/01/28/%E5%9C%A8CloudFlare%20Pages%E4%B8%8A%E9%83%A8%E7%BD%B2Hexo%E5%8D%9A%E5%AE%A2/</id>
+    <published>2022-01-28T04:32:06.000Z</published>
+    <updated>2022-02-26T09:02:29.263Z</updated>
+    
+    <content type="html"><![CDATA[<p>我的初衷是完全使用Github写博客，目前可以的方案有（<strong>免备案</strong>）：</p><ul><li>Github Actions+Github Pages</li><li>CloudFlare Pages</li></ul><p>目前这两种方案都可以实现自动部署，且完全使用Github写博客。考虑到速度和稳定性，我决定将博客部署到CloudFlare Pages。</p><span id="more"></span><p><a name="nuxQC"></a></p><h1 id="1、本地Hexo站点搭建"><a href="#1、本地Hexo站点搭建" class="headerlink" title="1、本地Hexo站点搭建"></a>1、本地Hexo站点搭建</h1><p>以Keep主题为例，在本地搭建Hexo站点。首先安装<a href="https://nodejs.org/en/">Node.js</a>和<a href="https://git-scm.com/">Git</a>。<br />之后在本地新建站点文件夹，并安装<code>Hexo</code>。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli <span class="comment"># 全局安装hexo</span></span><br><span class="line">hexo init howarzheng <span class="comment"># howarzheng是站点文件夹</span></span><br><span class="line"><span class="built_in">cd</span> howarzheng</span><br><span class="line">npm install</span><br><span class="line">hexo g</span><br><span class="line">hexo s <span class="comment"># 之后根据提示在浏览器中打开localhost:4000即可预览本地站点。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将Hexo站点的默认主题landscape更换为keep</span></span><br><span class="line"><span class="comment"># 如果你在使用 Hexo 5.0 或更高版本，最简单的安装方式是通过 npm。本示例通过npm进行安装keep主题。</span></span><br><span class="line"><span class="built_in">cd</span> howarzheng <span class="comment"># 在Hexo站点根文件夹通过npm安装主题</span></span><br><span class="line">npm install hexo-theme-keep <span class="comment"># 之后可在站点根文件夹~/node_modules中看到安装的keep主题。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可以通过 git clone 克隆整个仓库来安装keep主题：</span></span><br><span class="line"><span class="built_in">cd</span> howarzheng</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/XPoet/hexo-theme-keep themes/keep</span><br></pre></td></tr></table></figure><p>安装好<code>keep</code>主题后，在站点根文件夹新建<code>_config.keep.yml</code>主题配置文件，并按照<a href="https://keep-docs.xpoet.cn/">keep主题</a>配置说明配置即可。</p><blockquote><p>只要存在于 <code>_config.keep.yml </code>的配置都是高优先级，修改keep主题文件夹里的<code> _config.yml</code> 是无效的。</p></blockquote><p><a name="vzSrN"></a></p><h1 id="2、将本地Hexo站点推送至Github"><a href="#2、将本地Hexo站点推送至Github" class="headerlink" title="2、将本地Hexo站点推送至Github"></a>2、将本地Hexo站点推送至Github</h1><p><strong>生成SSH key：</strong><br />SSH key是一种身份凭证，用于将本地Hexo推送至Github。SSH key包含公钥和私钥，公钥存储在Github，私钥存储在本地。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置用户名和邮箱</span></span><br><span class="line"> git config --global user.name <span class="string">&quot;HowarZheng</span></span><br><span class="line"><span class="string"> git config --global user.email &quot;</span>howar.zheng@gmail.com</span><br><span class="line"> </span><br><span class="line">  生成 ssh 密钥</span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;howar.zheng@gmail.com&quot;</span> <span class="comment"># 输入如下命令后直接三次回车即可。</span></span><br><span class="line"><span class="comment"># 执行上述命令之后，会生成 id_rsa 和 id_rsa.pub 两个文件，id_rsa是私钥，id_rsa.pub是公钥。</span></span><br></pre></td></tr></table></figure><p><strong>添加SSH key到Github：</strong><br />登录Github账号，点击个人头像。接着点击设置-SSH and keys。<br /><img data-src="https://vip1.loli.io/2022/01/28/jNMdx7sG2KkOg41.png" alt="image.png"><br />之后点击 New SSH key。<br /><img data-src="https://vip2.loli.io/2022/01/28/wUuYET86rlCgBOM.png" alt="image.png"><br />Title随意，key输入本地~/.ssh/id_rsa.pub(公钥)内容。<br /><img data-src="https://vip1.loli.io/2022/01/28/TtzeOHIG8DBQWCP.png" alt="image.png"><br />之后在本地检查SSH key是否生效。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure><p><br /> 直接输入 yes 回车，如果提示以下内容说明已配置成功。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi xxx! You<span class="string">&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure><p><strong>推送本地Hexo站点到Github远程仓库：</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> howarzheng</span><br><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;版本备注&quot;</span></span><br><span class="line">git remote add origin git@github.com:HowarZheng/howarzheng.git <span class="comment"># 关联远程仓库。 origin是远程仓库的简写，可以自定义。</span></span><br><span class="line">git push origin master --force <span class="comment"># 确保本地版本是最新的时候，直接使本地仓库强制覆盖远程仓库。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）</span></span><br><span class="line">git pull --rebase origin master</span><br><span class="line"></span><br><span class="line">git push origin master <span class="comment"># 之后推送时使用此命令即可。</span></span><br></pre></td></tr></table></figure><p><a name="EuRnB"></a></p><h1 id="3、部署Hexo站点到CloudFlare-Pages"><a href="#3、部署Hexo站点到CloudFlare-Pages" class="headerlink" title="3、部署Hexo站点到CloudFlare Pages"></a>3、部署Hexo站点到CloudFlare Pages</h1><p>首先登陆<a href="https://www.cloudflare.com/zh-cn/">CloudFlare</a>，点击左侧栏Pages，接着点击创建项目。<br /><img data-src="https://vip2.loli.io/2022/01/28/PTUFBevqs5IxAg1.png" alt="image.png"><br />之后会让你关联Git仓库，可以是Github，也可以是GitLab。这里我们选Github。登录Github并授权后，选择需要部署的仓库和分支。<br /><img data-src="https://vip1.loli.io/2022/01/28/GP45vpLxHUzWyEM.png" alt="image.png"><br />最后输入部署时的构建命令和其他参数，自动部署网站即可。<br />框架预设如何找不到<code>Hexo</code>的化，就选<code>none</code>。<br /><img data-src="https://vip1.loli.io/2022/01/28/GlwtIqnzLBPX6b7.png" alt="image.png"><br />之后想要更新文章，只需要在Github仓库/source/_posts文件夹内修改文章或上传文章即可，最终将实现完全使用Github写博客。<br />CloudFlare Pages和Github Pages一样，可以自定义域名，并且CloudFlare Pages可以绑定10个域名。<br /><br /></p><hr><p>后期如果想要对博客进行大改，例如修改主题和安装插件，只需要将Github 仓库克隆到本地，修改完再push 到远程Github仓库即可。<br />​</p><p><strong>CloudFlare使用限制（说明书）：</strong><a href="https://developers.cloudflare.com/pages/">https://developers.cloudflare.com/pages/</a><br /><img data-src="https://vip2.loli.io/2022/01/28/cSk2M85ENlZhTAv.png"></p><ul><li>专业版（Pro）每月5000次构建发布，5个并发构建，20美元/月；</li><li>商业版（Business）每月20000次构建发布，20个并发构建，200美元/月。</li><li>其它限制为：单个文件大小 ≤25MB ，单个站点文件总数 ≤20000个。</li></ul><p><strong>​</strong></p><p><strong>​</strong><br /></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;我的初衷是完全使用Github写博客，目前可以的方案有（&lt;strong&gt;免备案&lt;/strong&gt;）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Github Actions+Github Pages&lt;/li&gt;
+&lt;li&gt;CloudFlare Pages&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;目前这两种方案都可以实现自动部署，且完全使用Github写博客。考虑到速度和稳定性，我决定将博客部署到CloudFlare Pages。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="网站建设" scheme="https://zhengxi.io/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"/>
+    
+    
+    <category term="CloudFlare" scheme="https://zhengxi.io/tags/CloudFlare/"/>
+    
+    <category term="CloudFlare Pages" scheme="https://zhengxi.io/tags/CloudFlare-Pages/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>win10环境hexo-admin插件实现本地后台管理博客</title>
+    <link href="https://zhengxi.io/2022/01/25/win10%E7%8E%AF%E5%A2%83hexo-admin%E6%8F%92%E4%BB%B6%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://zhengxi.io/2022/01/25/win10%E7%8E%AF%E5%A2%83hexo-admin%E6%8F%92%E4%BB%B6%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E5%8D%9A%E5%AE%A2/</id>
+    <published>2022-01-25T10:02:26.000Z</published>
+    <updated>2022-02-26T08:59:44.037Z</updated>
+    
+    <content type="html"><![CDATA[<p>Hexo每次发布和部署文章都需要在命令行下操作，比较繁琐，<code>hexo-admin</code>这个插件可以给你的Hexo博客搭建一个后台。<br><a name="toc-heading-1"></a></p><span id="more"></span><h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-admin</span><br><span class="line">hexo server -d</span><br><span class="line">open http://localhost:4000/admin</span><br></pre></td></tr></table></figure><p>之后，在浏览器里打开<a href="http://localhost:4000/admin%E5%8D%B3%E5%8F%AF%E8%AE%BF%E9%97%AE%E5%90%8E%E5%8F%B0%E3%80%82">http://localhost:4000/admin即可访问后台。</a><br />后台界面：<br /><img data-src="https://vip2.loli.io/2022/01/25/IuSb4sDmdRyCn7P.png"><br />可以直接新建文章，新建页面，写完文章后还能直接部署。<br />部署之前需要先进行配置：<br />在站点根目录新建文件<code>hexo-generate.bat</code>，在文件中写入<code>hexo g -d</code>。<br />之后，打开根目录站点配置文件：<br /><strong>新增</strong></p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">admin:</span></span><br><span class="line">    <span class="attr">deployCommand:</span> <span class="string">&#x27;hexo-generate.bat&#x27;</span></span><br></pre></td></tr></table></figure><p>现在，后台写完文章可以直接部署了。<br />为了更好的随时随地写文章，可以设置win10开机自启<code>hexo serve</code><br />需要创建2个脚本，一个为vbs脚本，一个为bat脚本。<br />vbs脚本放到启动文件夹，用于运行bat脚本，而bat脚本用于启动hexo server<br /><strong>创建vbs脚本</strong><br /><code>set ws=WScript.CreateObject(&quot;WScript.Shell&quot;)</code><br /><code>ws.Run &quot;E:\\WorkSpace\\webProject\\Hexo-blog\\hexo-server.bat /start&quot;,0</code><br /><strong>创建bat脚本</strong><br /><code>E:</code><br /><code>cd E:/WorkSpace/webProject/Hexo-Blog</code><br /><code>hexo s -d</code><br />将<strong>vbs脚本</strong>放到启动文件夹<br />win10 启动文件夹目录为<br /><code>C:\Users\你的用户名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</code><br />这样就能实现开机启动<code>hexo server</code>了，剩下的一切都可以交给浏览器和<code>hexo-admin</code>了。如果使用七牛，则可以使用<code>hexo-admin with qiniu</code>。</p><blockquote><p><strong>后台还可以设置密码访问。</strong></p></blockquote><p><img data-src="https://vip2.loli.io/2022/01/25/SAUP5W3pwhTkycm.png"><br />后台设置<strong>用户名</strong>和<strong>密码</strong>后，将它复制到<strong>根目录站点配置</strong>文件即可。</p><blockquote><p>参考文献：</p></blockquote><ol><li><a href="https://blog.csdn.net/upc_xbt/article/details/54020135">https://blog.csdn.net/upc_xbt/article/details/54020135</a></li><li><a href="https://segmentfault.com/a/1190000018488921">https://segmentfault.com/a/1190000018488921</a></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Hexo每次发布和部署文章都需要在命令行下操作，比较繁琐，&lt;code&gt;hexo-admin&lt;/code&gt;这个插件可以给你的Hexo博客搭建一个后台。&lt;br&gt;&lt;a name=&quot;toc-heading-1&quot;&gt;&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="网站建设" scheme="https://zhengxi.io/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"/>
+    
+    <category term="Hexo" scheme="https://zhengxi.io/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/Hexo/"/>
+    
+    
+    <category term="Hexo" scheme="https://zhengxi.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo主题hexo-theme-matery配置DaoVoice 实现在线聊天功能</title>
+    <link href="https://zhengxi.io/2022/01/25/Hexo%E4%B8%BB%E9%A2%98hexo-theme-matery%E9%85%8D%E7%BD%AEDaoVoice%20%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E8%81%8A%E5%A4%A9%E5%8A%9F%E8%83%BD/"/>
+    <id>https://zhengxi.io/2022/01/25/Hexo%E4%B8%BB%E9%A2%98hexo-theme-matery%E9%85%8D%E7%BD%AEDaoVoice%20%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E8%81%8A%E5%A4%A9%E5%8A%9F%E8%83%BD/</id>
+    <published>2022-01-25T10:01:26.000Z</published>
+    <updated>2022-02-26T08:56:53.110Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>DaoVoice 可以提供在线联系的功能，可以让静态博客Hexo更加多样和完整。</strong></p><span id="more"></span><p><br />设置完成效果如下：<br /><img data-src="https://vip1.loli.io/2022/01/25/bUaPyOcKD5orTJs.png"><br><a name="toc-heading-1"></a></p><h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><p><a name="toc-heading-2"></a></p><h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><p>首先需要注册一个 DaoVoice，<a href="http://dashboard.daovoice.io/get-started?invite_code=7f3d6e70">点击注册</a>。<br />注册成功后，进入后台控制台，进入到 <code>应用设置--&gt;安装到网站</code> 页面，**可以得到一个 ** **<code>app_id</code><strong>：</strong><br /><img data-src="https://vip1.loli.io/2022/01/25/mywG9pZqtken3RX.png"><br />**之后复制下的<code>app_id</code></p><p><img data-src="https://vip2.loli.io/2022/01/25/ySOsQ39NpXlIcxm.png"><br />接下来，打开<code>\themes\hexo-theme-matery\layout\_partial</code>文件夹下的<code>footer.ejs</code>文件<br />在文件末尾写入：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">i,s,o,g,r,a,m</span>)</span>&#123;i[<span class="string">&quot;DaoVoiceObject&quot;</span>]=r;i[r]=i[r]||<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;(i[r].q=i[r].q||[]).push(<span class="built_in">arguments</span>)&#125;,i[r].l=<span class="number">1</span>*<span class="keyword">new</span> <span class="built_in">Date</span>();a=s.createElement(o),m=s.getElementsByTagName(o)[<span class="number">0</span>];a.async=<span class="number">1</span>;a.src=g;a.charset=<span class="string">&quot;utf-8&quot;</span>;m.parentNode.insertBefore(a,m)&#125;)(<span class="built_in">window</span>,<span class="built_in">document</span>,<span class="string">&quot;script&quot;</span>,(<span class="string">&#x27;https:&#x27;</span> == <span class="built_in">document</span>.location.protocol ? <span class="string">&#x27;https:&#x27;</span> : <span class="string">&#x27;http:&#x27;</span>) + <span class="string">&quot;//widget.daovoice.io/widget/0f81ff2f.js&quot;</span>,<span class="string">&quot;daovoice&quot;</span>)</span><br><span class="line">  daovoice(<span class="string">&#x27;init&#x27;</span>, &#123;</span><br><span class="line">      <span class="attr">app_id</span>: <span class="string">&quot;刚刚复制的app_id&quot;</span></span><br><span class="line">    &#125;);</span><br><span class="line">  daovoice(<span class="string">&#x27;update&#x27;</span>);</span><br><span class="line">  &lt;/script&gt;</span><br></pre></td></tr></table></figure><p>在主题配置文件 <code>_config.yml</code>，添加如下代码：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Online contact </span></span><br><span class="line"><span class="attr">daovoice:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">daovoice_app_id:</span> <span class="string">这里输入前面复制的app_id</span></span><br></pre></td></tr></table></figure><p><a href="https://github.com/blinkfox/hexo-theme-matery">hexo-theme-matery</a>主题下聊天的按钮会和其他按钮重叠到一起，可以到聊天设置，修改下按钮的位置：<br /><img data-src="https://vip1.loli.io/2022/01/25/8QbHw5uLxNmreIF.png" alt="image.png"><br />位置可以在 hexo s 调试模式下进行调试，效果满意后部署就可以看到最终效果啦！</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;DaoVoice 可以提供在线联系的功能，可以让静态博客Hexo更加多样和完整。&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="网站建设" scheme="https://zhengxi.io/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"/>
+    
+    <category term="Hexo" scheme="https://zhengxi.io/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/Hexo/"/>
+    
+    
+    <category term="Hexo" scheme="https://zhengxi.io/tags/Hexo/"/>
+    
+    <category term="matery" scheme="https://zhengxi.io/tags/matery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>scrapy安装失败</title>
+    <link href="https://zhengxi.io/2022/01/25/scrapy%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5/"/>
+    <id>https://zhengxi.io/2022/01/25/scrapy%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5/</id>
+    <published>2022-01-25T09:59:26.000Z</published>
+    <updated>2022-02-26T08:59:09.707Z</updated>
+    
+    <content type="html"><![CDATA[<p><a name="toc-heading-1"></a></p><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>安装scrapy时提示：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error: Microsoft Visual C++ <span class="number">14.0</span> <span class="keyword">is</span> required. Get it <span class="keyword">with</span> <span class="string">&quot;Microsoft Visual C++ Build Tools&quot;</span>: http://landinghub.visualstudio.com/visual-cpp-build-tools</span><br></pre></td></tr></table></figure><p><a name="toc-heading-2"></a></p><span id="more"></span><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p><br />去该网站：<a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted">https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted</a> 下载对应的twisted的安装文件安装后即可。<br />例如：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install <span class="string">&quot;C:\Users\Howar Zheng\Downloads\Twisted-18.9.0-cp37-cp37m-win32.whl&quot;</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a name=&quot;toc-heading-1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;p&gt;安装scrapy时提示：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;error: Microsoft Visual C++ &lt;span class=&quot;number&quot;&gt;14.0&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;is&lt;/span&gt; required. Get it &lt;span class=&quot;keyword&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&amp;quot;Microsoft Visual C++ Build Tools&amp;quot;&lt;/span&gt;: http://landinghub.visualstudio.com/visual-cpp-build-tools&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a name=&quot;toc-heading-2&quot;&gt;&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程笔记" scheme="https://zhengxi.io/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Python" scheme="https://zhengxi.io/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/Python/"/>
+    
+    
+    <category term="Python" scheme="https://zhengxi.io/tags/Python/"/>
+    
+    <category term="scrapy" scheme="https://zhengxi.io/tags/scrapy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>只需3行代码15秒就能抠图的Python神库</title>
+    <link href="https://zhengxi.io/2022/01/25/%E5%8F%AA%E9%9C%803%E8%A1%8C%E4%BB%A3%E7%A0%8115%E7%A7%92%E5%B0%B1%E8%83%BD%E6%8A%A0%E5%9B%BE%E7%9A%84Python%E7%A5%9E%E5%BA%93/"/>
+    <id>https://zhengxi.io/2022/01/25/%E5%8F%AA%E9%9C%803%E8%A1%8C%E4%BB%A3%E7%A0%8115%E7%A7%92%E5%B0%B1%E8%83%BD%E6%8A%A0%E5%9B%BE%E7%9A%84Python%E7%A5%9E%E5%BA%93/</id>
+    <published>2022-01-25T09:54:26.000Z</published>
+    <updated>2022-02-26T09:02:14.388Z</updated>
+    
+    <content type="html"><![CDATA[<p><em>这是一款网站：</em><a href="https://www.remove.bg/"><em>Remove.bg</em></a><br /><em>可以通过调用网站提供的API进行抠图，每月可以免费抠图50张。唯一缺点就是分辨率限制。</em><br><a name="toc-heading-1"></a></p><span id="more"></span><h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><p><strong>第一步：</strong><br /><a href="https://www.remove.bg/api">网站上注册获取 API</a><br /><strong>第二步：</strong><br />安装抠图库<br /><code>pip install removebg</code><br /><strong>实现抠图</strong></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> removebg <span class="keyword">import</span> RemoveBg</span><br><span class="line">rmbg = RemoveBg(<span class="string">&quot;WPZ2Q4fraseKfAN9PPxxxxxx&quot;</span>, <span class="string">&quot;error.log&quot;</span>) <span class="comment"># 引号内是你获取的API</span></span><br><span class="line">rmbg.remove_background_from_img_file(<span class="string">&quot;C:/Users/sony/Desktop/1.jpg&quot;</span>) <span class="comment">#图片地址</span></span><br></pre></td></tr></table></figure><p><a name="toc-heading-2"></a></p><h2 id="批量抠图"><a href="#批量抠图" class="headerlink" title="批量抠图"></a>批量抠图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> removebg <span class="keyword">import</span> RemoveBg</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line">rmbg = RemoveBg(<span class="string">&quot;WPZ2Q4fraseKfAN9PPxxxxxx&quot;</span>, <span class="string">&quot;error.log&quot;</span>)</span><br><span class="line">path = <span class="string">&#x27;%s/picture&#x27;</span>%os.getcwd() <span class="comment">#图片放到程序的同级文件夹 picture 里面</span></span><br><span class="line"><span class="keyword">for</span> pic <span class="keyword">in</span> os.listdir(path):</span><br><span class="line">    rmbg.remove_background_from_img_file(<span class="string">&quot;%s\%s&quot;</span>%(path,pic))</span><br></pre></td></tr></table></figure><p>GitHub 库地址：<a href="https://github.com/brilam/remove-bg">https://github.com/brilam/remove-bg</a></p><blockquote><p>参考文献</p></blockquote><ol><li><a href="https://zhuanlan.zhihu.com/p/73073456">只需 3 行代码 5 秒就能抠图的 Python 神库</a></li><li><a href="https://blog.csdn.net/Quentin_he/article/details/97569625">python利用Remove.bg接口自动去背景</a></li><li><a href="https://www.remove.bg/">Remove.bg</a></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;em&gt;这是一款网站：&lt;/em&gt;&lt;a href=&quot;https://www.remove.bg/&quot;&gt;&lt;em&gt;Remove.bg&lt;/em&gt;&lt;/a&gt;&lt;br /&gt;&lt;em&gt;可以通过调用网站提供的API进行抠图，每月可以免费抠图50张。唯一缺点就是分辨率限制。&lt;/em&gt;&lt;br&gt;&lt;a name=&quot;toc-heading-1&quot;&gt;&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程笔记" scheme="https://zhengxi.io/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Python" scheme="https://zhengxi.io/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/Python/"/>
+    
+    
+    <category term="Python" scheme="https://zhengxi.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Get和Post请求的区别</title>
+    <link href="https://zhengxi.io/2022/01/25/Get%E5%92%8CPost%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>https://zhengxi.io/2022/01/25/Get%E5%92%8CPost%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
+    <published>2022-01-25T09:52:26.000Z</published>
+    <updated>2022-02-26T08:56:35.029Z</updated>
+    
+    <content type="html"><![CDATA[<p><em>Get请求和Post请求是HPPT中最常用的请求，那么他们有什么区别呢？</em><br /></p><span id="more"></span><p><strong>我们来看看标准答案：</strong></p><blockquote><ul><li>GET在浏览器回退时是无害的，而POST会再次提交请求。</li><li>GET产生的URL地址可以被Bookmark，而POST不可以。</li><li>GET请求会被浏览器主动cache，而POST不会，除非手动设置。</li><li>GET请求只能进行url编码，而POST支持多种编码方式。</li><li>GET请求参数会被完整保留在浏览器历史记录里，而POST中的参数不会被保留。</li><li>GET请求在URL中传送的参数是有长度限制的，而POST么有。</li><li>对参数的数据类型，GET只接受ASCII字符，而POST没有限制。</li><li>GET比POST更不安全，因为参数直接暴露在URL上，所以不能用来传递敏感信息。</li><li>GET参数通过URL传递，POST放在Request body中。</li></ul></blockquote><p>以上标准答案来自<a href="https://www.w3schools.com/">w3schools</a>。<br />到这里前端的小伙伴们可能会说，他们的区别是：</p><blockquote><p>GET使用URL或Cookie传参，而POST将数据放在BODY中</p></blockquote><p><strong>这其实是错的！</strong><br />GET和POST是由HTTP协议定义的。在HTTP协议中，Method和Data（URL， Body， Header）是正交的两个概念，也就是说，使用哪个Method与应用层的数据如何传输是没有相互关系的。<br />HTTP没有要求，如果Method是POST数据就要放在BODY中。也没有要求，如果Method是GET，数据（参数）就一定要放在URL中而不能放在BODY中。<br />因此网上的那些说法都是错的！<br />HTTP是什么？Hyper Text Transfer Protocol（超文本传输协议）的缩写，是基于TCP/IP的关于数据如何在万维网中如何通信的协议。<br /><strong>具有以下特征：</strong></p><ul><li>基于tcp/ip、一种网络应用层协议、超文本传输协议HyperText Transfer Protocol</li><li>工作方式：客户端请求服务端应答的模式</li><li>快速：无状态连接，灵活：可以传输任意对象，对象类型由Content-Type标记</li><li>客户端请求request消息包括以下格式：请求行（request line）、请求头部（header）、空行、请求数据。</li></ul><p>我们惊讶的发现，HTTP、Get和Post他们的底层都是TCP/IP，也就是说，GET/POST都是TCP链接。GET能做的，POST也能做。你要给GET加上request body，给POST带上url参数，技术上是完全行的通的。<br />HTTP只是个行为准则，而TCP才是GET和POST怎么实现的基本。<br />另外，GET和POST还有一个重大区别：</p><blockquote><p>GET产生一个TCP数据包；POST产生两个TCP数据包。</p></blockquote><ul><li>对于GET方式的请求，浏览器会把http header和data一并发送出去，服务器响应200（返回数据）；</li><li>而对于POST，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok（返回数据）。<blockquote><p>参考文献：</p></blockquote></li></ul><ol><li><a href="https://www.oschina.net/news/77354/http-get-post-different">https://www.oschina.net/news/77354/http-get-post-different</a></li><li><a href="https://www.w3schools.com/">https://www.w3schools.com/</a></li><li><a href="https://juejin.im/entry/597ca6caf265da3e301e64db">https://juejin.im/entry/597ca6caf265da3e301e64db</a></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;em&gt;Get请求和Post请求是HPPT中最常用的请求，那么他们有什么区别呢？&lt;/em&gt;&lt;br /&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程笔记" scheme="https://zhengxi.io/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Python" scheme="https://zhengxi.io/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/Python/"/>
+    
+    
+    <category term="Python" scheme="https://zhengxi.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python中正则表达式的基本使用</title>
+    <link href="https://zhengxi.io/2022/01/25/Python%E4%B8%AD%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"/>
+    <id>https://zhengxi.io/2022/01/25/Python%E4%B8%AD%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</id>
+    <published>2022-01-25T09:22:09.000Z</published>
+    <updated>2022-02-26T08:58:40.025Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>字符串</strong>是编程时涉及到的最多的一种<strong>数据结构</strong>，对字符串进行操作的需求几乎无处不在。比如判断一个字符串是否是合法的Email地址，虽然可以编程提取@前后的子串，再分别判断是否是单词和域名，但这样做不但麻烦，而且代码难以复用。<br /></p><span id="more"></span><p>正则表达式是一种用来匹配字符串的强有力的武器。它的设计思想是用一种描述性的语言来给字符串定义一个规则，凡是符合规则的字符串，我们就认为它<strong>“匹配”</strong>了，否则，该字符串就是不合法的。<br />所以我们判断一个字符串是否是合法的Email的方法是：<br /><strong>创建一个匹配Email的正则表达式；</strong></p><ol><li>用该正则表达式去匹配用户的输入来判断是否合法。</li><li>因为正则表达式也是用字符串表示的，所以，我们要首先了解如何用字符来描述字符。</li></ol><p>正则表达式的大致匹配过程是：依次拿出表达式和文本中的字符比较，如果每一个字符都能匹配，则匹配成功；一旦有匹配不成功的字符则匹配失败。</p><blockquote><p>官方文档：<br>中文：<a href="https://docs.python.org/zh-cn/3/library/re.html">https://docs.python.org/zh-cn/3/library/re.html</a><br>英文：<a href="https://docs.python.org/3/library/re.html">https://docs.python.org/3/library/re.html</a></p></blockquote><p>使用之前，需要引入正则模块(Regular Expression)：<br /><code>import re #引入正则表达式</code><br />主要使用的方法 match(), 从左到右进行匹配：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#pattern 为要校验的规则</span></span><br><span class="line"><span class="comment">#str 为要进行校验的字符串</span></span><br><span class="line">result = re.match(pattern, <span class="built_in">str</span>) </span><br><span class="line"><span class="comment">#如果result不为None,则group方法则对result进行数据提取</span></span><br><span class="line">result.group()</span><br></pre></td></tr></table></figure><p>匹配规则：<br />1️⃣单字符匹配规则：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">字符    功能</span><br><span class="line">.       匹配任意<span class="number">1</span>个字符(除了\n)</span><br><span class="line">[]      匹配[]中列举的字符</span><br><span class="line">\d      匹配数字,也就是<span class="number">0</span>-<span class="number">9</span></span><br><span class="line">\D      匹配非数字,也就是匹配不是数字的字符</span><br><span class="line">\s      匹配空白符,也就是 空格\tab</span><br><span class="line">\S      匹配非空白符,\s取反</span><br><span class="line">\w      陪陪单词字符, a-z, A-Z, <span class="number">0</span>-<span class="number">9</span>, _</span><br><span class="line">\W      匹配非单词字符, \w取反</span><br></pre></td></tr></table></figure><p>2️⃣表示数量的规则：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">字符    功能</span><br><span class="line">*       匹配前一个字符出现<span class="number">0</span>次多次或者无限次,可有可无,可多可少</span><br><span class="line">+       匹配前一个字符出现<span class="number">1</span>次多次或则无限次,直到出现一次</span><br><span class="line">?       匹配前一个字符出现<span class="number">1</span>次或者<span class="number">0</span>次,要么有<span class="number">1</span>次,要么没有</span><br><span class="line">&#123;m&#125;     匹配前一个字符出现m次</span><br><span class="line">&#123;m,&#125;    匹配前一个字符至少出现m次</span><br><span class="line">&#123;m,n&#125;   匹配前一个字符出现m到n次</span><br></pre></td></tr></table></figure><p>下表列出了正则表达式模式语法中的特殊元素。如果你使用模式的同时提供了可选的标志参数，某些模式元素的含义会改变。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">模式    描述</span><br><span class="line">^    匹配字符串的开头</span><br><span class="line">$    匹配字符串的末尾。</span><br><span class="line">.    匹配任意字符，除了换行符，当re.DOTALL标记被指定时，则可以匹配包括换行符的任意字符。</span><br><span class="line">[...]    用来表示一组字符,单独列出：[amk] 匹配 <span class="string">&#x27;a&#x27;</span>，<span class="string">&#x27;m&#x27;</span>或<span class="string">&#x27;k&#x27;</span></span><br><span class="line">[^...]    不在[]中的字符：[^abc] 匹配除了a,b,c之外的字符。</span><br><span class="line">re*    匹配<span class="number">0</span>个或多个的表达式。</span><br><span class="line">re+    匹配<span class="number">1</span>个或多个的表达式。</span><br><span class="line">re?    匹配<span class="number">0</span>个或<span class="number">1</span>个由前面的正则表达式定义的片段，非贪婪方式</span><br><span class="line">re&#123; n&#125;     </span><br><span class="line">re&#123; n,&#125;    精确匹配n个前面表达式。</span><br><span class="line">re&#123; n, m&#125;    匹配 n 到 m 次由前面的正则表达式定义的片段，贪婪方式</span><br><span class="line">a| b    匹配a或b</span><br><span class="line">(re)    G匹配括号内的表达式，也表示一个组</span><br><span class="line">(?imx)    正则表达式包含三种可选标志：i, m, 或 x 。只影响括号中的区域。</span><br><span class="line">(?-imx)    正则表达式关闭 i, m, 或 x 可选标志。只影响括号中的区域。</span><br><span class="line">(?: re)    类似 (...), 但是不表示一个组</span><br><span class="line">(?imx: re)    在括号中使用i, m, 或 x 可选标志</span><br><span class="line">(?-imx: re)    在括号中不使用i, m, 或 x 可选标志</span><br><span class="line">(?<span class="comment">#...)    注释.</span></span><br><span class="line">(?= re)    前向肯定界定符。如果所含正则表达式，以 ... 表示，在当前位置成功匹配时成功，否则失败。但一旦所含表达式已经尝试，匹配引擎根本没有提高；模式的剩余部分还要尝试界定符的右边。</span><br><span class="line">(?! re)    前向否定界定符。与肯定界定符相反；当所含表达式不能在字符串当前位置匹配时成功</span><br><span class="line">(?&gt; re)    匹配的独立模式，省去回溯。</span><br><span class="line">\w    匹配字母数字</span><br><span class="line">\W    匹配非字母数字</span><br><span class="line">\s    匹配任意空白字符，等价于 [\t\n\r\f].</span><br><span class="line">\S    匹配任意非空字符</span><br><span class="line">\d    匹配任意数字，等价于 [<span class="number">0</span>-<span class="number">9</span>].</span><br><span class="line">\D    匹配任意非数字</span><br><span class="line">\A    匹配字符串开始</span><br><span class="line">\Z    匹配字符串结束，如果是存在换行，只匹配到换行前的结束字符串。c</span><br><span class="line">\z    匹配字符串结束</span><br><span class="line">\G    匹配最后匹配完成的位置。</span><br><span class="line">\b    匹配一个单词边界，也就是指单词和空格间的位置。例如， <span class="string">&#x27;er\b&#x27;</span> 可以匹配<span class="string">&quot;never&quot;</span> 中的 <span class="string">&#x27;er&#x27;</span>，但不能匹配 <span class="string">&quot;verb&quot;</span> 中的 <span class="string">&#x27;er&#x27;</span>。</span><br><span class="line">\B    匹配非单词边界。<span class="string">&#x27;er\B&#x27;</span> 能匹配 <span class="string">&quot;verb&quot;</span> 中的 <span class="string">&#x27;er&#x27;</span>，但不能匹配 <span class="string">&quot;never&quot;</span> 中的 <span class="string">&#x27;er&#x27;</span>。</span><br><span class="line">\n, \t, 等.    匹配一个换行符。匹配一个制表符。等</span><br><span class="line">\<span class="number">1.</span>..\<span class="number">9</span>    匹配第n个分组的子表达式。</span><br><span class="line">\<span class="number">10</span>    匹配第n个分组的子表达式，如果它经匹配。否则指的是八进制字符码的表达式。</span><br></pre></td></tr></table></figure><p><a name="toc-heading-1"></a></p><h3 id="re库中常用方法"><a href="#re库中常用方法" class="headerlink" title="re库中常用方法"></a>re库中常用方法</h3><p><img data-src="https://vip2.loli.io/2022/01/25/83mX7AGTEdpNVry.png" alt="image.png"><br><a name="toc-heading-2"></a></p><h3 id="修饰符总结"><a href="#修饰符总结" class="headerlink" title="修饰符总结"></a>修饰符总结</h3><p><img data-src="https://vip2.loli.io/2022/01/25/oik8KEGm6nbaVfC.png" alt="image.png"><br><a name="toc-heading-3"></a></p><h3 id="常用正则表达式"><a href="#常用正则表达式" class="headerlink" title="常用正则表达式"></a>常用正则表达式</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、匹配email地址:</span><br><span class="line">[\w!<span class="comment">#$%&amp;&#x27;*+/=?^_`&#123;|&#125;~-]+(?:\.[\w!#$%&amp;&#x27;*+/=?^_`&#123;|&#125;~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?</span></span><br><span class="line"><span class="number">2</span>、匹配网址URL：</span><br><span class="line">[a-zA-z]+://[^\s]*</span><br><span class="line"><span class="number">3</span>、匹配<span class="number">18</span>位身份证号：</span><br><span class="line">^(\d&#123;<span class="number">6</span>&#125;)(\d&#123;<span class="number">4</span>&#125;)(\d&#123;<span class="number">2</span>&#125;)(\d&#123;<span class="number">2</span>&#125;)(\d&#123;<span class="number">3</span>&#125;)([<span class="number">0</span>-<span class="number">9</span>]|X)$</span><br><span class="line"><span class="number">4</span>、匹配年月日格式：</span><br><span class="line">([<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">3</span>&#125;[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">2</span>&#125;[<span class="number">1</span>-<span class="number">9</span>][<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">1</span>&#125;|[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">1</span>&#125;[<span class="number">1</span>-<span class="number">9</span>][<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">2</span>&#125;|[<span class="number">1</span>-<span class="number">9</span>][<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">3</span>&#125;)-(((<span class="number">0</span>[<span class="number">13578</span>]|<span class="number">1</span>[02])-(<span class="number">0</span>[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">12</span>][<span class="number">0</span>-<span class="number">9</span>]|<span class="number">3</span>[01]))|((<span class="number">0</span>[<span class="number">469</span>]|<span class="number">11</span>)-(<span class="number">0</span>[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">12</span>][<span class="number">0</span>-<span class="number">9</span>]|<span class="number">30</span>))|(02-(<span class="number">0</span>[<span class="number">1</span>-<span class="number">9</span>]|[<span class="number">1</span>][<span class="number">0</span>-<span class="number">9</span>]|<span class="number">2</span>[<span class="number">0</span>-<span class="number">8</span>])))</span><br><span class="line"><span class="number">5</span>、匹配整数：</span><br><span class="line">^-?[<span class="number">1</span>-<span class="number">9</span>]\d*$</span><br><span class="line"><span class="number">6</span>、匹配正整数：</span><br><span class="line">^[<span class="number">1</span>-<span class="number">9</span>]\d*$</span><br><span class="line"><span class="number">7</span>、匹配负整数：</span><br><span class="line">^-[<span class="number">1</span>-<span class="number">9</span>]\d*$</span><br><span class="line"><span class="number">8</span>、匹配空白行：</span><br><span class="line">\n\s*\r</span><br></pre></td></tr></table></figure><blockquote><p>参考文献：</p></blockquote><ol><li><a href="https://www.jianshu.com/p/7fa6fe0b39af">https://www.jianshu.com/p/7fa6fe0b39af</a></li><li><a href="https://www.jianshu.com/p/773c32dcd254">https://www.jianshu.com/p/773c32dcd254</a></li><li><a href="https://blog.csdn.net/weixin_40136018/article/details/81183504">https://blog.csdn.net/weixin_40136018/article/details/81183504</a></li><li><a href="https://blog.csdn.net/weixin_40907382/article/details/79654372">https://blog.csdn.net/weixin_40907382/article/details/79654372</a></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;字符串&lt;/strong&gt;是编程时涉及到的最多的一种&lt;strong&gt;数据结构&lt;/strong&gt;，对字符串进行操作的需求几乎无处不在。比如判断一个字符串是否是合法的Email地址，虽然可以编程提取@前后的子串，再分别判断是否是单词和域名，但这样做不但麻烦，而且代码难以复用。&lt;br /&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程笔记" scheme="https://zhengxi.io/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Python" scheme="https://zhengxi.io/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/Python/"/>
+    
+    
+    <category term="Python" scheme="https://zhengxi.io/tags/Python/"/>
+    
+    <category term="正则表达式" scheme="https://zhengxi.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>免费及收费图床推荐</title>
+    <link href="https://zhengxi.io/2022/01/25/%E5%85%8D%E8%B4%B9%E5%8F%8A%E6%94%B6%E8%B4%B9%E5%9B%BE%E5%BA%8A%E6%8E%A8%E8%8D%90/"/>
+    <id>https://zhengxi.io/2022/01/25/%E5%85%8D%E8%B4%B9%E5%8F%8A%E6%94%B6%E8%B4%B9%E5%9B%BE%E5%BA%8A%E6%8E%A8%E8%8D%90/</id>
+    <published>2022-01-25T09:02:06.000Z</published>
+    <updated>2022-02-26T09:00:20.288Z</updated>
+    
+    <content type="html"><![CDATA[<p>一个优秀的图床，能够节省blogger很多时间。<br />时间就是金钱！<br /></p><span id="more"></span><p>目前免费的图床我只推荐Github。Github搭配jsdeliver免费CDN，还是能有不错的速度。<br />但由于滥用，jsdeliver目前在国内的访问也很不稳定。<strong>目前jsdeliver的使用限制如下：</strong></p><ul><li>单个文件大小。（实测20M是没有问题的）</li><li>单个仓库最大文件数10000。</li><li>单个仓库容量。（超过50M警告，超过100M封禁）</li></ul><p><strong>jsdeliver的官方说明：</strong><a href="https://www.jsdelivr.com/terms/acceptable-use-policy-jsdelivr-net">https://www.jsdelivr.com/terms/acceptable-use-policy-jsdelivr-net</a><br />基于Github的图床工具目前有<a href="https://github.com/Molunerfinn/PicGo">PicGO</a>（本地）+<a href="https://picx.xpoet.cn/">PicX</a>（在线）。PicGO+Typora是本地Markdown文档写作的一种高效方式，可以一键上传和转义替换图片。<br />PicX是作者<a href="https://xpoet.cn/">@Xpoet</a>基于Github开发的在线图床，目前支持批量上传、图片管理、图片压缩、jsdeliver CDN等功能。使用教程见：<a href="https://github.com/XPoet/picx/blob/master/README.md">https://github.com/XPoet/picx/blob/master/README.md</a><br />​</p><p>付费的图床推荐使用SM.MS。目前SM.MS已推出付费套餐，终身会员只需59美元，会员有100 G的空间、支持支链及有专门的CDN线路。此外SM.MS还推出了ios、ipad和Mac APP，对于苹果全家桶的人更是值得推荐。<br />目前SM.MS关闭了匿名上传功能（禁止游客上传），滥用减少，也常常搞活动，例如我就只花了29美元购买。</p><blockquote><p>SM.MS：由于关闭游客上传后，滥用减少，  SM.MS 图床的运营成本骤减，因此我们推出了 SM.MS 新年优惠，终身会员仅需 29 美元，使用优惠码 VMP6OUXH24 购买即可享受 VIP 服务，购买链接 <a href="https://sa.net/r/12">https://sa.net/r/12</a>（2022.01.25）</p></blockquote><p>为了博客图片的稳定访问，我也不打算折腾了，目前已经入手SM.MS终身会员。不过，也不保证SM.MS真的能永久运行，每篇博客文章也都在<a href="https://www.yuque.com/">语雀</a>进行了备份。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;一个优秀的图床，能够节省blogger很多时间。&lt;br /&gt;时间就是金钱！&lt;br /&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="网站建设" scheme="https://zhengxi.io/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"/>
+    
+    
+    <category term="jsdeliver" scheme="https://zhengxi.io/tags/jsdeliver/"/>
+    
+    <category term="Github" scheme="https://zhengxi.io/tags/Github/"/>
+    
+    <category term="CDN" scheme="https://zhengxi.io/tags/CDN/"/>
+    
+    <category term="PicX" scheme="https://zhengxi.io/tags/PicX/"/>
+    
+    <category term="SM.MS" scheme="https://zhengxi.io/tags/SM-MS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python中if __name__ == &#39;__main__&#39; 该如何正确理解?</title>
+    <link href="https://zhengxi.io/2022/01/25/Python%E4%B8%ADif%20__name__%20==%20&#39;__main__&#39;%20%E8%AF%A5%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%90%86%E8%A7%A3_/"/>
+    <id>https://zhengxi.io/2022/01/25/Python%E4%B8%ADif%20__name__%20==%20&#39;__main__&#39;%20%E8%AF%A5%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%90%86%E8%A7%A3_/</id>
+    <published>2022-01-25T06:32:26.000Z</published>
+    <updated>2022-02-26T08:57:58.050Z</updated>
+    
+    <content type="html"><![CDATA[<p>一个python的文件有两种使用的方法，第一是直接作为脚本执行，第二是import到其他的python脚本中被调用（模块重用）执行。而<code>if __name__ == &#39;main&#39;:</code>的作用就是控制这两种情况执行代码的过程，存在<code>if __name__ == &#39;main&#39;:</code>时，该脚本可以直接运行，但是作为模块导入后则不会提前运行。<br /></p><span id="more"></span><p>例如test.py：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#test.py</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;import the module&#x27;</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Hello, World!&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br><span class="line"><span class="comment">#end</span></span><br></pre></td></tr></table></figure><p>直接运行该程序，会输出：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;python test.py</span><br><span class="line"><span class="keyword">import</span> the module</span><br><span class="line">Hello, World!</span><br></pre></td></tr></table></figure><p><strong>同时输出了’import the module’和’Hello, World!’</strong><br />说明:<code>__name__ == &#39;__main__&#39;</code>是成立的，所以执行了下面的<code>main()</code><br /><strong>接下来请我们用import的方式</strong>，在CMD中输入<code>python</code>，再输入<code>import test</code></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;python</span><br><span class="line">Python <span class="number">3.6</span><span class="number">.5</span> |Anaconda, Inc.| (default, Mar <span class="number">29</span> <span class="number">2018</span>, <span class="number">13</span>:<span class="number">32</span>:<span class="number">41</span>) [MSC v<span class="number">.1900</span> <span class="number">64</span> bit (AMD64)] on win32</span><br><span class="line"><span class="type">Type</span> <span class="string">&quot;help&quot;</span>, <span class="string">&quot;copyright&quot;</span>, <span class="string">&quot;credits&quot;</span> <span class="keyword">or</span> <span class="string">&quot;license&quot;</span> <span class="keyword">for</span> more information.</span><br><span class="line">&gt;&gt;&gt;<span class="keyword">import</span> test</span><br><span class="line"><span class="keyword">import</span> the module    <span class="comment">#只输出了这个，没有Hello, World!</span></span><br><span class="line"><span class="comment">#这个时候</span></span><br><span class="line">&gt;&gt;&gt;test.__name__             </span><br><span class="line"><span class="string">&#x27;test&#x27;</span></span><br><span class="line">&gt;&gt;&gt;__name__                     </span><br><span class="line"><span class="string">&#x27;__main__&#x27;</span></span><br></pre></td></tr></table></figure><p>只输出了’import the module’，没有输出’Hello, World!’<br />可以看出这个时候test模块的<strong>name</strong>=’test’<br />而当前程序的<strong>name</strong>=’<strong>main</strong>‘<br />无论怎样，test.py中的<strong>name</strong> == ‘<strong>main</strong>‘都不会成立的，也就意味着，当你是通过import的方法来执行这个.py文件时，不能运行if <strong>name</strong> == ‘<strong>main</strong>‘:下面的语句或者函数。<br />总结：<br /><strong>name</strong> 是当前模块名，当模块被直接运行时模块名为 <strong>main</strong> 。这句话的意思就是，当模块被直接运行时，以下代码块将被运行，当模块是被导入时，代码块不被运行。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;一个python的文件有两种使用的方法，第一是直接作为脚本执行，第二是import到其他的python脚本中被调用（模块重用）执行。而&lt;code&gt;if __name__ == &amp;#39;main&amp;#39;:&lt;/code&gt;的作用就是控制这两种情况执行代码的过程，存在&lt;code&gt;if __name__ == &amp;#39;main&amp;#39;:&lt;/code&gt;时，该脚本可以直接运行，但是作为模块导入后则不会提前运行。&lt;br /&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程笔记" scheme="https://zhengxi.io/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Python" scheme="https://zhengxi.io/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/Python/"/>
+    
+    
+    <category term="Python" scheme="https://zhengxi.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Keep主题】为Hexo博客添加谷歌广告</title>
+    <link href="https://zhengxi.io/2022/01/25/%E3%80%90Keep%E4%B8%BB%E9%A2%98%E3%80%91%E4%B8%BAHexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8A/"/>
+    <id>https://zhengxi.io/2022/01/25/%E3%80%90Keep%E4%B8%BB%E9%A2%98%E3%80%91%E4%B8%BAHexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8A/</id>
+    <published>2022-01-25T03:32:06.000Z</published>
+    <updated>2022-02-26T08:54:46.602Z</updated>
+    
+    <content type="html"><![CDATA[<p>本博客使用keep主题，在主题文件夹<code>themes/keep/layout/layout.ejs</code>中加入谷歌广告代码即可。</p><span id="more"></span><br /><p><strong>例如：</strong></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;&lt;%= config.language %&gt;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">&lt;%- partial(&#x27;_partial/head&#x27;) %&gt;</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">data-ad-client</span>=<span class="string">&quot;ca-pub-7835998003747351&quot;</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="xml">&lt;%- body %&gt;</span></span><br><span class="line"><span class="xml">&lt;%- partial(&#x27;_partial/scripts&#x27;) %&gt;</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure><p>待谷歌审核通过后，下载<code>ads.txt</code>文件，并上传到Hexo的文档源文件夹<code>source/</code>下（也就是网站根目录下）。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;本博客使用keep主题，在主题文件夹&lt;code&gt;themes/keep/layout/layout.ejs&lt;/code&gt;中加入谷歌广告代码即可。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="网站建设" scheme="https://zhengxi.io/categories/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/"/>
+    
+    
+    <category term="谷歌广告" scheme="https://zhengxi.io/tags/%E8%B0%B7%E6%AD%8C%E5%B9%BF%E5%91%8A/"/>
+    
+  </entry>
+  
+</feed>

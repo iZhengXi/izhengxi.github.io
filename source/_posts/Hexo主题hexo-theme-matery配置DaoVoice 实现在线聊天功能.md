@@ -9,7 +9,11 @@ categories:
 - 	Hexo
 ---
 
-**DaoVoice 可以提供在线联系的功能，可以让静态博客Hexo更加多样和完整。**<br />设置完成效果如下：<br />![](https://vip1.loli.io/2022/01/25/bUaPyOcKD5orTJs.png)
+**DaoVoice 可以提供在线联系的功能，可以让静态博客Hexo更加多样和完整。**
+
+<!-- more -->
+
+<br />设置完成效果如下：<br />![](https://vip1.loli.io/2022/01/25/bUaPyOcKD5orTJs.png)
 <a name="toc-heading-1"></a>
 
 ## 实现方法

@@ -7,7 +7,11 @@ categories:
 - 编程笔记
 - 	Linux
 ---
-首先，我们来看Linux的各个目录的作用。<br />**_Linux的目录像一颗树：_**<br />
+首先，我们来看Linux的各个目录的作用。
+
+<!-- more -->
+
+<br />**_Linux的目录像一颗树：_**<br />
 
 ![image.png](https://vip1.loli.io/2022/01/25/RCw9iTzF5JPpqQA.png)
 

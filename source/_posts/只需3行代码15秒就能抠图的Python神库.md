@@ -11,6 +11,8 @@ categories:
 _这是一款网站：_[_Remove.bg_](https://www.remove.bg/)<br />_可以通过调用网站提供的API进行抠图，每月可以免费抠图50张。唯一缺点就是分辨率限制。_
 <a name="toc-heading-1"></a>
 
+<!-- more -->
+
 ## 实现步骤
 **第一步：**<br />[网站上注册获取 API](https://www.remove.bg/api)<br />**第二步：**<br />安装抠图库<br />`pip install removebg`<br />**实现抠图**
 ```python

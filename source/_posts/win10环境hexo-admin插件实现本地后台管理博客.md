@@ -11,6 +11,8 @@ categories:
 Hexo每次发布和部署文章都需要在命令行下操作，比较繁琐，`hexo-admin`这个插件可以给你的Hexo博客搭建一个后台。
 <a name="toc-heading-1"></a>
 
+<!-- more -->
+
 ## 安装插件
 ```
 npm install --save hexo-admin

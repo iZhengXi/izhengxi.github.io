@@ -8,7 +8,11 @@ categories:
 - 	Python
 ---
 
-_Get请求和Post请求是HPPT中最常用的请求，那么他们有什么区别呢？_<br />**我们来看看标准答案：**
+_Get请求和Post请求是HPPT中最常用的请求，那么他们有什么区别呢？_<br />
+
+<!-- more -->
+
+**我们来看看标准答案：**
 
 > - GET在浏览器回退时是无害的，而POST会再次提交请求。
 > - GET产生的URL地址可以被Bookmark，而POST不可以。

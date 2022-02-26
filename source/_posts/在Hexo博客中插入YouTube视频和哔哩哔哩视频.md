@@ -11,8 +11,10 @@ categories:
 -   Hexo
 ---
 
-
 在Hexo博客中可以插入哔哩哔哩视频和YouTube视频。并且相比哔哩哔哩视频，插入的YouTube视频可以调节清晰度。
+
+<!-- more -->
+
 在这里我们以插入YouTube博主[Bozeman Science](https://www.youtube.com/channel/UCEik-U3T6u6JA0XiHLbNbOw)的一个科普视频为例：
 
 **首先复制视频的分享代码：**

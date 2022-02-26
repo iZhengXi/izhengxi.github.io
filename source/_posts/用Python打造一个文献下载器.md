@@ -11,6 +11,8 @@ categories:
 文献下载有很多插件，例如[sci-hub button](https://greasyfork.org/zh-CN/scripts/370246-sci-hub-button)和[Scholarscope](https://www.scholarscope.cn/)，但是今天突然想用万能的Python实现一个自动下载文献的功能。
 <a name="toc-heading-1"></a>
 
+<!-- more -->
+
 ## 准备
 <a name="toc-heading-2"></a>
 ### 安装Anaconda

@@ -14,7 +14,11 @@ categories:
 - CloudFlare Pages
 
 目前这两种方案都可以实现自动部署，且完全使用Github写博客。考虑到速度和稳定性，我决定将博客部署到CloudFlare Pages。
+
+<!-- more -->
+
 <a name="nuxQC"></a>
+
 # 1、本地Hexo站点搭建
 以Keep主题为例，在本地搭建Hexo站点。首先安装[Node.js](https://nodejs.org/en/)和[Git](https://git-scm.com/)。<br />之后在本地新建站点文件夹，并安装`Hexo`。
 ```bash

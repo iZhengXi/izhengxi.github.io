@@ -13,10 +13,14 @@ categories:
 # 1、本地安装Hexo
 
 <br />Hexo是基于node.js，所以需要安装[node.js](https://nodejs.org/en/)和[Git](https://git-scm.com/)(用于提交本地文件到Github)<br />安装好环境后，打开Git Bash，全局安装`hexo-cli`
+
 ```bash
 npm install -g hexo-cli
 ```
 之后利用hexo命令建立本地站点：
+
+<!-- more -->
+
 ```bash
 hexo init howarzheng.github.io
 cd howarzheng.github.io

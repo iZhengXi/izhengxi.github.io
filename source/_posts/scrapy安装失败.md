@@ -16,6 +16,9 @@ categories:
 error: Microsoft Visual C++ 14.0 is required. Get it with "Microsoft Visual C++ Build Tools": http://landinghub.visualstudio.com/visual-cpp-build-tools
 ```
 <a name="toc-heading-2"></a>
+
+<!-- more -->
+
 ## 解决办法
 
 <br />去该网站：[https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted](https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted) 下载对应的twisted的安装文件安装后即可。<br />例如：

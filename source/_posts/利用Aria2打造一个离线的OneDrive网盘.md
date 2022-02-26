@@ -12,6 +12,9 @@ categories:
 ## 原理
 Aria2 有一个配置项`on-download-complete`，在下载完后执行一个脚本。当下载完成后 Aria2 会给脚本传递3个变量 `$1`、`$2`、`$3` 分别为 gid 、文件数量、文件路径。利用这个配置项和这些变量就可以实现很多功能，比如下载完成后调用 Rclone 进行上传操作。整个过程简单来说就是，Aria2 下载文件到 VPS ，完成后告诉 Rclone 将这个文件上传到网盘。理论上只要是 Rclone 支持的网盘，都可以按照这个思路来实现~~伪~~离线下载。并且还可实现下载完成上传OneDrive后自动本地删除，不占用VPS空间。
 <a name="toc-heading-2"></a>
+
+<!-- more -->
+
 ## 安装 Aria2
 这里使用 Aria2 一键安装管理脚本，执行下面的代码下载并运行脚本，出现脚本操作菜单输入 `1`开始安装。<br />`wget -N https://git.io/aria2.sh && chmod +x aria2.sh && bash aria2.sh`
 <a name="toc-heading-3"></a>

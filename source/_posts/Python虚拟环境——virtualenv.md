@@ -10,6 +10,9 @@ categories:
 
 _virtualenv是Python的一个工具包，可以创建完全隔离的Python环境，让一台电脑上同时拥有几个ython2和Python3的环境。_
 <a name="toc-heading-1"></a>
+
+<!-- more -->
+
 ## 基本使用
 **安装**
 ```python

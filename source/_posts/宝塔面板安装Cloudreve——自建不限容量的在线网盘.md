@@ -18,6 +18,10 @@ Github：https://github.com/cloudreve/Cloudreve
 
 1.Releases下载程序到本地：
 
+
+
+<!-- more -->
+
 ```bash
 wget https://github.com/cloudreve/Cloudreve/releases/download/3.1.1/cloudreve_3.1.1_linux_amd64.tar.gz
 ```

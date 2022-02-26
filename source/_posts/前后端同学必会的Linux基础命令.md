@@ -15,6 +15,9 @@ categories:
 ### 2、显示当前路径
 `pwd`
 <a name="toc-heading-4"></a>
+
+<!-- more -->
+
 ### 3、显示路径下的文件
 `ls`<br />`ls -a 显示隐藏文件。隐藏文件以 . 开头命名`
 <a name="toc-heading-5"></a>

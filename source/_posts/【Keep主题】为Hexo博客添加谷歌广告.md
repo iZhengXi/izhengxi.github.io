@@ -6,7 +6,14 @@ tags:
 categories:
 - 网站建设
 ---
-本博客使用keep主题，在主题文件夹`themes/keep/layout/layout.ejs`中加入谷歌广告代码即可。<br />**例如：**
+本博客使用keep主题，在主题文件夹`themes/keep/layout/layout.ejs`中加入谷歌广告代码即可。
+
+<!-- more -->
+
+<br />
+
+**例如：**
+
 ```javascript
 <!DOCTYPE html>
 <html lang="<%= config.language %>">

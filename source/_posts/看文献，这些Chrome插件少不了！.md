@@ -13,6 +13,8 @@ categories:
 看文献，早已成为了研究生的日常，如何更高效的筛选和阅读文献呢？这里分享一些我自己常用的插件。
 <a name="wLEMD"></a>
 
+<!-- more -->
+
 ## 1， Scholarscope
 这是我最喜欢的一个插件，使用它之后可以查看Pubmed检索的文献的影响因子、引用数量以及中科院分区。<br />![](https://vip2.loli.io/2022/02/18/4xUN6XpDTRoH2mh.png)
 <a name="VJ7Ay"></a>

@@ -13,7 +13,11 @@ categories:
 
 > SM.MS的付费图床速度还是杠杠的，使用了日本和 Premium Global CDN。
 
-那么博客中的视频应该放哪儿呢，答案是哔哩哔哩和YouTube。它们都是理想的视频床。考虑到防火墙原因，推荐使用哔哩哔哩。<br />由于markdown中是可以直接插入html代码的，因此可以直接复制哔哩哔哩视频的html代码粘贴到博客中。<br />
+那么博客中的视频应该放哪儿呢，答案是哔哩哔哩和YouTube。它们都是理想的视频床。考虑到防火墙原因，推荐使用哔哩哔哩。<br />
+
+<!-- more -->
+
+由于markdown中是可以直接插入html代码的，因此可以直接复制哔哩哔哩视频的html代码粘贴到博客中。<br />
 
 ![image.png](https://vip1.loli.io/2022/02/20/Y3RFeGBT6MZhjDu.png)
 

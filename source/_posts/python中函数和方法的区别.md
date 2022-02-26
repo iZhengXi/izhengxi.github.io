@@ -11,6 +11,8 @@ categories:
 _python中函数和方法是两个容易混淆的概念，他们其实有很多区别。_
 <a name="toc-heading-1"></a>
 
+<!-- more -->
+
 ## 1. 所处位置不同
 函数是直接写文件中而不是class中，方法是只能写在class中。
 <a name="toc-heading-2"></a>
