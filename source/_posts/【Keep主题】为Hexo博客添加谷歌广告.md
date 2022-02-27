@@ -1,10 +1,11 @@
 ---
 title: 【Keep主题】为Hexo博客添加谷歌广告
-date: 2022-01-25 11:32:06
 tags:
-- 谷歌广告
+  - 谷歌广告
 categories:
-- 网站建设
+  - 网站建设
+abbrlink: fae75641
+date: 2022-01-25 11:32:06
 ---
 本博客使用keep主题，在主题文件夹`themes/keep/layout/layout.ejs`中加入谷歌广告代码即可。
 

@@ -1,11 +1,12 @@
 ---
 title: Python中函数和方法的区别
-date: 2022-01-9 15:32:26
 tags:
-- Python
+  - Python
 categories:
-- 编程笔记
-- 	Python
+  - 编程笔记
+  - Python
+abbrlink: a2c3c0dd
+date: 2022-01-09 15:32:26
 ---
 
 _python中函数和方法是两个容易混淆的概念，他们其实有很多区别。_

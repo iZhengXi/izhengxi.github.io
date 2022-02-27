@@ -1,10 +1,11 @@
 ---
 title: 前后端同学必会的Linux基础命令
-date: 2018-08-13 13:34:46
 tags:
-- Linux
+  - Linux
 categories:
-- 编程笔记
+  - 编程笔记
+abbrlink: a0152f5a
+date: 2018-08-13 13:34:46
 ---
 <a name="toc-heading-1"></a>
 ## 基础篇

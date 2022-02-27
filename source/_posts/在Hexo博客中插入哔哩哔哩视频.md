@@ -1,12 +1,13 @@
 ---
 title: 在Hexo博客中插入哔哩哔哩视频
-date: 2022-02-17 12:32:06
 tags:
-- 哔哩哔哩
-- Hexo
+  - 哔哩哔哩
+  - Hexo
 categories:
-- 网站建设
-- 	Hexo
+  - 网站建设
+  - Hexo
+abbrlink: ed58e2bf
+date: 2022-02-17 12:32:06
 ---
 
 博客的图片可以使用图床，例如SM.MS，CloudFlare等。

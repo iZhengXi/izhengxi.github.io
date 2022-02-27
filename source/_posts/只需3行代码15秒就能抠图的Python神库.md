@@ -1,11 +1,12 @@
 ---
 title: 只需3行代码15秒就能抠图的Python神库
-date: 2022-01-25 17:54:26
 tags:
-- Python
+  - Python
 categories:
-- 编程笔记
-- 	Python
+  - 编程笔记
+  - Python
+abbrlink: 382fae02
+date: 2022-01-25 17:54:26
 ---
 
 _这是一款网站：_[_Remove.bg_](https://www.remove.bg/)<br />_可以通过调用网站提供的API进行抠图，每月可以免费抠图50张。唯一缺点就是分辨率限制。_

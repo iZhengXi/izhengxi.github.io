@@ -1,11 +1,12 @@
 ---
 title: 搭建基于Github的图床
-date: 2022-01-29 12:32:06
 tags:
-- 图床
-- Github
+  - 图床
+  - Github
 categories:
-- 网站建设
+  - 网站建设
+abbrlink: 7d89b07c
+date: 2022-01-29 12:32:06
 ---
 
 直接fork作者@Xpoet的仓库：https://github.com/XPoet/picx<br />之后开启Github Pages即可。<br />也可以使用作者已经搭建好的在线图床网站：[https://picx.xpoet.cn/](https://picx.xpoet.cn/)<br />PicX图床官方文档 >> https://picx-docs.xpoet.cn

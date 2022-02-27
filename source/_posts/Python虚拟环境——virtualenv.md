@@ -1,11 +1,12 @@
 ---
 title: Python虚拟环境——virtualenv
-date: 2020-09-13 08:42:26
 tags:
-- virtualenv
-- Python
+  - virtualenv
+  - Python
 categories:
-- 编程笔记
+  - 编程笔记
+abbrlink: ed361030
+date: 2020-09-13 08:42:26
 ---
 
 _virtualenv是Python的一个工具包，可以创建完全隔离的Python环境，让一台电脑上同时拥有几个ython2和Python3的环境。_

@@ -1,11 +1,12 @@
 ---
 title: 利用Aria2打造一个离线的OneDrive网盘
-date: 2021-01-13 15:32:26
 tags:
-- Aria2
-- Rclone
+  - Aria2
+  - Rclone
 categories:
-- 网站建设
+  - 网站建设
+abbrlink: 3846090a
+date: 2021-01-13 15:32:26
 ---
 
 <a name="toc-heading-1"></a>

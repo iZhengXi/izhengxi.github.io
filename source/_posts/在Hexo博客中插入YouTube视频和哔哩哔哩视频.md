@@ -1,14 +1,15 @@
 ---
 title: 在Hexo博客中插入YouTube视频和哔哩哔哩视频
-date: 2022-02-25 21:32:06
 tags:
-- Hexo
-- 博客
-- YouTube
-- 哔哩哔哩
+  - Hexo
+  - 博客
+  - YouTube
+  - 哔哩哔哩
 categories:
-- 网站建设
--   Hexo
+  - 网站建设
+  - Hexo
+abbrlink: 3fa8f0d
+date: 2022-02-25 21:32:06
 ---
 
 在Hexo博客中可以插入哔哩哔哩视频和YouTube视频。并且相比哔哩哔哩视频，插入的YouTube视频可以调节清晰度。

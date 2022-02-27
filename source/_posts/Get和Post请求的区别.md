@@ -1,11 +1,12 @@
 ---
 title: Get和Post请求的区别
-date: 2022-01-25 17:52:26
 tags:
-- Python
+  - Python
 categories:
-- 编程笔记
-- 	Python
+  - 编程笔记
+  - Python
+abbrlink: a11b4259
+date: 2022-01-25 17:52:26
 ---
 
 _Get请求和Post请求是HPPT中最常用的请求，那么他们有什么区别呢？_<br />

@@ -1,11 +1,12 @@
 ---
 title: 在CloudFlare Pages上部署Hexo博客
-date: 2022-01-28 12:32:06
 tags:
-- CloudFlare
-- CloudFlare Pages
+  - CloudFlare
+  - CloudFlare Pages
 categories:
-- 网站建设
+  - 网站建设
+abbrlink: b240d73a
+date: 2022-01-28 12:32:06
 ---
 
 我的初衷是完全使用Github写博客，目前可以的方案有（**免备案**）：

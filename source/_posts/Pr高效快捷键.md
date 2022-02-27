@@ -1,10 +1,11 @@
 ---
 title: Pr高效快捷键
-date: 2019-02-17 11:32:06
 tags:
-- Pr
+  - Pr
 categories:
-- 新媒体
+  - 新媒体
+abbrlink: a5eb209f
+date: 2019-02-17 11:32:06
 ---
 
 1. _调出快捷键面板 __Ctrl+Alt+K_。

@@ -1,12 +1,13 @@
 ---
 title: scrapy安装失败
-date: 2022-01-25 17:59:26
 tags:
-- Python
-- scrapy
+  - Python
+  - scrapy
 categories:
-- 编程笔记
-- 	Python
+  - 编程笔记
+  - Python
+abbrlink: e1aca15a
+date: 2022-01-25 17:59:26
 ---
 
 <a name="toc-heading-1"></a>

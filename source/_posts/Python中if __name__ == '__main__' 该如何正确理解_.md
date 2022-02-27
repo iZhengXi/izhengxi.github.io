@@ -1,11 +1,12 @@
 ---
 title: Python中if __name__ == '__main__' 该如何正确理解?
-date: 2022-01-25 14:32:26
 tags:
-- Python
+  - Python
 categories:
-- 编程笔记
--  	Python
+  - 编程笔记
+  - Python
+abbrlink: 957cbba9
+date: 2022-01-25 14:32:26
 ---
 
 一个python的文件有两种使用的方法，第一是直接作为脚本执行，第二是import到其他的python脚本中被调用（模块重用）执行。而`if __name__ == 'main':`的作用就是控制这两种情况执行代码的过程，存在`if __name__ == 'main':`时，该脚本可以直接运行，但是作为模块导入后则不会提前运行。<br />

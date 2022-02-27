@@ -1,11 +1,12 @@
 ---
 title: Vue文档风格的Typora主题
-date: 2019-05-23 16:32:06
 tags:
-- Typora
-- Vue
+  - Typora
+  - Vue
 categories:
-- 网络资源
+  - 网络资源
+abbrlink: f388d7c2
+date: 2019-05-23 16:32:06
 ---
 [Typora-vue-theme](https://github.com/blinkfox/typora-vue-theme) 是[ Typora](https://www.typora.io/) Markdown 文档编辑器中一款类似[Vue](https://vuejs.org/)文档风格的主题。
 

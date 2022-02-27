@@ -1,11 +1,12 @@
 ---
 title: 用Python打造一个文献下载器
-date: 2022-01-23 15:22:26
 tags:
-- Python
+  - Python
 categories:
-- 编程笔记
-- 	Python
+  - 编程笔记
+  - Python
+abbrlink: 9640fa29
+date: 2022-01-23 15:22:26
 ---
 
 文献下载有很多插件，例如[sci-hub button](https://greasyfork.org/zh-CN/scripts/370246-sci-hub-button)和[Scholarscope](https://www.scholarscope.cn/)，但是今天突然想用万能的Python实现一个自动下载文献的功能。

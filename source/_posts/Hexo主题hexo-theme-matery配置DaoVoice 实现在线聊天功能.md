@@ -1,12 +1,13 @@
 ---
 title: Hexo主题hexo-theme-matery配置DaoVoice 实现在线聊天功能
-date: 2022-01-25 18:01:26
 tags:
-- Hexo
-- matery
+  - Hexo
+  - matery
 categories:
-- 网站建设
-- 	Hexo
+  - 网站建设
+  - Hexo
+abbrlink: 3012f50a
+date: 2022-01-25 18:01:26
 ---
 
 **DaoVoice 可以提供在线联系的功能，可以让静态博客Hexo更加多样和完整。**

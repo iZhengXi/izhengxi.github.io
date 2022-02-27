@@ -1,12 +1,13 @@
 ---
 title: 利用Github Actions+Hexo+Github Pages实现完全在线写博客
-date: 2022-01-19 16:32:26
 tags:
-- Github Actions
-- Hexo
-- Github Pages
+  - Github Actions
+  - Hexo
+  - Github Pages
 categories:
-- 网站建设
+  - 网站建设
+abbrlink: df09533d
+date: 2022-01-19 16:32:26
 ---
 
 <a name="JnUTE"></a>

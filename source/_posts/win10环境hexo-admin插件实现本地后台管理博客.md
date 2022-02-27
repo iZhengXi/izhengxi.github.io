@@ -1,11 +1,12 @@
 ---
 title: win10环境hexo-admin插件实现本地后台管理博客
-date: 2022-01-25 18:02:26
 tags:
-- Hexo
+  - Hexo
 categories:
-- 网站建设
-- 	Hexo
+  - 网站建设
+  - Hexo
+abbrlink: 12f6a7f4
+date: 2022-01-25 18:02:26
 ---
 
 Hexo每次发布和部署文章都需要在命令行下操作，比较繁琐，`hexo-admin`这个插件可以给你的Hexo博客搭建一个后台。

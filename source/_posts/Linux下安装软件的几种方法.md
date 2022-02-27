@@ -1,11 +1,12 @@
 ---
 title: Linux下安装软件的几种方法
-date: 2022-01-23 15:32:26
 tags:
-- Linux
+  - Linux
 categories:
-- 编程笔记
-- 	Linux
+  - 编程笔记
+  - Linux
+abbrlink: 9c349f79
+date: 2022-01-23 15:32:26
 ---
 首先，我们来看Linux的各个目录的作用。
 
