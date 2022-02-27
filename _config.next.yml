@@ -590,12 +590,12 @@ comments:
   lazyload: true
   # Modify texts or order for any naves, here are some examples.
   nav:
-   gitalk:
-      text: load gitalk
-      order: -1
-   disqus:
-      text: Load Disqusjs
-      order: -2
+   # gitalk:
+     # text: load gitalk
+     # order: -1
+  # disqus:
+    #  text: Load Disqusjs
+      # order: -2
     
 # Disqus
 # For more information: https://disqus.com
@@ -630,7 +630,7 @@ livere_uid: # <your_uid>
 # Gitalk
 # For more information: https://gitalk.github.io
 gitalk:
-  enable: true
+  enable: false
   github_id: iZhengXi # GitHub repo owner
   repo: zhengxi.io.comments # Repository name to store issues
   client_id: 1b319e23348b3a7c7953 # GitHub Application Client ID
