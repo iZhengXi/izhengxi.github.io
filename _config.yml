@@ -120,3 +120,6 @@ sitemap:
 # 百度站点地图
 baidusitemap:
   path: baidusitemap.xml
+
+netlify_cms:
+  config_file: netlify.yaml
