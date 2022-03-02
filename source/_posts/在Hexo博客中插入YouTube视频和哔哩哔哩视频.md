@@ -10,6 +10,7 @@ categories:
   - Hexo
 abbrlink: 3fa8f0d
 date: 2022-02-25 21:32:06
+updated: 2022-03-02 20:10:10
 ---
 
 在Hexo博客中可以插入哔哩哔哩视频和YouTube视频。并且相比哔哩哔哩视频，插入的YouTube视频可以调节清晰度。
