@@ -228,6 +228,7 @@ footer:
 
   # Beian ICP and gongan information for Chinese users. See: https://beian.miit.gov.cn, http://www.beian.gov.cn
   beian:
+  
     enable: false
     icp:
     # The digit in the num of gongan beian.
@@ -294,7 +295,7 @@ follow_me:
 # Related popular posts
 # Dependencies: https://github.com/sergeyzwezdin/hexo-related-posts
 related_posts:
-  enable:  false
+  enable:  true
   title: # Custom header, leave empty to use the default one
   display_in_home: true
 
@@ -396,7 +397,7 @@ reading_progress:
   start_at: left
   # Available values: top | bottom
   position: top
-  reversed: false
+  reversed: true
   color: "#37c6c0"
   height: 3px
 
@@ -478,7 +479,7 @@ font:
 index_with_subtitle: false
 
 # Automatically add external URL with Base64 encrypt & decrypt.
-exturl: false
+exturl: true
 # If true, an icon will be attached to each external URL
 exturl_icon: true
 
