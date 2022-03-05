@@ -177,7 +177,7 @@ links_settings:
   icon: fa fa-globe
   title: 友情链接
   # Available values: block | inline
-  layout: block
+  layout: inline
 
 links:
   Xpoet: https://xpoet.cn/
@@ -303,8 +303,8 @@ related_posts:
 # Post edit
 # Easily browse and edit blog source code online.
 post_edit:
-  enable: false
-  url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/ # Link for view source
+  enable: true
+  url: https://zhengxi.io/admin/ # Link for view source
   #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/ # Link for fork & edit
 
 # Show previous post and next post in post footer if exists
@@ -360,7 +360,7 @@ mobile_layout_economy: true
 # Browser header panel color.
 theme_color:
   light: "#84fab0"
-  dark: "#222"
+  dark: "#8fd3f4"
 
 # Override browsers' default behavior.
 body_scrollbar:
@@ -413,8 +413,8 @@ bookmark:
 
 # `Follow me on GitHub` banner in the top-right corner.
 github_banner:
-  enable: false
-  permalink: https://github.com/yourname
+  enable: true
+  permalink: https://github.com/iZhengXi
   title: Follow me on GitHub
 
 
@@ -590,7 +590,7 @@ comments:
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
   # Lazyload all comment systems.
-  lazyload: true
+  lazyload: false
   # Modify texts or order for any naves, here are some examples.
   nav:
    # gitalk:
@@ -670,9 +670,9 @@ isso: # <data_isso>
 # Star rating support to each article.
 # To get your ID visit https://widgetpack.com
 rating:
-  enable: false
-  id:     # <app_id>
-  color:  "#fc6423"
+  enable: true
+  id: 34110 # <app_id>
+  color:  "#fccb90"
 
 # AddThis Share. See: https://www.addthis.com
 # Go to https://www.addthis.com/dashboard to customize your tools.
@@ -785,9 +785,9 @@ chat:
 # For more information: https://chatra.com
 # Dashboard: https://app.chatra.io/settings/general
 chatra:
-  enable: false
+  enable: true
   async: true
-  id: # Visit Dashboard to get your ChatraID
+  id: NfitcHLvLRadjpyRf # Visit Dashboard to get your ChatraID
   #embed: # Unfinished experimental feature for developers. See: https://chatra.com/help/api/#injectto
 
 # Tidio Support
