@@ -359,7 +359,7 @@ mobile_layout_economy: true
 
 # Browser header panel color.
 theme_color:
-  light: "#222"
+  light: "#84fab0"
   dark: "#222"
 
 # Override browsers' default behavior.
@@ -399,7 +399,7 @@ reading_progress:
   # Available values: top | bottom
   position: top
   reversed: true
-  color: "#37c6c0"
+  color: "#8fd3f4"
   height: 3px
 
 # Bookmark Support
@@ -549,7 +549,7 @@ mediumzoom: false
 
 # Vanilla JavaScript plugin for lazyloading images.
 # For more information: https://apoorv.pro/lozad.js/demo/
-lazyload: true
+lazyload: false
 
 # Pangu Support
 # For more information: https://github.com/vinta/pangu.js
