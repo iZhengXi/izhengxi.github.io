@@ -8,7 +8,7 @@ subtitle: ''
 description: ''
 keywords:
 author: ZhengXi
-language: en
+language: zh-CN
 timezone: ''
 
 # URL
@@ -121,5 +121,4 @@ sitemap:
 baidusitemap:
   path: baidusitemap.xml
 
-netlify_cms:
-  config_file: netlify.yaml
+
