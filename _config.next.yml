@@ -157,7 +157,7 @@ site_state: true
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
   GitHub: https://github.com/iZhengXi || fab fa-github
-  E-Mail: mailto:i@zhengxi.me || fa fa-envelope
+  E-Mail: mailto:x@zhengxi.io || fa fa-envelope
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Google: https://plus.google.com/yourname || fab fa-google
   Twitter: https://twitter.com/realZhengXi || fab fa-twitter
@@ -182,7 +182,7 @@ links_settings:
 links:
   Xpoet: https://xpoet.cn/
   懒得勤快: https://masuit.com/
-  HowarZheng: https://howarzheng.com/
+  HowarZheng's Blog: https://howarzheng.com/
   ZhengXi's Drive: https://drive.zhengxi.tech/
   PicX图床: https://picx.zhengxi.io/
   tg图床: https://tg.zhengxi.io/
