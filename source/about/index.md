@@ -5,5 +5,5 @@ type: about
 comment: true
 ---
 # 个人简历
-小镇做题家。
-联系方式：i#zhengxi.me(#替换为@)
+一个有趣的人。
+联系方式：x#zhengxi.io(#替换为@)
