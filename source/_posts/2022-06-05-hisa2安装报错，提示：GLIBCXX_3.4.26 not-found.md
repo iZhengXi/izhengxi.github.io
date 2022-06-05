@@ -9,6 +9,10 @@ categories:
 date: 2022-06-05 10:32:06
 ---
 
+更新libstdc++.so版本即可。
+
+<!-- more -->
+
 ```bash
 # 报错提示
 (NGS) ubuntu@VM-20-10-ubuntu:~$ hisat2 -h
