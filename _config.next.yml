@@ -184,8 +184,6 @@ links:
   懒得勤快: https://masuit.com/
   HowarZheng's Blog: https://howarzheng.com/
   ZhengXi's Drive: https://drive.zhengxi.tech/
-  PicX图床: https://picx.zhengxi.io/
-  tg图床: https://tg.zhengxi.io/
 
 
 # Table of Contents in the Sidebar
@@ -605,14 +603,14 @@ comments:
 # Disqus
 # For more information: https://disqus.com
 disqus:
-  enable: false
+  enable: true
   shortname: zhengxiblog
   count: true
 
 # DisqusJS
 # For more information: https://disqusjs.skk.moe
 disqusjs:
-  enable: true
+  enable: false
   # API Endpoint of Disqus API (https://disqus.com/api/docs/).
   # Leave api empty if you are able to connect to Disqus API. Otherwise you need a reverse proxy for it.
   # For example:
