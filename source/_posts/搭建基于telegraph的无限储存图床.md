@@ -10,6 +10,8 @@ date: 2022-03-13 14:32:26
 Telegraph是即时聊天软件Telegram的开发商推出的一个内容发布网站，它允许用户匿名发布文章，所以基于telegraph我们搭建一个无限储存空间的图床。
 github项目地址:https://github.com/cloudflytc/tgpic
 
+<!-- more -->
+
 1. 下载程序压缩包。
    下载地址：[点击下载](https://github.com/cloudflytc/tgpic/archive/refs/heads/master.zip)
 2. 上传压缩包到PHP环境中解压，然后访问网站即可上传图片。
