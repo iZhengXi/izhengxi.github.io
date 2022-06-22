@@ -16,6 +16,8 @@ telegram里面用户是可以无限上传文件的，但是我们在国内无法
 
 测试文件:**https://00s23-webgx4.wrench.gq/35822/test.mp4**
 
+<!-- more -->
+
 如果本文图片或者教程失效，请在本文评论区回复或者发送邮件到**talk@live.cn**提醒我
 本文原创地址:https://blog.paddi.cc/index.php/archives/8/
 
