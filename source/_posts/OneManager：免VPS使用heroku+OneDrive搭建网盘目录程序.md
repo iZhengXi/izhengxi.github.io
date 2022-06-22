@@ -19,6 +19,8 @@ date: 2022-03-03 18:32:26
 heroku官方： [heroku.com](http://heroku.com/)
 OneManager的：https://github.com/qkqpttgf/OneManager-php
 
+<!-- more -->
+
 # 教程开始
 
 1.通过heroku官网注册账户并登陆（验证码需过墙才能显示）
