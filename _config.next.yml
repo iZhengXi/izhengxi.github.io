@@ -694,7 +694,7 @@ google_analytics:
 
 # Baidu Analytics
 # See: https://tongji.baidu.com
-baidu_analytics:  # <app_id>
+baidu_analytics: 17650258  # <app_id>
 
 # Growingio Analytics
 # See: https://www.growingio.com
