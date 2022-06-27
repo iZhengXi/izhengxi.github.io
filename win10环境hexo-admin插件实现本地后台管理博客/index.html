@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #262626; --link-color: #262626;">
+<head>
+  <meta charset="UTF-8">
+  <title>win10环境hexo-admin插件实现本地后台管理博客 - ZhengXi&#39;s Blog</title>
+
+  <link rel="icon" href="">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="ZhengXi&#39;s Blog - Atom Feed" href="https://zhengxi.io/atom.xml">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7835998003747351"
+     crossorigin="anonymous"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6430c4dac5e43670548d34fbc3b1755c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/5_jiF_J8a');
+    ga('set', 'dimension2', 'post/5L_Cvl_sf');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //     'dimension2': 'postId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/5_jiF_J8a',
+    //   'postId': 'post/5L_Cvl_sf',
+    // });
+  </script>
+
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hexo每次发布和部署文章都需要在命令行下操作，比较繁琐，hexo-admin这个插件可以给你的Hexo博客搭建一个后台。
+
+
+安装插件
+npm install --save hexo-admin
+hexo server -d
+open h...">
+
+  <meta property="og:title" content="win10环境hexo-admin插件实现本地后台管理博客 - ZhengXi&#39;s Blog">
+  <meta property="og:description" content="Hexo每次发布和部署文章都需要在命令行下操作，比较繁琐，hexo-admin这个插件可以给你的Hexo博客搭建一个后台。
+
+
+安装插件
+npm install --save hexo-admin
+hexo server -d
+open h...">
+  
+  <meta property="og:url" content="https://zhengxi.io/win10环境hexo-admin插件实现本地后台管理博客/">
+  <meta property="og:site_name" content="ZhengXi&#39;s Blog">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="win10环境hexo-admin插件实现本地后台管理博客">
+
+  <meta name="gridea:post_id" content="5L_Cvl_sf">
+
+  <link rel="canonical" href="https://zhengxi.io/win10环境hexo-admin插件实现本地后台管理博客">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.3/styles/a11y-light.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">Z</div>
+      <a href="/">ZhengXi&#39;s Blog</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+        
+        <a
+          href="https://github.com/iZhengXi"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >Github</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://travellings.link/"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >Travellings</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href=""
+          class="mx-2 text-base border-b border-transparent"
+          
+        ></a>
+        
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+        
+        <a
+          href="https://github.com/iZhengXi"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >Github</a>
+      
+        
+        <a
+          href="https://travellings.link/"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >Travellings</a>
+      
+        
+        <a
+          href=""
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        ></a>
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      <div class="max-w-2xl mx-auto px-6 md:px-2">
+        <div class="my-24 text-center">
+          <h1 class="text-2xl font-bold">win10环境hexo-admin插件实现本地后台管理博客</h1>
+          <div class="post-title-bar mx-auto rounded mt-4"></div>
+          <div class="text-gray-400 mt-4">2022.01.25</div>
+          <div class="flex justify-center mt-4">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="p-4 md:p-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 flex relative">
+        <section class="post-content flex-1 default-post-content max-w-2xl">
+          <div v-pre>
+            <p>Hexo每次发布和部署文章都需要在命令行下操作，比较繁琐，<code>hexo-admin</code>这个插件可以给你的Hexo博客搭建一个后台。<br>
+<a name="toc-heading-1"></a></p>
+<!-- more -->
+<h2 id="安装插件">安装插件</h2>
+<pre><code>npm install --save hexo-admin
+hexo server -d
+open http://localhost:4000/admin
+</code></pre>
+<p>之后，在浏览器里打开<a href="http://localhost:4000/admin%E5%8D%B3%E5%8F%AF%E8%AE%BF%E9%97%AE%E5%90%8E%E5%8F%B0%E3%80%82">http://localhost:4000/admin即可访问后台。</a><br />后台界面：<br /><img src="https://vip2.loli.io/2022/01/25/IuSb4sDmdRyCn7P.png" alt="" loading="lazy"><br />可以直接新建文章，新建页面，写完文章后还能直接部署。<br />部署之前需要先进行配置：<br />在站点根目录新建文件<code>hexo-generate.bat</code>，在文件中写入<code>hexo g -d</code>。<br />之后，打开根目录站点配置文件：<br /><strong>新增</strong></p>
+<pre><code class="language-yaml">admin:
+    deployCommand: 'hexo-generate.bat'
+</code></pre>
+<p>现在，后台写完文章可以直接部署了。<br />为了更好的随时随地写文章，可以设置win10开机自启<code>hexo serve</code><br />需要创建2个脚本，一个为vbs脚本，一个为bat脚本。<br />vbs脚本放到启动文件夹，用于运行bat脚本，而bat脚本用于启动hexo server<br /><strong>创建vbs脚本</strong><br /><code>set ws=WScript.CreateObject(&quot;WScript.Shell&quot;)</code><br /><code>ws.Run &quot;E:\\WorkSpace\\webProject\\Hexo-blog\\hexo-server.bat /start&quot;,0</code><br /><strong>创建bat脚本</strong><br /><code>E:</code><br /><code>cd E:/WorkSpace/webProject/Hexo-Blog</code><br /><code>hexo s -d</code><br />将<strong>vbs脚本</strong>放到启动文件夹<br />win10 启动文件夹目录为<br /><code>C:\Users\你的用户名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</code><br />这样就能实现开机启动<code>hexo server</code>了，剩下的一切都可以交给浏览器和<code>hexo-admin</code>了。如果使用七牛，则可以使用<code>hexo-admin with qiniu</code>。</p>
+<blockquote>
+<p><strong>后台还可以设置密码访问。</strong></p>
+</blockquote>
+<p><img src="https://vip2.loli.io/2022/01/25/SAUP5W3pwhTkycm.png" alt="" loading="lazy"><br />后台设置<strong>用户名</strong>和<strong>密码</strong>后，将它复制到<strong>根目录站点配置</strong>文件即可。</p>
+<blockquote>
+<p>参考文献：</p>
+</blockquote>
+<ol>
+<li><a href="https://blog.csdn.net/upc_xbt/article/details/54020135">https://blog.csdn.net/upc_xbt/article/details/54020135</a></li>
+<li><a href="https://segmentfault.com/a/1190000018488921">https://segmentfault.com/a/1190000018488921</a></li>
+</ol>
+
+          </div>
+          <div class="py-4 text-gray-600 flex items-center justify-between">
+            <div class="">
+              <div class="text-sm text-gray-300">最后更新于: </div>
+              <div class="text-base font-medium">2022.06.25</div>
+            </div>
+            <!-- <div class="flex items-center text-sm text-gray-600">
+              <i class="ri-eye-line"></i> <span class="ml-2">{{ views }}</span>
+            </div> -->
+          </div>
+          <div>
+            <div id="disqus_thread"></div>
+          </div>
+        </section>
+        
+          <!-- <aside class="sticky toc-container flex-shrink-0 hidden md:block">
+            <div class="text-gray-600 mb-4">目 录</div>
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6">安装插件</a></li>
+</ul>
+</li>
+</ul>
+
+          </aside> -->
+        
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+    <script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://zhengxiblog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+  
+  
+    
+  
+</body>
+</html>

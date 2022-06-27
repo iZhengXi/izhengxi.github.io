@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #262626; --link-color: #262626;">
+<head>
+  <meta charset="UTF-8">
+  <title>RNA-seq转录组数据的比对 - ZhengXi&#39;s Blog</title>
+
+  <link rel="icon" href="">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="ZhengXi&#39;s Blog - Atom Feed" href="https://zhengxi.io/atom.xml">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7835998003747351"
+     crossorigin="anonymous"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6430c4dac5e43670548d34fbc3b1755c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/5_jiF_J8a');
+    ga('set', 'dimension2', 'post/HntHg187z');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //     'dimension2': 'postId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/5_jiF_J8a',
+    //   'postId': 'post/HntHg187z',
+    // });
+  </script>
+
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RNA-seq常见比对软件的使用，包括TopHat2、Hisat2和STAR。
+
+目标：
+
+掌握高通量的比对算法。
+能够下载参考基因组序列、基因注释文件建立index。
+完成序列比对及BAM文件的转换索引，理解含义。
+理解不同比对软件的优劣...">
+
+  <meta property="og:title" content="RNA-seq转录组数据的比对 - ZhengXi&#39;s Blog">
+  <meta property="og:description" content="RNA-seq常见比对软件的使用，包括TopHat2、Hisat2和STAR。
+
+目标：
+
+掌握高通量的比对算法。
+能够下载参考基因组序列、基因注释文件建立index。
+完成序列比对及BAM文件的转换索引，理解含义。
+理解不同比对软件的优劣...">
+  
+  <meta property="og:url" content="https://zhengxi.io/RNA-seq转录组数据的比对/">
+  <meta property="og:site_name" content="ZhengXi&#39;s Blog">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="RNA-seq转录组数据的比对">
+
+  <meta name="gridea:post_id" content="HntHg187z">
+
+  <link rel="canonical" href="https://zhengxi.io/RNA-seq转录组数据的比对">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.3/styles/a11y-light.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">Z</div>
+      <a href="/">ZhengXi&#39;s Blog</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+        
+        <a
+          href="https://github.com/iZhengXi"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >Github</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://travellings.link/"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >Travellings</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href=""
+          class="mx-2 text-base border-b border-transparent"
+          
+        ></a>
+        
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+        
+        <a
+          href="https://github.com/iZhengXi"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >Github</a>
+      
+        
+        <a
+          href="https://travellings.link/"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >Travellings</a>
+      
+        
+        <a
+          href=""
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        ></a>
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      <div class="max-w-2xl mx-auto px-6 md:px-2">
+        <div class="my-24 text-center">
+          <h1 class="text-2xl font-bold">RNA-seq转录组数据的比对</h1>
+          <div class="post-title-bar mx-auto rounded mt-4"></div>
+          <div class="text-gray-400 mt-4">2022.06.12</div>
+          <div class="flex justify-center mt-4">
+            
+              <a href="https://zhengxi.io/tags/RNA-seq" class="inline-flex items-center mr-4 text-sm text-gray-600">
+                <span class="mr-1">#</span>RNA-seq
+              </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="p-4 md:p-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 flex relative">
+        <section class="post-content flex-1 default-post-content max-w-2xl">
+          <div v-pre>
+            <p>RNA-seq常见比对软件的使用，包括TopHat2、Hisat2和STAR。</p>
+<!-- more -->
+<p><strong>目标：</strong></p>
+<ul>
+<li>掌握高通量的比对算法。</li>
+<li>能够下载参考基因组序列、基因注释文件建立index。</li>
+<li>完成序列比对及BAM文件的转换索引，理解含义。</li>
+<li>理解不同比对软件的优劣并能合理选择。</li>
+</ul>
+<p><img src="https://vip2.loli.io/2022/06/12/Au5noweFidZrTfp.png" alt="image.png" loading="lazy"><br /><strong>本节测试数据下载方式：</strong><br /><img src="https://vip2.loli.io/2022/06/12/eUEQ5GdRcaS4Cso.png" alt="image.png" loading="lazy"><br />Alignment和Mapping的区别？<br /><img src="https://vip2.loli.io/2022/06/12/oqY5gWFyHhk7zDr.png" alt="image.png" loading="lazy"><br /><strong>RNA-seq数据分析的相关软件：</strong><br />质控：fastqc ,multiqc , trimmomatic, cutadapt, trim-galore <br />比对：star , hisat2 , tophat , bowtie2 , bwa , subread <br />定量：htseq , bedtools, salmon, Kallisto<br>
+<a name="MxmUN"></a></p>
+<h1 id="1-拟南芥参考基因组转录组的下载">1、拟南芥参考基因组/转录组的下载</h1>
+<p>下载网址：<a href="http://ftp.ensemblgenomes.org/pub/plants/release-53/fasta/arabidopsis_thaliana/dna/">http://ftp.ensemblgenomes.org/pub/plants/release-53/fasta/arabidopsis_thaliana/dna/</a><br />一般我们下载全染色体的基因组文件：<a href="http://ftp.ensemblgenomes.org/pub/plants/release-53/fasta/arabidopsis_thaliana/dna/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz">http://ftp.ensemblgenomes.org/pub/plants/release-53/fasta/arabidopsis_thaliana/dna/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz</a><br />拟南芥基因组索引文件：<a href="http://ftp.ensemblgenomes.org/pub/plants/release-53/fasta/arabidopsis_thaliana/dna_index/">http://ftp.ensemblgenomes.org/pub/plants/release-53/fasta/arabidopsis_thaliana/dna_index/</a><br />一般我们下载*toplevel.fa.gz文件，为参考基因组完整文件，其他rm，sm，和分开染色体得文件；sm和rm的意义可看README文件。</p>
+<blockquote>
+<p>教程：<a href="https://blog.csdn.net/u010608296/article/details/121438333">https://blog.csdn.net/u010608296/article/details/121438333</a></p>
+</blockquote>
+<p><img src="https://vip2.loli.io/2022/06/12/GIJczZDLBM8pb7P.png" alt="image.png" loading="lazy"><br /><a href="https://www.yuque.com/attachments/yuque/0/2022/pdf/641947/1653551010938-134a68cc-1ea1-4047-b07e-9c996d26d394.pdf">Ensembl和NCBI基因组下载，基因序列下载查看.pdf</a><br />拟南芥基因组注释gff3文件下载：<a href="http://ftp.ensemblgenomes.org/pub/plants/release-53/gff3/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.53.gff3.gz">http://ftp.ensemblgenomes.org/pub/plants/release-53/gff3/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.53.gff3.gz</a><br />拟南芥基因组注释gtf文件下载：<a href="http://ftp.ensemblgenomes.org/pub/plants/release-53/gtf/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.53.gtf.gz">http://ftp.ensemblgenomes.org/pub/plants/release-53/gtf/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.53.gtf.gz</a></p>
+<hr>
+<p><a name="xmk3l"></a></p>
+<h1 id="2-tophat和tophat2">2、TopHat和TopHat2</h1>
+<p><img src="https://vip2.loli.io/2022/06/12/DPOgGBobFvM186Z.png" alt="image.png" loading="lazy"><br /><img src="https://vip2.loli.io/2022/06/12/c4H3yfqWsLKCPgI.png" alt="image.png" loading="lazy"><br />tophat2需要python2的环境。<br />首先需要用bowtie2构建基因组index：</p>
+<pre><code class="language-bash">bowtie2-build --thread 6 ref_hg38.fa ref_hg38.fa &gt; bt2_index.log 2&gt;&amp;1 &amp; # 主要设置一个thread参数即可，这是线程参数。第一个ref_hg38.fa表示那个基因组，第二个表示的是名字。
+less -S bt2_index.log # 查看log文件。
+</code></pre>
+<p><img src="https://vip2.loli.io/2022/06/12/gNSvTHi4fBz8YmI.png" alt="image.png" loading="lazy"><br />log的最后一行会提示用了多长时间。</p>
+<pre><code class="language-bash">tophat2 -G ./xx.gtf -o ./temp_tophat2 ./index.xx.fa ../test_R1_cutadapt.fa.gz .. /test_R2_cutadapt.fa.gz &amp; # -G参数对应的是基因组注释文件。-o对应的是tophat2输出结果。
+# tophat2也可以加一个-p参数。比如tophat2 -p 6,6个核。
+</code></pre>
+<p>tophat2的输出结果：<br />可以看到那里是deletions，那里是insertions。<br />比较好的是，直接给出了bam文件。<br /><img src="https://vip2.loli.io/2022/06/12/bqtB2Cj7I46pHJA.png" alt="image.png" loading="lazy"></p>
+<pre><code class="language-bash"># 查看文件头 
+samtools view -H accepted_hits.bam # -H这个参数的作用是输出文件头。
+
+# 查看比对结果
+samtools view accepted_hits.bam | less -S
+
+</code></pre>
+<p>bam文件文件头：<br />SO: coordinate表示这个bam文件已经排过序了。而且是按照基因组坐标进行排序的。<br /><img src="https://vip2.loli.io/2022/06/12/WNSRvCVekQDTrGL.png" alt="image.png" loading="lazy"></p>
+<p><a name="DSr1z"></a></p>
+<h1 id="2-starspliced-transcripts-alignment-to-a-reference">2、STAR：Spliced Transcripts Alignment to a Reference</h1>
+<p>STAR的优势在于快，能够快速的mapping。<br />缺点在于占用内存巨大，human的mapping需要28G~32 GB左右的RAM。<br />STAR的出现，完全是为了ENCODE计划。（ENCODE: Encyclopedia of DNA Elements）<br />运行一个程序是32 GB内存，运行100个程序也是32 GB内存，因此大型项目都喜欢用STAR软件。<br /><img src="https://vip2.loli.io/2022/06/12/lMwRPmL3uaYskgH.png" alt="image.png" loading="lazy"><br />STAR软件的策略：<br />STAR首先将一个reads切成两份，找到全基因组上对应的位置。<br />通过打分算法，把邻近的全基因组符合的seeds都拼接在一起，形成mappting结果。<br />优势在于支持并行计算。<br />STAR的比对质量有时候还不如TopHat2。<br /><img src="https://vip2.loli.io/2022/06/12/VRegWzEFqN25d1t.png" alt="image.png" loading="lazy"></p>
+<pre><code class="language-bash">mkdier temp_star_index #首先建立star index
+STAR --runThreadN 12 --runMode genomeGenerate \  # runMode总共有两种。一种是genomeGenerate，一种是mapping。
+--genomeDir /home/menghaowei/ngs_course/reference/STAR_index \ # 需要创建的index位置。
+--genomeFastaFiles /home/menghaowei/ngs_course/reference/STAR_index/ref_ref_hg38.fa \ 参考基因组。
+--sjdbGTFfile /home/menghaowei/ngs_course/reference/gtf/hg38xxxx.gtf \ # 基因组注释文件。
+--sjdbOverhang 150 &amp; # 分析的是100 bp的reads，就写100。分析的是150 bp的reads就写150。目前illumina的都是150 bp的reads。
+</code></pre>
+<p>查看STAR index：<br />只用了人的两条染色体，建立出来的index大小居然有4.4 G。恐怖。</p>
+<pre><code class="language-bash">du -dl -h 查看大小
+</code></pre>
+<p><br /><img src="https://vip2.loli.io/2022/06/12/GpBZ2mVR1cNw65r.png" alt="image.png" loading="lazy"></p>
+<pre><code class="language-bash">less log.out
+tail log.out #查看日志尾部。
+</code></pre>
+<p>STAR进行比对：</p>
+<pre><code class="language-bash"># 这是常用的参数。一般不要轻易的更改。
+STAR \
+--genomeDir /home/menghaowei/ngs_course/reference/STAR_index \
+--runThreadN 6 \
+--readFileIn ./fix.fastq/test_R1_cutadapt.fq.gz ./fix.fastq/test_R2_cutadapt.fq.gz \
+--readFilescommand zcat \
+--outFileNamePrefix ./bam/test-STAR \
+--outSAMtype BAM Unsorted \ # 输出的文件类型。不排序的BAM。
+--outSAMstrandField intronMotif \ 
+--outSAMattributes All \ # 这个地方一定要选All。
+--outFilterIntronMotifs RemoveNoncanonical &gt; ./bam/test_STAR.log 2&gt;&amp;1 &amp;
+</code></pre>
+<p>查看STAR结果：</p>
+<pre><code class="language-bash">ls
+less -S test_STAR.log
+</code></pre>
+<p><img src="https://vip2.loli.io/2022/06/12/1nxhYK6ZmMXVCzT.png" alt="image.png" loading="lazy"><br />最后，STAR一般适合大型项目。准确率还可以。</p>
+<p><a name="ghzH3"></a></p>
+<h1 id="3-hisat和hisat2">3、HISAT和HISAT2</h1>
+<p>HISAT2可以同时比对DNA和RNA。<br /><img src="https://vip2.loli.io/2022/06/12/r76thmdYFB18lZe.png" alt="image.png" loading="lazy"></p>
+<p><img src="https://vip2.loli.io/2022/06/12/OYHCnK8ctDWNRm7.png" alt="image.png" loading="lazy"><br />比对软件的时间线：<br /><img src="https://vip2.loli.io/2022/06/12/miTJhUD4gscnSZ7.png" alt="image.png" loading="lazy"></p>
+<pre><code class="language-bash">hisat2-build -t 6 ref_hg38.fa ref_hg38.fa &gt;hisat2_build.log 2&gt;&amp;1 &amp; # 和bowtie2-build很像。
+
+# hisat2比对
+hisat2 -p 12 \ # 12个核心。	
+-x /home/menghaowei/ngs_course/reference/hisat2_index/ref_hg38.fa \
+-1 ./fix.fastq/test_R1_cutadapt.fq.gz \
+-2 ./fix.fastq/test_R2_cutadapt.fa.gz \
+-S ./bam/test_hisat2.sam &gt; ./bam/test_hisat2.log 2&gt;&amp;1 &amp; # -S是输出的SAM文件。
+
+</code></pre>
+<blockquote>
+<p><a href="https://evvail.com/2021/05/17/2411.html">https://evvail.com/2021/05/17/2411.html</a></p>
+</blockquote>
+<p>如果有SNP，需要给出SNP信息：<br /><img src="https://vip2.loli.io/2022/06/12/YvlzKegTs2Ft4O5.png" alt="image.png" loading="lazy"></p>
+<hr>
+<p>HISATA2 index的构建：<br />可以增加SNP信息和可变剪切信息。</p>
+<p><img src="https://vip2.loli.io/2022/06/12/Lc742jWuCazwmEf.png" alt="image.png" loading="lazy"><br />SNP可在UCSC网站下载。</p>
+<pre><code class="language-bash">hisat2_extract_exons.py hg38_refseq.gtf &gt; hg38_refseq.exon &amp; # 从GTF注释文件中提取外显子信息。这个脚本在hisat2中已经包含了。
+hisat2_extract_splice_sites.py hg38_refseq.gtf &gt; hg38_refseq.ss &amp; #提取剪切信息。
+hisat2_extract_snps_haplotypes_UCSC.py ref_hg38.fa snp151Common.txt snp151Common &amp; #第二个snp151Common是生成的snp文件名称。
+hisat2_build -p 6 --snp snp151Common.snp --haplotype snp151Common.haplotype --exon hg38_refseq.exon --ss hg38_refseq.ss ref_hg38.fa.snp_gtf &gt; hisat2_build.log 2&gt;&amp;1 &amp;
+</code></pre>
+<p><img src="https://vip2.loli.io/2022/06/12/lAgrthd4qSjfx8k.png" alt="image.png" loading="lazy"></p>
+<p>SAM文件是不可以的，需要转换为按基因组排序的BAM文件。</p>
+<pre><code class="language-bash">samtools sort -O BAM -o ngs_test.sort.bam -@6 -m 2G -T ngs_test.sort.bam.temp test_hisat2.sam &amp; # -O生成的格式为BAM，6个线程，每个线程2G运行内存。生成的文件名称ngs_test.sort.bam.temp。
+
+# 查看生成的BAM文件排序结果
+samtools view -h ngs_test.sort.bam | less -S
+</code></pre>
+<p>BAM排序结果：<br /><img src="https://vip2.loli.io/2022/06/12/HJpav5IxfN1yenc.png" alt="image.png" loading="lazy"><br />第一行可以看到SO: coordinate，表示已经排过序了。<br>
+<a name="Wfo1T"></a></p>
+<h1 id="参考资料">参考资料</h1>
+<ol>
+<li><a href="https://evvail.com/">https://evvail.com/</a></li>
+<li><a href="https://www.plob.org/article/10397.html">https://www.plob.org/article/10397.html</a></li>
+</ol>
+
+          </div>
+          <div class="py-4 text-gray-600 flex items-center justify-between">
+            <div class="">
+              <div class="text-sm text-gray-300">最后更新于: </div>
+              <div class="text-base font-medium">2022.06.25</div>
+            </div>
+            <!-- <div class="flex items-center text-sm text-gray-600">
+              <i class="ri-eye-line"></i> <span class="ml-2">{{ views }}</span>
+            </div> -->
+          </div>
+          <div>
+            <div id="disqus_thread"></div>
+          </div>
+        </section>
+        
+          <!-- <aside class="sticky toc-container flex-shrink-0 hidden md:block">
+            <div class="text-gray-600 mb-4">目 录</div>
+            <ul class="markdownIt-TOC">
+<li><a href="#1-%E6%8B%9F%E5%8D%97%E8%8A%A5%E5%8F%82%E8%80%83%E5%9F%BA%E5%9B%A0%E7%BB%84%E8%BD%AC%E5%BD%95%E7%BB%84%E7%9A%84%E4%B8%8B%E8%BD%BD">1、拟南芥参考基因组/转录组的下载</a></li>
+<li><a href="#2-tophat%E5%92%8Ctophat2">2、TopHat和TopHat2</a></li>
+<li><a href="#2-starspliced-transcripts-alignment-to-a-reference">2、STAR：Spliced Transcripts Alignment to a Reference</a></li>
+<li><a href="#3-hisat%E5%92%8Chisat2">3、HISAT和HISAT2</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
+</ul>
+
+          </aside> -->
+        
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+    <script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://zhengxiblog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+  
+  
+    
+  
+</body>
+</html>

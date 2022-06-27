@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #262626; --link-color: #262626;">
+<head>
+  <meta charset="UTF-8">
+  <title>博客写作攻略 --Hexo+Github+Netlify+CMS - ZhengXi&#39;s Blog</title>
+
+  <link rel="icon" href="">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="ZhengXi&#39;s Blog - Atom Feed" href="https://zhengxi.io/atom.xml">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7835998003747351"
+     crossorigin="anonymous"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6430c4dac5e43670548d34fbc3b1755c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/5_jiF_J8a');
+    ga('set', 'dimension2', 'post/2daqMJmyu');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //     'dimension2': 'postId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/5_jiF_J8a',
+    //   'postId': 'post/2daqMJmyu',
+    // });
+  </script>
+
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="
+本文转载自：https://noby.in/blogdesign
+
+为什么说这是最佳实践？
+
+
+如果你跟我一样也是一个追求极致的人，希望自己的博客面面俱到，在线编辑 (这是最主要的), 主题丰富 , 支持高度自定义 , 国内访问快 , 那...">
+
+  <meta property="og:title" content="博客写作攻略 --Hexo+Github+Netlify+CMS - ZhengXi&#39;s Blog">
+  <meta property="og:description" content="
+本文转载自：https://noby.in/blogdesign
+
+为什么说这是最佳实践？
+
+
+如果你跟我一样也是一个追求极致的人，希望自己的博客面面俱到，在线编辑 (这是最主要的), 主题丰富 , 支持高度自定义 , 国内访问快 , 那...">
+  
+  <meta property="og:url" content="https://zhengxi.io/博客写作攻略 --Hexo+Github+Netlify+CMS/">
+  <meta property="og:site_name" content="ZhengXi&#39;s Blog">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="博客写作攻略 --Hexo+Github+Netlify+CMS">
+
+  <meta name="gridea:post_id" content="2daqMJmyu">
+
+  <link rel="canonical" href="https://zhengxi.io/博客写作攻略 --Hexo+Github+Netlify+CMS">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.3/styles/a11y-light.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">Z</div>
+      <a href="/">ZhengXi&#39;s Blog</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+        
+        <a
+          href="https://github.com/iZhengXi"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >Github</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://travellings.link/"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >Travellings</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href=""
+          class="mx-2 text-base border-b border-transparent"
+          
+        ></a>
+        
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+        
+        <a
+          href="https://github.com/iZhengXi"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >Github</a>
+      
+        
+        <a
+          href="https://travellings.link/"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >Travellings</a>
+      
+        
+        <a
+          href=""
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        ></a>
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      <div class="max-w-2xl mx-auto px-6 md:px-2">
+        <div class="my-24 text-center">
+          <h1 class="text-2xl font-bold">博客写作攻略 --Hexo+Github+Netlify+CMS</h1>
+          <div class="post-title-bar mx-auto rounded mt-4"></div>
+          <div class="text-gray-400 mt-4">2022.03.03</div>
+          <div class="flex justify-center mt-4">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="p-4 md:p-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 flex relative">
+        <section class="post-content flex-1 default-post-content max-w-2xl">
+          <div v-pre>
+            <blockquote>
+<p>本文转载自：https://noby.in/blogdesign</p>
+</blockquote>
+<h1 id="为什么说这是最佳实践">为什么说这是最佳实践？</h1>
+<hr>
+<blockquote>
+<p>如果你跟我一样也是一个追求极致的人，希望自己的博客面面俱到，<strong>在线编辑 (这是最主要的)</strong>, <strong>主题丰富</strong> , <strong>支持高度自定义</strong> , <strong>国内访问快</strong> , 那么这个方案我觉得是最佳实践。</p>
+</blockquote>
+<!-- more -->
+<h2 id="为什么使用-hexo">为什么使用 Hexo?</h2>
+<h3 id="jekyll">Jekyll</h3>
+<p>jekyll 是一个简单的免费的 Blog 生成工具，类似 WordPress。但是和 WordPress 又有很大的不同，原因是 jekyll 只是一个生成静态网页的工具，不需要数据库支持。但是可以配合第三方服务，例如 discuz。最关键的是 jekyll 可以免费部署在 Github 上，而且可以绑定自己的域名。</p>
+<h3 id="hugo">Hugo</h3>
+<p>Hugo 是 Go 编写的静态网站生成器，速度快，易用，可配置。Hugo 有一个内容和模板目录，把他们渲染到完全的 HTML 网站。Hugo 依赖于 Markdown 文件，元数据字体 。用户可以从任意的目录中运行 Hugo，支持共享主机和其他系统。</p>
+<h3 id="hexo">Hexo</h3>
+<p>Hexo 是一个基于 <a href="https://www.oschina.net/p/nodejs">nodejs</a> 的静态博客网站生成器，作者是来自台湾的 Tommy Chen。</p>
+<p>特点：</p>
+<ul>
+<li>不可思议的快速 ─ 只要一眨眼静态文件即生成完成</li>
+<li>支持 <a href="https://daringfireball.net/projects/markdown/">Markdown</a></li>
+<li>仅需一道指令即可部署到 <a href="https://pages.github.com/">GitHub Pages</a> 和 <a href="https://heroku.com/">Heroku</a></li>
+<li>已移植 <a href="https://octopress.org/">Octopress</a> 插件</li>
+<li>高扩展性、自订性</li>
+<li>兼容于 Windows, Mac &amp; Linux</li>
+</ul>
+<h3 id="gridea">Gridea</h3>
+<p>上手极快，操作简便，适合小白，但处在萌新阶段，功能不成熟。</p>
+<h3 id="个人原因">个人原因</h3>
+<p>主要还是喜欢 hexo 的 next 主题，同时该主题的高度自定义和丰富的插件，让喜欢折腾的人能够很满意，所以还是选择使用 hexo, 不过现在大家好像都在往 hugo 上迁移，据说网站生成速度快，但是主题比较单一，所以暂时放弃。</p>
+<h2 id="为什么托管到-github">为什么托管到 Github?</h2>
+<p>因为大部分的博客渲染工具 (hexo, hugo, gridea) 都是依赖于 github, 国内的 coding page 无论是从稳定性还是操作便捷程度都不及 github, 推送代码还有广告，而这完全取决与你的氪金程度。所以还是推荐使用 github 托管。可能你会说 coding page 在国内访问快，但是单单这一个优势无法称作是最佳实践，而且下文的 netlify 会解决这一系列的问题，先按下不表。</p>
+<p><strong>最重要的是我们把 github 仅仅作为博客的托管仓库，不使用它的 github page 部署</strong></p>
+<h2 id="为什么使用-netlify">为什么使用 Netlify?</h2>
+<p><strong>先说一下它的功能:</strong></p>
+<ul>
+<li>可以<strong>托管静态资源</strong></li>
+<li>可以将静态网站部署到 CDN 上，<strong>加速国内访问</strong></li>
+<li>Continuous Deployment <strong>持续部署</strong> , 当你提交改变到 git 仓库，它就会自动运行 build command, 进行自动部署</li>
+<li>可以添加自定义域名</li>
+<li><strong>可以启用免费的 TLS 证书，启用 HTTPS</strong></li>
+<li><strong>最强大的 cms</strong>, 用来管理静态资源</li>
+<li>自带 CI、支持自定义页面重定向、自定义插入代码、打包和压缩 JS 和 CSS、压缩图片、处理图片</li>
+</ul>
+<p><strong>github page:</strong></p>
+<ul>
+<li>github 虽然没有被墙，但是那个访问速度非常的慢，对国内访问的用户来说体验极差</li>
+<li>百度无法抓取，众所周知国内用百度的还是多，如果你写的文章，无法被百度抓取收录，那还是有点坑的</li>
+<li>无法做 CDN 加速。未备案域名服务器，无法使用国内的 cnd 加速服务</li>
+</ul>
+<p><strong>Netlify 与 Travis CI 的区别:</strong></p>
+<ul>
+<li>我们可以看到使用 Netlify 可以轻松的帮你自动持续部署博客，也就是说，<strong>他会自动检测到你的博客源码的更改，自动执行 hexo d+ hexo g</strong>.</li>
+<li><a href="https://www.netlify.com/">Netlify</a> 与 <a href="https://travis-ci.org/">Travis CI</a> 等等都是持续集成工具，但是它更加关注前端，或者说网站或者 web app 的持续集成与持续部署，这也是它与其他持续集成工具最大的区别。目前对于 <a href="https://www.netlify.com/">Netlify</a> 的使用也非常简单，但是这是其他持续集成工具没有的.</li>
+</ul>
+<p><strong>所以说使用了 Netlify, 就等于替代了 GithubPage+ Travis CI. 并且比较完美的弥补了两者的不足.</strong></p>
+<blockquote>
+<p>ps: 我在查询相关的资料的时候发现有的博客的做法是把源码和渲染后的网页放在两个分支 (这也是 hexo 提倡的做法), 但是却只是让 netlify 托管渲染后的分支，这样的话 netlify 无法做到自动部署，此时的 netlify 仅仅是充当了 githubpage 的角色</p>
+</blockquote>
+<h2 id="为什么使用-netlify-cms">为什么使用 Netlify CMS?</h2>
+<h3 id="什么是-cms">什么是 CMS?</h3>
+<blockquote>
+<p><strong>内容管理系统</strong>（英语：<strong>content management system</strong>，缩写为 <strong>CMS</strong>）是指在一个合作模式下，用于<a href="https://zh.wikipedia.org/wiki/%E7%AE%A1%E7%90%86">管理</a>工作流程的一套制度。该系统可应用于手工操作中，也可以应用到<a href="https://zh.wikipedia.org/wiki/%E7%94%B5%E8%84%91">电脑</a>或<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C">网路</a>里。作为一种中央储存器（central repository），内容管理系统可将相关内容集中储存并具有群组管理、版本控制等功能。<a href="https://zh.wikipedia.org/wiki/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6">版本控制</a>是内容管理系统的一个主要优势。</p>
+</blockquote>
+<h3 id="netlify-cms-的优势">Netlify CMS 的优势</h3>
+<ul>
+<li>我们可以通过 <a href="https://www.netlifycms.org/docs/configuration-options/">Netlify CMS</a> 来在线编辑我们的文章，而<strong>不用在本地比较繁琐的操作</strong></li>
+<li>虽然它是作为一款团队的编辑工具，但作为轻量的博客编辑，我们可以暂时把他定位为个人的在线编辑工具，这样的话你<strong>可以随时随地修改，编辑你的博客，而不用考虑多设备如何同步的问题.</strong></li>
+<li>Netlify CMS 提供 Hexo 的插件，可以简单的开启你的 Netlify CMS 服务</li>
+</ul>
+<h1 id="部署-hexo-相关操作">部署 Hexo 相关操作</h1>
+<hr>
+<p>由于关于 hexo 的部署文章已经是很多了，同时自己也是从网上看到详尽优质的 hexo 部署教程此处不再阐述如何进行 hexo 的部署。提供相关的链接如下:</p>
+<p><a href="https://hexo.io/zh-cn/">Hexo 官方指南</a></p>
+<p><a href="http://theme-next.iissnan.com/">NexT 主题</a></p>
+<p><a href="http://saili.science/2017/04/02/github-for-win/">Git Pages 使用指南</a></p>
+<p><a href="https://io-oi.me/tech/hexo-next-optimization.html">打造个性超赞博客 Hexo + NexT + GitHub Pages 的超深度优化</a></p>
+<h1 id="部署-netlify-的操作流程">部署 Netlify 的操作流程</h1>
+<hr>
+<p>首先肯定是去<a href="https://app.netlify.com/signup/">注册</a>，推荐直接用 GitHub 的帐号，然后按照提示授权、选仓库，部署参数如图:</p>
+<p><a href="https://i.loli.net/2019/07/25/5d398139865fb31565.png"><img src="https://vip1.loli.io/2022/03/04/J7Qy4ZaA9nvKkFY.png" alt="img" loading="lazy"></a></p>
+<p>部署环境设置:</p>
+<p><a href="https://i.loli.net/2019/07/25/5d3980e91da5757089.png"><img src="https://vip1.loli.io/2022/03/04/q7nZoIEaTFx6kby.png" alt="img" loading="lazy"></a></p>
+<p>第一次部署好后，会让你设置域名，直接输入自己的域名，然后默认即可。接下来设置 DNS，如下图:</p>
+<p><a href="https://i.loli.net/2019/07/25/5d3975ad49d8f21761.jpg"><img src="https://vip1.loli.io/2022/03/04/b4ODnkYwf5E9d7a.jpg" alt="img" loading="lazy"></a></p>
+<p>然后按提示，去你的域名服务商的管理界面将域名服务器（DNS 服务器）修改为 Netlify 提供的地址，如下图：</p>
+<p><a href="https://i.loli.net/2019/07/25/5d3976f78883b20492.jpg"><img src="https://vip2.loli.io/2022/03/04/jput8PkU1dIFgME.jpg" alt="img" loading="lazy"></a></p>
+<p>接下来设置 HTTPS，这个其实 Netlify 是会自动为我们设置的，但是由于域名服务器的缓存原因（更改的 DNS 不能及时生效），这个时间可能会需要很久，因此可以去<a href="https://www.netlify.com/docs/ssl/#troubleshooting">文档</a>中提到的 Google 的<a href="https://developers.google.com/speed/public-dns/cache">这个网站</a>去清空缓存，以加速这一过程。</p>
+<p><a href="https://i.loli.net/2019/07/25/5d397782d2b7647772.jpg"><img src="https://vip2.loli.io/2022/03/04/LguzJh9jKAlDQxN.jpg" alt="img" loading="lazy"></a></p>
+<p>其他设置压缩 css,js , 图片以加速访问:</p>
+<p><a href="https://i.loli.net/2019/07/25/5d3977f18b2c175399.jpg"><img src="https://vip1.loli.io/2022/03/04/GN6tDynwuQ5HBZW.jpg" alt="img" loading="lazy"></a></p>
+<p>至此，我们的 netlify 部署成功，</p>
+<p>可查看自动部署状态:</p>
+<p><a href="https://i.loli.net/2019/07/25/5d397a2f4899698394.gif"><img src="https://vip2.loli.io/2022/03/04/GPNXUYq8zQaCfKA.gif" alt="img" loading="lazy"></a></p>
+<h1 id="netlify-cms-操作记录">Netlify CMS 操作记录</h1>
+<hr>
+<h2 id="添加依赖">添加依赖</h2>
+<p>在 hexo 的文件夹中左键菜单打开 git bash</p>
+<p><a href="https://i.loli.net/2019/07/25/5d397e703e72849465.png"><img src="https://vip2.loli.io/2022/03/04/HgtOoZ9zm5il3Xb.png" alt="img" loading="lazy"></a></p>
+<p>输入以下内容：</p>
+<pre><code class="language-bash">yarn add hexo-netlify-cms
+// or npm
+npm i hexo-netlify-cms --save
+</code></pre>
+<h2 id="在-hexo-的-config-配置文件-非-next-主题配置-中新增以下内容">在 hexo 的 config 配置文件 (非 next 主题配置) 中新增以下内容</h2>
+<pre><code class="language-bash">netlify_cms:
+  config_file: netlify.yaml
+</code></pre>
+<h2 id="在-hexo-根目录新建-netlifyyaml-文件添加以下内容">在 hexo 根目录新建 <code>netlify.yaml</code> 文件，添加以下内容</h2>
+<pre><code class="language-yaml">backend:
+  name: git-gateway
+  branch: master
+
+media_folder: source/images
+public_folder: /images
+publish_mode: editorial_workflow
+
+# pages auto generate
+pages: 
+  enabled: true
+  # over page collection config
+  # if fields not set, would use posts fields config
+  config:
+    label: &quot;Page&quot;
+    delete: false
+    editor:
+      preview: true
+    # fields: 
+# through hexo config over fields
+over_format: true
+scripts:
+  - js/cms/youtube.js
+  - js/cms/img.js
+
+# A list of collections the CMS should be able to edit
+collections:
+  # Used in routes, ie.: /admin/collections/:slug/edit
+  - name: &quot;posts&quot;
+    # Used in the UI, ie.: &quot;New Post&quot;
+    label: &quot;Post&quot;
+    folder: &quot;source/_posts&quot; # The path to the folder where the documents are stored
+    sort: &quot;date:desc&quot;
+    create: true # Allow users to create new documents in this collection
+    editor:
+      preview: true
+    fields: # The fields each document in this collection have
+      - {label: &quot;Title&quot;, name: &quot;title&quot;, widget: &quot;string&quot;}
+      - {label: &quot;Publish Date&quot;, name: &quot;date&quot;, widget: &quot;datetime&quot;, format: &quot;YYYY-MM-DD HH:mm:ss&quot;, dateFormat: &quot;YYYY-MM-DD&quot;, timeFormat: &quot;HH:mm:ss&quot;, required: false}
+      - {label: &quot;Updeted Date&quot;, name: &quot;updated&quot;, widget: &quot;datetime&quot;, format: &quot;YYYY-MM-DD HH:mm:ss&quot;, required: false}
+      - {label: &quot;Tags&quot;, name: &quot;tags&quot;, widget: &quot;list&quot;, required: false}
+      - {label: &quot;Categories&quot;, name: &quot;categories&quot;, widget: &quot;list&quot;, required: false}
+      - {label: &quot;Body&quot;, name: &quot;body&quot;, widget: &quot;markdown&quot;, required: false}
+      - {label: &quot;Permalink&quot;, name: &quot;permalink&quot;, widget: &quot;string&quot;, required: false}
+      - {label: &quot;Comments&quot;, name: &quot;comments&quot;, widget: &quot;boolean&quot;, default: true, required: false}
+</code></pre>
+<h2 id="在-netlify-中开启服务">在 Netlify 中开启服务</h2>
+<p>开启服务：</p>
+<p><a href="https://i.loli.net/2019/07/25/5d398022a989a82897.png"><img src="https://vip1.loli.io/2022/03/04/RtgPQfJdwSzqx8O.png" alt="img" loading="lazy"></a></p>
+<p>添加 netlify-identity-widget.js, 代码如下<br>
+<code>&lt;script src=&quot;https://identity.netlify.com/v1/netlify-identity-widget.js&quot;&gt;&lt;/script&gt;</code></p>
+<p><a href="https://i.loli.net/2019/07/25/5d398b03418c429733.png"><img src="https://vip2.loli.io/2022/03/04/WqPYgQGFp4x3NdB.png" alt="img" loading="lazy"></a></p>
+<p>同时为了不使你的文章被任意修改，设置为仅邀请模式:</p>
+<p><a href="https://i.loli.net/2019/07/25/5d398b4a3f9b012322.png"><img src="https://vip1.loli.io/2022/03/04/NTo7AF4eBcRjrn1.png" alt="img" loading="lazy"></a></p>
+<p>你可以发送带有权限的邮件邀请，上限为 5 人。同时，你也可以添加使用 github 账号登录的选项:</p>
+<p><a href="https://i.loli.net/2019/07/25/5d398c003751163547.png"><img src="https://vip2.loli.io/2022/03/04/BVPg3MZiKUJtdyC.png" alt="img" loading="lazy"></a></p>
+<p>完成后你可以在你的网站后添加后缀 /admin, 便进入了在线编辑界面 (你也可以像我一样做一个按钮放在博客侧边栏上来更加简便操作)</p>
+<p><a href="https://i.loli.net/2019/07/25/5d399274a850043818.gif"><img src="https://vip2.loli.io/2022/03/04/JPYjlxphskdVCN7.gif" alt="img" loading="lazy"></a></p>
+<p><a href="https://i.loli.net/2019/07/26/5d3a92409142c43951.gif"><img src="https://vip1.loli.io/2022/03/04/f4Bu1layRJw6m5n.gif" alt="img" loading="lazy"></a></p>
+<p>参考链接:</p>
+<p><a href="https://io-oi.me/tech/deploy-static-site-to-netlify.html">将 Hexo 静态博客部署到 Netlify</a></p>
+<p><a href="https://www.dnocm.com/articles/beechnut/hexo-netlify-cms/">Hexo Netlify CMS</a></p>
+<h1 id="存在的不足">存在的不足</h1>
+<hr>
+<ul>
+<li>
+<p>使用 Netlify 后，如果你再想在本地编辑文章的话，最好就是先把 github 上全部 pull 下来后，再编辑文章。</p>
+<p><code>git fetch --all &amp;&amp; git reset --hard origin/master &amp;&amp; git pull</code></p>
+<p>该命令是从<strong>远端仓库 pull 下来后，强制覆盖本地</strong> , 因为远程仓库被 netlify 自动部署后和本地的仓库内容会出现不同。</p>
+</li>
+<li>
+<p>完成后仅仅推送就可以，不是用 <code>hexo-g-d</code> 而是 <code>git add ./ &amp;&amp; git commit -m</code>, 单单推送文章修改，让 netlify 自动部署。</p>
+</li>
+</ul>
+<h1 id="未完待续">未完待续</h1>
+
+          </div>
+          <div class="py-4 text-gray-600 flex items-center justify-between">
+            <div class="">
+              <div class="text-sm text-gray-300">最后更新于: </div>
+              <div class="text-base font-medium">2022.06.25</div>
+            </div>
+            <!-- <div class="flex items-center text-sm text-gray-600">
+              <i class="ri-eye-line"></i> <span class="ml-2">{{ views }}</span>
+            </div> -->
+          </div>
+          <div>
+            <div id="disqus_thread"></div>
+          </div>
+        </section>
+        
+          <!-- <aside class="sticky toc-container flex-shrink-0 hidden md:block">
+            <div class="text-gray-600 mb-4">目 录</div>
+            <ul class="markdownIt-TOC">
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4%E8%BF%99%E6%98%AF%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5">为什么说这是最佳实践？</a>
+<ul>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-hexo">为什么使用 Hexo?</a>
+<ul>
+<li><a href="#jekyll">Jekyll</a></li>
+<li><a href="#hugo">Hugo</a></li>
+<li><a href="#hexo">Hexo</a></li>
+<li><a href="#gridea">Gridea</a></li>
+<li><a href="#%E4%B8%AA%E4%BA%BA%E5%8E%9F%E5%9B%A0">个人原因</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%89%98%E7%AE%A1%E5%88%B0-github">为什么托管到 Github?</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-netlify">为什么使用 Netlify?</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-netlify-cms">为什么使用 Netlify CMS?</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF-cms">什么是 CMS?</a></li>
+<li><a href="#netlify-cms-%E7%9A%84%E4%BC%98%E5%8A%BF">Netlify CMS 的优势</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E9%83%A8%E7%BD%B2-hexo-%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C">部署 Hexo 相关操作</a></li>
+<li><a href="#%E9%83%A8%E7%BD%B2-netlify-%E7%9A%84%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B">部署 Netlify 的操作流程</a></li>
+<li><a href="#netlify-cms-%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95">Netlify CMS 操作记录</a>
+<ul>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96">添加依赖</a></li>
+<li><a href="#%E5%9C%A8-hexo-%E7%9A%84-config-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-%E9%9D%9E-next-%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE-%E4%B8%AD%E6%96%B0%E5%A2%9E%E4%BB%A5%E4%B8%8B%E5%86%85%E5%AE%B9">在 hexo 的 config 配置文件 (非 next 主题配置) 中新增以下内容</a></li>
+<li><a href="#%E5%9C%A8-hexo-%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%96%B0%E5%BB%BA-netlifyyaml-%E6%96%87%E4%BB%B6%E6%B7%BB%E5%8A%A0%E4%BB%A5%E4%B8%8B%E5%86%85%E5%AE%B9">在 hexo 根目录新建 <code>netlify.yaml</code> 文件，添加以下内容</a></li>
+<li><a href="#%E5%9C%A8-netlify-%E4%B8%AD%E5%BC%80%E5%90%AF%E6%9C%8D%E5%8A%A1">在 Netlify 中开启服务</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AD%98%E5%9C%A8%E7%9A%84%E4%B8%8D%E8%B6%B3">存在的不足</a></li>
+<li><a href="#%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD">未完待续</a></li>
+</ul>
+
+          </aside> -->
+        
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+    <script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://zhengxiblog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+  
+  
+    
+  
+</body>
+</html>

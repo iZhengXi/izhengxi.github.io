@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #262626; --link-color: #262626;">
+<head>
+  <meta charset="UTF-8">
+  <title>Python中if __name__ == &#39;__main__&#39; 该如何正确理解? - ZhengXi&#39;s Blog</title>
+
+  <link rel="icon" href="">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="ZhengXi&#39;s Blog - Atom Feed" href="https://zhengxi.io/atom.xml">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7835998003747351"
+     crossorigin="anonymous"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6430c4dac5e43670548d34fbc3b1755c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/5_jiF_J8a');
+    ga('set', 'dimension2', 'post/c1Cbw_-Kq');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //     'dimension2': 'postId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/5_jiF_J8a',
+    //   'postId': 'post/c1Cbw_-Kq',
+    // });
+  </script>
+
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="一个python的文件有两种使用的方法，第一是直接作为脚本执行，第二是import到其他的python脚本中被调用（模块重用）执行。而if __name__ == &#39;main&#39;:的作用就是控制这两种情况执行代码的过程，存在if __name...">
+
+  <meta property="og:title" content="Python中if __name__ == &#39;__main__&#39; 该如何正确理解? - ZhengXi&#39;s Blog">
+  <meta property="og:description" content="一个python的文件有两种使用的方法，第一是直接作为脚本执行，第二是import到其他的python脚本中被调用（模块重用）执行。而if __name__ == &#39;main&#39;:的作用就是控制这两种情况执行代码的过程，存在if __name...">
+  
+  <meta property="og:url" content="https://zhengxi.io/Python中if __name__ == &#39;__main__&#39; 该如何正确理解_/">
+  <meta property="og:site_name" content="ZhengXi&#39;s Blog">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="Python中if __name__ == &#39;__main__&#39; 该如何正确理解?">
+
+  <meta name="gridea:post_id" content="c1Cbw_-Kq">
+
+  <link rel="canonical" href="https://zhengxi.io/Python中if __name__ == &#39;__main__&#39; 该如何正确理解_">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.3/styles/a11y-light.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">Z</div>
+      <a href="/">ZhengXi&#39;s Blog</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+        
+        <a
+          href="https://github.com/iZhengXi"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >Github</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://travellings.link/"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >Travellings</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href=""
+          class="mx-2 text-base border-b border-transparent"
+          
+        ></a>
+        
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+        
+        <a
+          href="https://github.com/iZhengXi"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >Github</a>
+      
+        
+        <a
+          href="https://travellings.link/"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >Travellings</a>
+      
+        
+        <a
+          href=""
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        ></a>
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      <div class="max-w-2xl mx-auto px-6 md:px-2">
+        <div class="my-24 text-center">
+          <h1 class="text-2xl font-bold">Python中if __name__ == &#39;__main__&#39; 该如何正确理解?</h1>
+          <div class="post-title-bar mx-auto rounded mt-4"></div>
+          <div class="text-gray-400 mt-4">2022.01.25</div>
+          <div class="flex justify-center mt-4">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="p-4 md:p-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 flex relative">
+        <section class="post-content flex-1 default-post-content max-w-2xl">
+          <div v-pre>
+            <p>一个python的文件有两种使用的方法，第一是直接作为脚本执行，第二是import到其他的python脚本中被调用（模块重用）执行。而<code>if __name__ == 'main':</code>的作用就是控制这两种情况执行代码的过程，存在<code>if __name__ == 'main':</code>时，该脚本可以直接运行，但是作为模块导入后则不会提前运行。<br /></p>
+<!-- more -->
+<p>例如test.py：</p>
+<pre><code class="language-python">#test.py
+print('import the module')
+def main():
+    print('Hello, World!')
+if __name__ == '__main__':
+    main()
+#end
+</code></pre>
+<p>直接运行该程序，会输出：</p>
+<pre><code class="language-python">&gt;&gt;&gt;python test.py
+import the module
+Hello, World!
+</code></pre>
+<p><strong>同时输出了’import the module’和’Hello, World!’</strong><br />说明:<code>__name__ == '__main__'</code>是成立的，所以执行了下面的<code>main()</code><br /><strong>接下来请我们用import的方式</strong>，在CMD中输入<code>python</code>，再输入<code>import test</code></p>
+<pre><code class="language-python">&gt;&gt;&gt;python
+Python 3.6.5 |Anaconda, Inc.| (default, Mar 29 2018, 13:32:41) [MSC v.1900 64 bit (AMD64)] on win32
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;import test
+import the module    #只输出了这个，没有Hello, World!
+#这个时候
+&gt;&gt;&gt;test.__name__             
+'test'
+&gt;&gt;&gt;__name__                     
+'__main__'
+</code></pre>
+<p>只输出了’import the module’，没有输出’Hello, World!’<br />可以看出这个时候test模块的<strong>name</strong>=’test’<br />而当前程序的<strong>name</strong>=’<strong>main</strong>‘<br />无论怎样，test.py中的<strong>name</strong> == ‘<strong>main</strong>‘都不会成立的，也就意味着，当你是通过import的方法来执行这个.py文件时，不能运行if <strong>name</strong> == ‘<strong>main</strong>‘:下面的语句或者函数。<br />总结：<br /><strong>name</strong> 是当前模块名，当模块被直接运行时模块名为 <strong>main</strong> 。这句话的意思就是，当模块被直接运行时，以下代码块将被运行，当模块是被导入时，代码块不被运行。</p>
+
+          </div>
+          <div class="py-4 text-gray-600 flex items-center justify-between">
+            <div class="">
+              <div class="text-sm text-gray-300">最后更新于: </div>
+              <div class="text-base font-medium">2022.06.25</div>
+            </div>
+            <!-- <div class="flex items-center text-sm text-gray-600">
+              <i class="ri-eye-line"></i> <span class="ml-2">{{ views }}</span>
+            </div> -->
+          </div>
+          <div>
+            <div id="disqus_thread"></div>
+          </div>
+        </section>
+        
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+    <script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://zhengxiblog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+  
+  
+    
+  
+</body>
+</html>

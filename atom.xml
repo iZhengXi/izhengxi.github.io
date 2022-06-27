@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>zhengxi.io</id>
+    <title>ZhengXi's Blog</title>
+    <updated>2022-06-27T11:20:29.877Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="zhengxi.io"/>
+    <link rel="self" href="zhengxi.io/atom.xml"/>
+    <subtitle>Innovation has no limits. The only limit is your imagination.</subtitle>
+    <rights>All rights reserved 2022, ZhengXi's Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[从Linux下载文献到Windows本地]]></title>
+        <id>https://zhengxi.io/conglinux-xia-zai-wen-xian-daowindows-ben-di</id>
+        <link href="https://zhengxi.io/conglinux-xia-zai-wen-xian-daowindows-ben-di"/>
+        <updated>2022-06-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[使用Xshell:
+使用xshell来操作服务非常方便，传文件也比较方便。
+就是使用rz，sz
+首先，服务器要安装了rz，sz
+yum install lrzsz
+当然你的本地windows主机也通过ssh连接了linux服务器
+运行rz，...]]></summary>
+        <content type="html"><![CDATA[<p><strong>使用Xshell:</strong></p>
+<pre><code class="language-bash">使用xshell来操作服务非常方便，传文件也比较方便。
+就是使用rz，sz
+首先，服务器要安装了rz，sz
+yum install lrzsz
+当然你的本地windows主机也通过ssh连接了linux服务器
+运行rz，会将windows的文件传到linux服务器
+运行sz filename，会将文件下载到windows本地
+</code></pre>
+<p><strong>Ubuntu安装lrzsz:</strong></p>
+<pre><code class="language-bash">sudo apt-get update -y
+sudo apt-get install -y lrzsz
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ubuntu | Vim Command Not Found]]></title>
+        <id>https://zhengxi.io/ubuntu-or-vim-command-not-found</id>
+        <link href="https://zhengxi.io/ubuntu-or-vim-command-not-found"/>
+        <updated>2022-06-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[sudo apt install vim
+
+
+...]]></summary>
+        <content type="html"><![CDATA[<pre><code class="language-bash">sudo apt install vim
+</code></pre>
+<p><img src="https://static.gridea.dev/335395751264780883/S_pSmi6iM.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Linux Shell Bash带有特殊含义的退出码]]></title>
+        <id>https://zhengxi.io/linux-shell-bash-dai-you-te-shu-han-yi-de-tui-chu-ma</id>
+        <link href="https://zhengxi.io/linux-shell-bash-dai-you-te-shu-han-yi-de-tui-chu-ma"/>
+        <updated>2022-06-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[
+例如：
+ hisat2-align exited with value 1 # 这个报错的意思是，出错了。
+
+...]]></summary>
+        <content type="html"><![CDATA[<p><img src="https://static.gridea.dev/335395751264780883/TfWEKvC-h.png" alt="" loading="lazy"></p>
+<p><strong>例如：</strong></p>
+<pre><code class="language-bash"> hisat2-align exited with value 1 # 这个报错的意思是，出错了。
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Gridea Web：个人博客的文艺复兴]]></title>
+        <id>https://zhengxi.io/Gridea Web：个人博客的文艺复兴</id>
+        <link href="https://zhengxi.io/Gridea Web：个人博客的文艺复兴"/>
+        <updated>2022-06-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Gridea是一个静态博客客户端，可快速构建静态博客站点，并拥有大量主题可供选择。
+而Gridea Web，则可实现完全云上写作。不用担心本地环境变化，博客备份问题，还可实现跨设备使用。
+累了。不想为了折腾而折腾。虽然目前Hexo+Gith...]]></summary>
+        <content type="html"><![CDATA[<p>Gridea是一个静态博客客户端，可快速构建静态博客站点，并拥有大量主题可供选择。</p>
+<p>而Gridea Web，则可实现完全云上写作。不用担心本地环境变化，博客备份问题，还可实现跨设备使用。</p>
+<p>累了。不想为了折腾而折腾。虽然目前Hexo+Github Pages+Github Actions或Cloudflare Pages可以实现自动构建自动部署，但是使用Github在线编辑博客实在是有点麻烦。Gridea Web则是一种新的博客解决方案。</p>
+<p>无需了解编程知识，无需操心与写作无关的杂事，只需 5 分钟时间，你将拥有一个属于自己的独立博客。</p>
+<p>Gridea Web官网：https://web.gridea.dev/</p>
+<p><img src="https://static.gridea.dev/335395751264780883/ZPph82Zuz.png" alt="" loading="lazy"></p>
+<p>Gridea Web吸引我的tips：</p>
+<blockquote>
+<p>价格便宜！一个月6元，一旦开始付款，即使你中间暂停付费一段时间，博客终可访问，直到下次付费，你可以继续更新网站内容。所以，按需订阅，无需担心。</p>
+<p>内置图床，再也不用为博客寻找可靠图床了。</p>
+<p>自定义域名。太酷了。</p>
+<p>在线编辑器，写博客变得简单易行。</p>
+</blockquote>
+<p>希望这是我博客的最后一次折腾吧，不想再搞了，专注写作记录吧~</p>
+<p><strong>Gridea Web缺点：</strong></p>
+<p>虽然Gridea Web可以快速构建个人博客，但是也缺少差异化，例如不可以像Gridea客户端那样可以自定义网站主题，网站的评论也只有Disqus可以选择。</p>
+<p>这些缺点，有时候也是优点，可以让你专注于写作。</p>
+<p>最后，Gridea Web要是有相应的app就好了。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Google Adsense申请指南]]></title>
+        <id>https://zhengxi.io/Google Adsense申请指南</id>
+        <link href="https://zhengxi.io/Google Adsense申请指南"/>
+        <updated>2022-06-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Google Adsense是谷歌广告联盟，是个人站长获取收入的一种快速简便的方法，适合于各种规模的网站发布商。得益于Google强大的算法，Google Adsense会根据网站内容提供相关的广告，从而增加广告点击率（按点击付费），最终为...]]></summary>
+        <content type="html"><![CDATA[<p>Google Adsense是谷歌广告联盟，是个人站长获取收入的一种快速简便的方法，适合于各种规模的网站发布商。得益于Google强大的算法，Google Adsense会根据网站内容提供相关的广告，从而增加广告点击率（按点击付费），最终为创作者带来丰厚的经济效益。使用Google Adsense的自动广告可以使创作者专注于内容创作，而不用担心广告投放问题。</p>
+<p>首先需要主持<a href="https://www.google.com/adsense">Google Adsense</a>，若没有Google账号需要提前注册<a href="https://www.google.com/">Google</a>账号。</p>
+<p>注册好Google Adsense后，点击左边菜单栏网站，添加个人网站。</p>
+<p><img src="https://static.gridea.dev/335395751264780883/5JX9OlkuD.png" alt="" loading="lazy"></p>
+<p>随后将广告代码添加到网站所有页面的<code>&lt;head&gt;&lt;/head&gt;</code>之间。</p>
+<p>广告代码一般长这样：</p>
+<pre><code class="language-javascript">&lt;script async src=&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxx&quot;
+     crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>一般几天内，Google机会审核完成，审核的结果会通过邮箱告知。</p>
+<p>就我个人的经验来看，网站内容的原创度是最关键的，Google Adsense不接受抄袭和有版权争议的内容。</p>
+<p>即使是新网站也不要紧，坚持创作原创高质量内容，Google Adsense审核通过是迟早的事情。</p>
+<p>下面是一些注意事项：</p>
+<blockquote>
+<p><strong>Google Adsense的要求</strong><br>
+诚实，这可能是对中国绝大多数个人站点最大的要求。成为Google Adsense的用户，你永远不要准备任何作弊行为！你自己不能点击自己的广告，即使想测试一下也不允许。一个IP在24小时之内一次以上的点击是无效的，通过代理服务器的点击是违反规定的，你不要试图采用软件或其他的方式作弊，对Google Adsense，你的行为都将显得极其愚蠢和可笑。</p>
+<p><strong>Google Adsense的惩罚</strong><br>
+最大的惩罚就是停止你的帐号，一旦Google Adsense中止了你的帐号，你将永远不要奢望可以拿回帐号和里面已经存在的收入，即使已经到手的支票在兑付过程中也会被拒绝支付。而相应的你的ADWARDS服务也会被停止，你使用的名字，银行帐号，收款地址和IP都将被拒绝。</p>
+</blockquote>
+<p>Google adsense的广告费满100美元可以申请支付，满10美元时需要验证收款地址，Google Adsense会给邮寄PIN码，确认地址是真实存在的。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ReadCube papers：以阅读为中心的文献管理软件]]></title>
+        <id>https://zhengxi.io/ReadCube papers：以阅读为中心的文献管理软件</id>
+        <link href="https://zhengxi.io/ReadCube papers：以阅读为中心的文献管理软件"/>
+        <updated>2022-06-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[我目前在读河北师范大学细胞生物学专业硕士研究生，在接触科研的几年时间里，几乎尝试过市面上的所有的文献管理软件，有收费的EndNote，也有免费开源的Zotera、Mendeley、abRef，当然也支持过国产文献管理软件Noteexpres...]]></summary>
+        <content type="html"><![CDATA[<p>我目前在读河北师范大学细胞生物学专业硕士研究生，在接触科研的几年时间里，几乎尝试过市面上的所有的文献管理软件，有收费的EndNote，也有免费开源的Zotera、Mendeley、abRef，当然也支持过国产文献管理软件Noteexpress。早期阅读的文献中文较多，因此用Noteexpress会更好。随着阅读的文献越来越多，尤其是英文文献，开始接触EndNote。EndNote是以引文为核心的文献管理软件，在文献插入和引用方面有着强大的功能，可以各种DIY。在好奇心的驱使下，其他文献管理软件也都尝试了一下，但都不尽人意，优缺点都很明显。</p>
+<p>papers是目前用过的最好的文献管理软件。这是它的官网地址：https://www.papersapp.com/</p>
+<p><img src="https://static.gridea.dev/335395751264780883/gLVTGnBRr.png" alt="" loading="lazy"></p>
+<p>目前该软件可以免费试用30天（不需要信用卡）。</p>
+<p>papers与流行的文献管理软件EndNote有着本质的区别，它是以阅读为中心的文献管理软件，自带强大的文件搜索引擎，可以自动加载文献PDF，还具有强大的文献追踪与索引功能等等。总之，papers可以让你完全沉浸在文献阅读中，让你的知识更有框架性。</p>
+<p>软件的下载安装，略。【有手就行】</p>
+<p>下面，我将简单介绍一下papers的强大之处。</p>
+<p>首先，你需要导入文献，你可以导入常规的PDF、bib、ris格式，当导入PDF格式的文献后，papers能够自动抓取文献的信息，如期刊、标题、作者、年份等。</p>
+<p><img src="https://static.gridea.dev/335395751264780883/MV9aWqjHW.png" alt="" loading="lazy"></p>
+<p>导入以后，我们可以看到文献的基本信息。左下角是文献的预览情况，若不喜欢可以关闭预览功能。在右边可以看到文献的基本信息，包括题目、摘要等。对于重要的文献我们还可以标星，可以添加tags和lists，方便日后文献的检索。</p>
+<p><img src="https://vip2.loli.io/2022/06/25/KAfo2kM6r1Tmb4U.png" alt="" loading="lazy"></p>
+<p>papers还有一些非常实用的功能，例如自动加载文献补充数据。</p>
+<p><img src="https://vip2.loli.io/2022/06/25/dvXx9wKrQsODgmu.png" alt="" loading="lazy"></p>
+<p>如果仅仅是以上这些，那papers将不值得分享。</p>
+<p>papers的王炸功能是Metrics。</p>
+<p><img src="https://vip2.loli.io/2022/06/25/9yMlWRwox8iEuDH.png" alt="" loading="lazy"></p>
+<p>Metrics可以帮助我们分析该文献被哪些文献引用了，哪些文献提到了该文献。当然也可以一键分析文献引用的参考文献。借助该功能，可以让你只需要根据几篇专业内的顶级综述就可以把握一个学科的发展脉络，可以快速了解某一方向的研究内容。Metrics不仅适用于科研萌新了解研究课题，也适用于科研大佬追踪科研进展。</p>
+<p>当你不知道看啥文献时，还可以使用papers的文献推荐功能，它可以根据你的文献列表推荐你感兴趣的文献。</p>
+<p><img src="https://vip2.loli.io/2022/06/25/7EJiGXRrCVFxKlP.png" alt="" loading="lazy"></p>
+<p>作为一款出色的文献管理软件，papers也开发了针对Word和Google Docs的插件，方便引用文献。papers内置了几百个常用期刊的引文格式，可以一键使用。</p>
+<blockquote>
+<p>不要过分迷信papers内置的引文格式，可能不对，需要手动检查一下。</p>
+</blockquote>
+<p>papers还有非常多优秀的地方，例如多端同步，支持apple pencil批注等等，大家可以去自己挖掘一下。</p>
+<blockquote>
+<p>最后，这款软件也非常自信，在它的官网上，它把自己和市面上的文献管理软件做了一个对比，完虐哈哈哈。</p>
+</blockquote>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[博客文章信息模板]]></title>
+        <id>https://zhengxi.io/博客文章信息模板</id>
+        <link href="https://zhengxi.io/博客文章信息模板"/>
+        <updated>2022-06-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[博客文章信息模板。
+
+---
+title: 这是标题。
+tags:
+  - 标签。
+  - 标签2
+categories:
+  - 生物信息学 # 一级目录。
+  - RNA-seq转录组数据分析 # 二级目录。
+date: 2022-06...]]></summary>
+        <content type="html"><![CDATA[<p>博客文章信息模板。</p>
+<!-- more -->
+<pre><code class="language-yaml">---
+title: 这是标题。
+tags:
+  - 标签。
+  - 标签2
+categories:
+  - 生物信息学 # 一级目录。
+  - RNA-seq转录组数据分析 # 二级目录。
+date: 2022-06-05 10:32:06 # 日期。
+---
+
+这是一个摘要。
+# 摘要分隔符。
+
+&lt;!-- more --&gt;
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[RNA-seq转录组数据的比对]]></title>
+        <id>https://zhengxi.io/RNA-seq转录组数据的比对</id>
+        <link href="https://zhengxi.io/RNA-seq转录组数据的比对"/>
+        <updated>2022-06-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[RNA-seq常见比对软件的使用，包括TopHat2、Hisat2和STAR。
+
+目标：
+
+掌握高通量的比对算法。
+能够下载参考基因组序列、基因注释文件建立index。
+完成序列比对及BAM文件的转换索引，理解含义。
+理解不同比对软件的优劣...]]></summary>
+        <content type="html"><![CDATA[<p>RNA-seq常见比对软件的使用，包括TopHat2、Hisat2和STAR。</p>
+<!-- more -->
+<p><strong>目标：</strong></p>
+<ul>
+<li>掌握高通量的比对算法。</li>
+<li>能够下载参考基因组序列、基因注释文件建立index。</li>
+<li>完成序列比对及BAM文件的转换索引，理解含义。</li>
+<li>理解不同比对软件的优劣并能合理选择。</li>
+</ul>
+<p><img src="https://vip2.loli.io/2022/06/12/Au5noweFidZrTfp.png" alt="image.png" loading="lazy"><br /><strong>本节测试数据下载方式：</strong><br /><img src="https://vip2.loli.io/2022/06/12/eUEQ5GdRcaS4Cso.png" alt="image.png" loading="lazy"><br />Alignment和Mapping的区别？<br /><img src="https://vip2.loli.io/2022/06/12/oqY5gWFyHhk7zDr.png" alt="image.png" loading="lazy"><br /><strong>RNA-seq数据分析的相关软件：</strong><br />质控：fastqc ,multiqc , trimmomatic, cutadapt, trim-galore <br />比对：star , hisat2 , tophat , bowtie2 , bwa , subread <br />定量：htseq , bedtools, salmon, Kallisto<br>
+<a name="MxmUN"></a></p>
+<h1 id="1-拟南芥参考基因组转录组的下载">1、拟南芥参考基因组/转录组的下载</h1>
+<p>下载网址：<a href="http://ftp.ensemblgenomes.org/pub/plants/release-53/fasta/arabidopsis_thaliana/dna/">http://ftp.ensemblgenomes.org/pub/plants/release-53/fasta/arabidopsis_thaliana/dna/</a><br />一般我们下载全染色体的基因组文件：<a href="http://ftp.ensemblgenomes.org/pub/plants/release-53/fasta/arabidopsis_thaliana/dna/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz">http://ftp.ensemblgenomes.org/pub/plants/release-53/fasta/arabidopsis_thaliana/dna/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz</a><br />拟南芥基因组索引文件：<a href="http://ftp.ensemblgenomes.org/pub/plants/release-53/fasta/arabidopsis_thaliana/dna_index/">http://ftp.ensemblgenomes.org/pub/plants/release-53/fasta/arabidopsis_thaliana/dna_index/</a><br />一般我们下载*toplevel.fa.gz文件，为参考基因组完整文件，其他rm，sm，和分开染色体得文件；sm和rm的意义可看README文件。</p>
+<blockquote>
+<p>教程：<a href="https://blog.csdn.net/u010608296/article/details/121438333">https://blog.csdn.net/u010608296/article/details/121438333</a></p>
+</blockquote>
+<p><img src="https://vip2.loli.io/2022/06/12/GIJczZDLBM8pb7P.png" alt="image.png" loading="lazy"><br /><a href="https://www.yuque.com/attachments/yuque/0/2022/pdf/641947/1653551010938-134a68cc-1ea1-4047-b07e-9c996d26d394.pdf">Ensembl和NCBI基因组下载，基因序列下载查看.pdf</a><br />拟南芥基因组注释gff3文件下载：<a href="http://ftp.ensemblgenomes.org/pub/plants/release-53/gff3/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.53.gff3.gz">http://ftp.ensemblgenomes.org/pub/plants/release-53/gff3/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.53.gff3.gz</a><br />拟南芥基因组注释gtf文件下载：<a href="http://ftp.ensemblgenomes.org/pub/plants/release-53/gtf/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.53.gtf.gz">http://ftp.ensemblgenomes.org/pub/plants/release-53/gtf/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.53.gtf.gz</a></p>
+<hr>
+<p><a name="xmk3l"></a></p>
+<h1 id="2-tophat和tophat2">2、TopHat和TopHat2</h1>
+<p><img src="https://vip2.loli.io/2022/06/12/DPOgGBobFvM186Z.png" alt="image.png" loading="lazy"><br /><img src="https://vip2.loli.io/2022/06/12/c4H3yfqWsLKCPgI.png" alt="image.png" loading="lazy"><br />tophat2需要python2的环境。<br />首先需要用bowtie2构建基因组index：</p>
+<pre><code class="language-bash">bowtie2-build --thread 6 ref_hg38.fa ref_hg38.fa &gt; bt2_index.log 2&gt;&amp;1 &amp; # 主要设置一个thread参数即可，这是线程参数。第一个ref_hg38.fa表示那个基因组，第二个表示的是名字。
+less -S bt2_index.log # 查看log文件。
+</code></pre>
+<p><img src="https://vip2.loli.io/2022/06/12/gNSvTHi4fBz8YmI.png" alt="image.png" loading="lazy"><br />log的最后一行会提示用了多长时间。</p>
+<pre><code class="language-bash">tophat2 -G ./xx.gtf -o ./temp_tophat2 ./index.xx.fa ../test_R1_cutadapt.fa.gz .. /test_R2_cutadapt.fa.gz &amp; # -G参数对应的是基因组注释文件。-o对应的是tophat2输出结果。
+# tophat2也可以加一个-p参数。比如tophat2 -p 6,6个核。
+</code></pre>
+<p>tophat2的输出结果：<br />可以看到那里是deletions，那里是insertions。<br />比较好的是，直接给出了bam文件。<br /><img src="https://vip2.loli.io/2022/06/12/bqtB2Cj7I46pHJA.png" alt="image.png" loading="lazy"></p>
+<pre><code class="language-bash"># 查看文件头 
+samtools view -H accepted_hits.bam # -H这个参数的作用是输出文件头。
+
+# 查看比对结果
+samtools view accepted_hits.bam | less -S
+
+</code></pre>
+<p>bam文件文件头：<br />SO: coordinate表示这个bam文件已经排过序了。而且是按照基因组坐标进行排序的。<br /><img src="https://vip2.loli.io/2022/06/12/WNSRvCVekQDTrGL.png" alt="image.png" loading="lazy"></p>
+<p><a name="DSr1z"></a></p>
+<h1 id="2-starspliced-transcripts-alignment-to-a-reference">2、STAR：Spliced Transcripts Alignment to a Reference</h1>
+<p>STAR的优势在于快，能够快速的mapping。<br />缺点在于占用内存巨大，human的mapping需要28G~32 GB左右的RAM。<br />STAR的出现，完全是为了ENCODE计划。（ENCODE: Encyclopedia of DNA Elements）<br />运行一个程序是32 GB内存，运行100个程序也是32 GB内存，因此大型项目都喜欢用STAR软件。<br /><img src="https://vip2.loli.io/2022/06/12/lMwRPmL3uaYskgH.png" alt="image.png" loading="lazy"><br />STAR软件的策略：<br />STAR首先将一个reads切成两份，找到全基因组上对应的位置。<br />通过打分算法，把邻近的全基因组符合的seeds都拼接在一起，形成mappting结果。<br />优势在于支持并行计算。<br />STAR的比对质量有时候还不如TopHat2。<br /><img src="https://vip2.loli.io/2022/06/12/VRegWzEFqN25d1t.png" alt="image.png" loading="lazy"></p>
+<pre><code class="language-bash">mkdier temp_star_index #首先建立star index
+STAR --runThreadN 12 --runMode genomeGenerate \  # runMode总共有两种。一种是genomeGenerate，一种是mapping。
+--genomeDir /home/menghaowei/ngs_course/reference/STAR_index \ # 需要创建的index位置。
+--genomeFastaFiles /home/menghaowei/ngs_course/reference/STAR_index/ref_ref_hg38.fa \ 参考基因组。
+--sjdbGTFfile /home/menghaowei/ngs_course/reference/gtf/hg38xxxx.gtf \ # 基因组注释文件。
+--sjdbOverhang 150 &amp; # 分析的是100 bp的reads，就写100。分析的是150 bp的reads就写150。目前illumina的都是150 bp的reads。
+</code></pre>
+<p>查看STAR index：<br />只用了人的两条染色体，建立出来的index大小居然有4.4 G。恐怖。</p>
+<pre><code class="language-bash">du -dl -h 查看大小
+</code></pre>
+<p><br /><img src="https://vip2.loli.io/2022/06/12/GpBZ2mVR1cNw65r.png" alt="image.png" loading="lazy"></p>
+<pre><code class="language-bash">less log.out
+tail log.out #查看日志尾部。
+</code></pre>
+<p>STAR进行比对：</p>
+<pre><code class="language-bash"># 这是常用的参数。一般不要轻易的更改。
+STAR \
+--genomeDir /home/menghaowei/ngs_course/reference/STAR_index \
+--runThreadN 6 \
+--readFileIn ./fix.fastq/test_R1_cutadapt.fq.gz ./fix.fastq/test_R2_cutadapt.fq.gz \
+--readFilescommand zcat \
+--outFileNamePrefix ./bam/test-STAR \
+--outSAMtype BAM Unsorted \ # 输出的文件类型。不排序的BAM。
+--outSAMstrandField intronMotif \ 
+--outSAMattributes All \ # 这个地方一定要选All。
+--outFilterIntronMotifs RemoveNoncanonical &gt; ./bam/test_STAR.log 2&gt;&amp;1 &amp;
+</code></pre>
+<p>查看STAR结果：</p>
+<pre><code class="language-bash">ls
+less -S test_STAR.log
+</code></pre>
+<p><img src="https://vip2.loli.io/2022/06/12/1nxhYK6ZmMXVCzT.png" alt="image.png" loading="lazy"><br />最后，STAR一般适合大型项目。准确率还可以。</p>
+<p><a name="ghzH3"></a></p>
+<h1 id="3-hisat和hisat2">3、HISAT和HISAT2</h1>
+<p>HISAT2可以同时比对DNA和RNA。<br /><img src="https://vip2.loli.io/2022/06/12/r76thmdYFB18lZe.png" alt="image.png" loading="lazy"></p>
+<p><img src="https://vip2.loli.io/2022/06/12/OYHCnK8ctDWNRm7.png" alt="image.png" loading="lazy"><br />比对软件的时间线：<br /><img src="https://vip2.loli.io/2022/06/12/miTJhUD4gscnSZ7.png" alt="image.png" loading="lazy"></p>
+<pre><code class="language-bash">hisat2-build -t 6 ref_hg38.fa ref_hg38.fa &gt;hisat2_build.log 2&gt;&amp;1 &amp; # 和bowtie2-build很像。
+
+# hisat2比对
+hisat2 -p 12 \ # 12个核心。	
+-x /home/menghaowei/ngs_course/reference/hisat2_index/ref_hg38.fa \
+-1 ./fix.fastq/test_R1_cutadapt.fq.gz \
+-2 ./fix.fastq/test_R2_cutadapt.fa.gz \
+-S ./bam/test_hisat2.sam &gt; ./bam/test_hisat2.log 2&gt;&amp;1 &amp; # -S是输出的SAM文件。
+
+</code></pre>
+<blockquote>
+<p><a href="https://evvail.com/2021/05/17/2411.html">https://evvail.com/2021/05/17/2411.html</a></p>
+</blockquote>
+<p>如果有SNP，需要给出SNP信息：<br /><img src="https://vip2.loli.io/2022/06/12/YvlzKegTs2Ft4O5.png" alt="image.png" loading="lazy"></p>
+<hr>
+<p>HISATA2 index的构建：<br />可以增加SNP信息和可变剪切信息。</p>
+<p><img src="https://vip2.loli.io/2022/06/12/Lc742jWuCazwmEf.png" alt="image.png" loading="lazy"><br />SNP可在UCSC网站下载。</p>
+<pre><code class="language-bash">hisat2_extract_exons.py hg38_refseq.gtf &gt; hg38_refseq.exon &amp; # 从GTF注释文件中提取外显子信息。这个脚本在hisat2中已经包含了。
+hisat2_extract_splice_sites.py hg38_refseq.gtf &gt; hg38_refseq.ss &amp; #提取剪切信息。
+hisat2_extract_snps_haplotypes_UCSC.py ref_hg38.fa snp151Common.txt snp151Common &amp; #第二个snp151Common是生成的snp文件名称。
+hisat2_build -p 6 --snp snp151Common.snp --haplotype snp151Common.haplotype --exon hg38_refseq.exon --ss hg38_refseq.ss ref_hg38.fa.snp_gtf &gt; hisat2_build.log 2&gt;&amp;1 &amp;
+</code></pre>
+<p><img src="https://vip2.loli.io/2022/06/12/lAgrthd4qSjfx8k.png" alt="image.png" loading="lazy"></p>
+<p>SAM文件是不可以的，需要转换为按基因组排序的BAM文件。</p>
+<pre><code class="language-bash">samtools sort -O BAM -o ngs_test.sort.bam -@6 -m 2G -T ngs_test.sort.bam.temp test_hisat2.sam &amp; # -O生成的格式为BAM，6个线程，每个线程2G运行内存。生成的文件名称ngs_test.sort.bam.temp。
+
+# 查看生成的BAM文件排序结果
+samtools view -h ngs_test.sort.bam | less -S
+</code></pre>
+<p>BAM排序结果：<br /><img src="https://vip2.loli.io/2022/06/12/HJpav5IxfN1yenc.png" alt="image.png" loading="lazy"><br />第一行可以看到SO: coordinate，表示已经排过序了。<br>
+<a name="Wfo1T"></a></p>
+<h1 id="参考资料">参考资料</h1>
+<ol>
+<li><a href="https://evvail.com/">https://evvail.com/</a></li>
+<li><a href="https://www.plob.org/article/10397.html">https://www.plob.org/article/10397.html</a></li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[使用FastQC、cutadapt进行数据质控]]></title>
+        <id>https://zhengxi.io/使用FastQC、cutadapt进行数据质控</id>
+        <link href="https://zhengxi.io/使用FastQC、cutadapt进行数据质控"/>
+        <updated>2022-06-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[使用FastQC、cutadapt进行数据质控。包括相关的软件安装和使用。
+
+
+1、NASA示例代码-FastQC【推荐首先阅读】
+
+https://mp.weixin.qq.com/s/2Xo-a3p47kg2feawgeynOg
+htt...]]></summary>
+        <content type="html"><![CDATA[<p>使用FastQC、cutadapt进行数据质控。包括相关的软件安装和使用。</p>
+<!-- more -->
+<p><a name="mjuIl"></a></p>
+<h1 id="1-nasa示例代码-fastqc推荐首先阅读">1、NASA示例代码-FastQC【推荐首先阅读】</h1>
+<blockquote>
+<p><a href="https://mp.weixin.qq.com/s/2Xo-a3p47kg2feawgeynOg">https://mp.weixin.qq.com/s/2Xo-a3p47kg2feawgeynOg</a><br>
+<a href="https://github.com/nasa/GeneLab_Data_Processing/tree/master/RNAseq/GLDS_Processing_Scripts">https://github.com/nasa/GeneLab_Data_Processing/tree/master/RNAseq/GLDS_Processing_Scripts</a></p>
+</blockquote>
+<p><img src="https://vip2.loli.io/2022/06/12/zi4gyhLDjoakH6w.jpg" alt="" loading="lazy"><br /><strong>fastqc 代码及结果文件:</strong><br /><img src="https://vip2.loli.io/2022/06/12/c4ZNoBxfJMTLRQE.jpg" alt="" loading="lazy"></p>
+<pre><code class="language-bash"> fastqc -o /path/to/output/directory \
+         -t number_of_threads \
+         /path/to/input/files
+</code></pre>
+<p><strong>multiqc 整合质控结果：</strong><br /><img src="https://vip2.loli.io/2022/06/12/SU4xyYMjJtplo87.jpg" alt="" loading="lazy"></p>
+<pre><code class="language-bash">multiqc -o /path/to/output/directory \
+          /path/to/fastqc/output/files
+</code></pre>
+<p><a name="sRkxu"></a></p>
+<h1 id="2-孟浩巍课程笔记转录组数据的质控">2、【孟浩巍课程笔记】转录组数据的质控</h1>
+<p>fastqc安装：</p>
+<pre><code class="language-bash"># 首先需要安装conda。
+# 不推荐直接安装Anaconda，太过于臃肿。安装miniconda就好了。
+conda install fastqc #需要先安装conda。安装conda后非常方便。但是conda比较慢，于是有人开放了mamba。
+conda install mamba
+mamba install fastqc # mamba安装会快很多，能用mamba就用mamba。目前mamba不太好用，可能因为一些更新问题（2022.06.12）。
+conda create -n RNA-seq python=3.7 #创建一个专门的环境。
+mamba create -n RNA-seq python=3.7 #使用mamba创建一个RNA-seq的专门环境。
+conda activate RNA-seq #激活环境。
+conda deactivate #退出当前环境。
+</code></pre>
+<p>conda、miniconda和Anaconda的区别：Miniconda 只安装了 Conda 核心，而 Anaconda 除此之外还安装了完整的 Anaconda 的发行包，换句话说后者初始安装的包更多，因此安装文件体积也更大。</p>
+<blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/28610806">https://zhuanlan.zhihu.com/p/28610806</a><br>
+<a href="https://blog.csdn.net/qq_18668137/article/details/80807829">https://blog.csdn.net/qq_18668137/article/details/80807829</a></p>
+</blockquote>
+<p><strong>一定要先要先创建单独的环境，然后激活环境，再安装软件。将生信软件都安装在这个环境中好了。</strong><br />查看fastq格式的测序文件：</p>
+<pre><code class="language-bash">zcat test_R1.fq.gz | less -S #zcat解压，通过管道服务放到一行（- S参数）。
+# zcat命令：Zcat是一个命令行实用程序，用于查看压缩文件的内容，而无需对其进行解压缩。
+</code></pre>
+<blockquote>
+<p>zcat命令：<a href="https://www.cnblogs.com/xuefy/p/11337858.html">https://www.cnblogs.com/xuefy/p/11337858.html</a></p>
+</blockquote>
+<p><img src="https://vip2.loli.io/2022/06/12/PSEy6nMkXiqWKQv.png" alt="image.png" loading="lazy"><br />fastq格式：<br /><img src="https://vip2.loli.io/2022/06/12/4v1WE2uwDdqmAJr.png" alt="image.png" loading="lazy"></p>
+<ul>
+<li>第一行：以@开头的read信息；</li>
+<li>第二行： read序列；</li>
+<li>第三行：以+号开头，与第一行相同（常被省略，只保留+号）；</li>
+<li>第四行：reads每个位置测序质量；</li>
+</ul>
+<p><img src="https://vip2.loli.io/2022/06/12/wBhGaM3TEtgeKIZ.png" alt="image.png" loading="lazy"></p>
+<p>fastqc语法</p>
+<pre><code class="language-bash">fastqc -t 20 -o test_out/ ./raw.fastq/test_R*.gz &amp; # -t表示20个线程，-o表示的是fastqc输出文件夹。./raw.fastq/test_R*.gz指的是输入文件。最后加一个&amp;，表示在后台运行。之后点击回车键就可以开始分析了。
+top #该命令可以查看程序的后台运行情况。
+kill 123 #终止运行某一个后台程序。
+</code></pre>
+<hr>
+<p><a name="z5NSE"></a></p>
+<h1 id="sra数据库及linux本地下载">SRA数据库及Linux本地下载</h1>
+<p>SRA Toolkit安装：</p>
+<blockquote>
+<p>参考连接：<a href="https://github.com/ncbi/sra-tools/wiki/02.-Installing-SRA-Toolkit">https://github.com/ncbi/sra-tools/wiki/02.-Installing-SRA-Toolkit</a></p>
+</blockquote>
+<p>For Ubuntu,</p>
+<pre><code class="language-bash">wget --output-document sratoolkit.tar.gz http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz
+</code></pre>
+<p>For CentOS,</p>
+<pre><code class="language-bash">wget --output-document sratoolkit.tar.gz http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz
+</code></pre>
+<p>解压文件：</p>
+<pre><code class="language-bash">tar -vxzf sratoolkit.tar.gz
+</code></pre>
+<p>添加环境变量：</p>
+<pre><code class="language-bash">echo &quot;export PATH=\$PATH:PWD/sratoolkit.2.9.2-ubuntu64/bin&quot; &gt;&gt; ~/.bashrc # echo命令是在屏幕中输出一段字符，该代码的啥意思是，将export PATH=\$PATH:PWD/sratoolkit.2.9.2-ubuntu64/bin写入到~/.bashrc文件末尾。
+
+# 进入bin目录，查看当前位置 pwd 。根据当前路径，加在自己的$PATH:后面
+
+source ~/.bashrc # 保存配置文件，使生效。
+fastq-dump -h #
+</code></pre>
+<p>安装后很可能会报错：<br /><img src="https://vip2.loli.io/2022/06/12/TEgbjf9kY4hSylz.png" alt="图片" loading="lazy"><br />安装<code>libxml-libxml-perl</code>即可：</p>
+<blockquote>
+<p>在单独创建的conda环境中安装就不会报错了。</p>
+</blockquote>
+<blockquote>
+<p><a href="https://grantm.github.io/perl-libxml-by-example/installation.html">https://grantm.github.io/perl-libxml-by-example/installation.html</a><br>
+<a href="https://github.com/ncbi/sra-tools/issues/219">https://github.com/ncbi/sra-tools/issues/219</a><br>
+<a href="https://zoomadmin.com/HowToInstall/UbuntuPackage/libxml-libxml-perl">https://zoomadmin.com/HowToInstall/UbuntuPackage/libxml-libxml-perl</a></p>
+</blockquote>
+<pre><code class="language-bash">sudo apt-get update -y
+sudo apt-get install -y libxml-libxml-perl
+</code></pre>
+<p>conda安装sra-tools：</p>
+<pre><code class="language-bash">conda install sra-tools # sra-tools就是sratoolkits。
+
+</code></pre>
+<p>sratoolkits插件的作用有两个：下载SRA测序文件，将SRA测序文件转换为fastq格式。<br /><strong>安装生信软件时常见的报错原因：</strong></p>
+<ul>
+<li>python/R版本不对。</li>
+<li>缺少依赖。<br>
+<a name="PNkcX"></a></li>
+</ul>
+<h1 id="sra文件转fastq格式">SRA文件转fastq格式</h1>
+<p>由于下载的数据格式不符合分析所需格式，需转换。数据太多，写个脚本转换。这里是直接转换成立fastq.gz格式，很省内存，后面用这个格式文件分析就行。<br />如果文件数量少，一个个去转换。如果文件数量多，就需要批量转换。</p>
+<pre><code class="language-bash">mkdir scripts#创建一个文件夹用来存放脚本
+mkdir fq#创建一个存放fq文件的文件夹
+cd ../scripts
+cat &gt; sra2fq.sh
+for i in ../sra.data/*sra
+do
+echo $i
+fastq-dump --split-3 --gzip ../sra.data/$i
+done
+cd ../fq
+nohup sh ../scripts/sra2fq.sh &gt; ../logs/sra2fq.log 2&gt;&amp;1 &amp; # nohub命令用于后台不断的运行命令不挂断，即使关闭终端也不停止运行。
+</code></pre>
+<p><br />SRA文件转fastq格式单个转：</p>
+<pre><code class="language-bash"># 单端测序
+fastq-dump SRR14306907.sra -O ./ （结果生成：SRR14306907.fastq）
+fastq-dump --fasta SRR14306907.sra -O ./ （结果生成：SRR14306907.fasta）
+
+# 双端测序
+fastq-dump SRR14306907.sra --split-3 -O ./ （结果生成：SRR14306907_1.fastq，SRR14306907_2.fastq）
+fastq-dump SRR14306907.sra --split-3 --gzip -O ./ （结果生成：SRR14306907_1.fastq.gz， SRR14306907_2.fastq.gz）
+</code></pre>
+<p><a name="L0Q9K"></a></p>
+<h1 id="cutadapt">cutadapt</h1>
+<p>安装cutadapt：</p>
+<pre><code class="language-bash">mamba install cutadapt
+cutadapt -h #查看说明文档。
+</code></pre>
+<p>cutadapt使用：</p>
+<pre><code class="language-bash"># cutadapt
+cutadapt -j 24 --times 1 -e 0.1 -o 3 --quality-cutoff 25 -m 55 \ # \是换行符。
+-a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA # adapter trimming reads1
+-A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT # adapter trimming reads2
+-o ./test_R1_cutadapt.fq.gz \ # trim完的R1。
+-p ./test_R2_cutadapt.fq.gz \ # trim完的R2。
+./test_R1.fq.gz\ # 需要trim的源文件。
+./test_R2.fq.gz &gt; fix.fastq/test_cutadapt.log 2&gt;&amp;1 &amp; #&gt;是输出，这一步是输出log文件。2输出到1。2是标准错误，1是标准输出。
+
+
+cutadapt参数 
+-j 24 # 调用CPU24个核。
+--times 1 # 只进行一次去除。也就是我认为一条序列只会出现一侧adapter。
+-e 0.1 # 当reads和adapter reads序列不一样的时候，我允许有10%的错误率，也就是10个碱基允许错配一个。
+-o 3 #reads至少有3 bp和adapter匹配，我才认为是adapter。
+--quality-cutoff 25 # 去除3端的低质量reads，一般选择25。
+-m 55 # trim完以后，如果reads小于55，那么这一对reads就不要了。
+
+3端的测序质量一定比5端的测序质量差。
+reads2的测序质量一定比reads1的测序质量差。
+reads如果要比对到参考基因组上，则reads在trim完以后不能小于40，不然比对的不准。
+
+怎么知道adapter triming reads1/2是否正确呢？
+zcat test_R1.fq.gz | grep AGATCGGAAGAGCACACGTCTGAACTCCAGTCA #查看adapter序列是否在fastq序列里。按Esc退出。
+ 
+linux下的top命令能够实时显示系统各个进程的资源占用情况，类似于windows系统的任务管理器。
+
+cutadapt想要使用多核运算，一定要使用python3环境。
+
+less -S test_cutadapt.temp.log # 查看log文件。
+</code></pre>
+<p><img src="https://vip2.loli.io/2022/06/12/SG9OQcedPZb6gx7.png" alt="image.png" loading="lazy"><br />cutadapt运行完了以后的日志文件：</p>
+<ul>
+<li>read2 1 adapter占比7.8%</li>
+<li>reads2 adapter占比8.4%</li>
+<li>trim完以后，太短的占比3.9%</li>
+<li>最后输出96.1%</li>
+</ul>
+<p><img src="https://vip2.loli.io/2022/06/12/OQwSaBPnvCNR3qo.png" alt="image.png" loading="lazy"><br /><a href="https://www.yuque.com/attachments/yuque/0/2022/pdf/641947/1653531243463-7cd5415a-af14-4750-a1c7-0e907a434515.pdf">illumina-adapter-sequences.pdf</a></p>
+<hr>
+<p>当我们拿到一个fastQC报告时，首先看箱线图：<br /><img src="https://vip2.loli.io/2022/06/12/3C5fKIEZpsTxmFz.png" alt="image.png" loading="lazy"><br />箱线图纵轴超过20，则表明测序质量还可以。超过30就算非常不错了。上图显示的测序质量就非常不错。<br /><strong>查看adapter比例：</strong><br /><img src="https://vip2.loli.io/2022/06/12/koEI2RCfxKUv3HT.png" alt="image.png" loading="lazy"><br /><strong>--quality-cutoff 25是啥？</strong><br />碱基质量值怎么看？比如F，<br />fastq的标准有sanger、solexa、illumina1.3+、illumina1.5+等。目前最常见的是sanger标准。<br /><img src="https://vip2.loli.io/2022/06/12/WGHvDPflZ63hpQ7.png" alt="image.png" loading="lazy"><br /><img src="https://vip2.loli.io/2022/06/12/91CXMlteQTmNWzV.png" alt="image.png" loading="lazy"><br />万分之一的错误率，算出来Phred是40，千分之一是30，百分之一是20。<br />ASCⅡ表：0到255，每一个对应一个 字符。<br /><img src="https://vip2.loli.io/2022/06/12/fLZAsqR4rG1v7tw.png" alt="image.png" loading="lazy"></p>
+<p><img src="https://vip2.loli.io/2022/06/12/DU1Lp32uOJFQYr9.png" alt="image.png" loading="lazy"><br /><img src="https://vip2.loli.io/2022/06/12/uGOpW5hQvc3rdJC.png" alt="image.png" loading="lazy"><br />phred值是不需要排序的，因为3端的测序质量是天然不如5端的。<br>
+<a name="F7ekY"></a></p>
+<h1 id="参考资料">参考资料</h1>
+<p>1、<a href="https://mp.weixin.qq.com/s/2Xo-a3p47kg2feawgeynOg">NASA 的 RNA-seq 标准流程代码</a><br />2、刘欣晔《分子生物学大实验》PPT：<br /><a href="https://www.yuque.com/attachments/yuque/0/2022/pptx/641947/1653534657573-5e96fbee-7126-4937-9921-fbbea5a385d0.pptx">2021细胞生物大实验刘昕晔正式上课课件.pptx</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[hisat2安装报错，提示：`GLIBCXX_3.4.26' not found]]></title>
+        <id>https://zhengxi.io/2022-06-05-hisa2安装报错，提示：GLIBCXX_3.4.26 not-found</id>
+        <link href="https://zhengxi.io/2022-06-05-hisa2安装报错，提示：GLIBCXX_3.4.26 not-found"/>
+        <updated>2022-06-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[更新libstdc++.so版本即可。
+
+# 报错提示
+(NGS) ubuntu@VM-20-10-ubuntu:~$ hisat2 -h
+/home/ubuntu/anaconda3/envs/NGS/bin/hisat2-align-s...]]></summary>
+        <content type="html"><![CDATA[<p>更新libstdc++.so版本即可。</p>
+<!-- more -->
+<pre><code class="language-bash"># 报错提示
+(NGS) ubuntu@VM-20-10-ubuntu:~$ hisat2 -h
+/home/ubuntu/anaconda3/envs/NGS/bin/hisat2-align-s: /home/ubuntu/anaconda3/envs/NGS/bin/../lib/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /home/ubuntu/anaconda3/envs/NGS/bin/hisat2-align-s)
+(ERR): Description of arguments failed!
+Exiting now ...
+
+cd /home/ubuntu/anaconda3/envs/NGS/lib/
+strings libstdc++.so.6 | grep GLIBCXX # 查看GLIBCXX版本，结果发现确实没有GLIBCXX_3.4.26
+
+因此，只需要更新libstdc++.so，下载一个含有该库的版本即可。到时候删除原文件，增加新的软链接即可。
+
+sudo wget http://www.vuln.cn/wp-content/uploads/2019/08/libstdc.so_.6.0.26.zip
+unzip libstdc.so_.6.0.26.zip # 解压。
+sudo rm libstdc++.so.6 # 建议删除前备份。
+sudo ln -s libstdc++.so.6.0.26 libstdc++.so.6 # 链接新版本。
+
+
+strings libstdc++.so.6 | grep GLIBCXX # 查看是否包含GLIBCXX_3.4.26
+
+GLIBCXX_3.4
+GLIBCXX_3.4.1
+GLIBCXX_3.4.2
+GLIBCXX_3.4.3
+GLIBCXX_3.4.4
+GLIBCXX_3.4.5
+GLIBCXX_3.4.6
+GLIBCXX_3.4.7
+GLIBCXX_3.4.8
+GLIBCXX_3.4.9
+GLIBCXX_3.4.10
+GLIBCXX_3.4.11
+GLIBCXX_3.4.12
+GLIBCXX_3.4.13
+GLIBCXX_3.4.14
+GLIBCXX_3.4.15
+GLIBCXX_3.4.16
+GLIBCXX_3.4.17
+GLIBCXX_3.4.18
+GLIBCXX_3.4.19
+GLIBCXX_3.4.20
+
+
+</code></pre>
+<p><a name="CA3dC"></a></p>
+<h1 id="参考资料">参考资料</h1>
+<ol>
+<li><a href="https://www.jianshu.com/p/050b2b777b9d">version `GLIBCXX_3.4.20' not found 解决方法</a></li>
+<li><a href="https://www.yuque.com/attachments/yuque/0/2022/zip/641947/1654431867662-cf156f39-b614-4f60-bc92-1ad4098946f9.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2022%2Fzip%2F641947%2F1654431867662-cf156f39-b614-4f60-bc92-1ad4098946f9.zip%22%2C%22name%22%3A%22libstdc.so_.6.0.26.zip%22%2C%22size%22%3A4165669%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22ext%22%3A%22zip%22%2C%22source%22%3A%22%22%2C%22status%22%3A%22done%22%2C%22download%22%3Atrue%2C%22taskId%22%3A%22u08f7d87f-c2e1-4074-ac01-892dace24a9%22%2C%22taskType%22%3A%22upload%22%2C%22__spacing%22%3A%22both%22%2C%22id%22%3A%22u0509d202%22%2C%22margin%22%3A%7B%22top%22%3Atrue%2C%22bottom%22%3Atrue%7D%2C%22card%22%3A%22file%22%7D">libstdc.so_.6.0.26.zip</a></li>
+</ol>
+]]></content>
+    </entry>
+</feed>

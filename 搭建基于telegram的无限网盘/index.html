@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #262626; --link-color: #262626;">
+<head>
+  <meta charset="UTF-8">
+  <title>搭建基于telegraph的无限网盘 - ZhengXi&#39;s Blog</title>
+
+  <link rel="icon" href="">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="ZhengXi&#39;s Blog - Atom Feed" href="https://zhengxi.io/atom.xml">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7835998003747351"
+     crossorigin="anonymous"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6430c4dac5e43670548d34fbc3b1755c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/5_jiF_J8a');
+    ga('set', 'dimension2', 'post/7Va9-ZK0r');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //     'dimension2': 'postId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/5_jiF_J8a',
+    //   'postId': 'post/7Va9-ZK0r',
+    // });
+  </script>
+
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="
+本文转载自：https://blog.paddi.cc/index.php/archives/8/
+
+telegram里面用户是可以无限上传文件的，但是我们在国内无法直接访问telegram，所以有大佬开发了个项目，可以通过机器人获取te...">
+
+  <meta property="og:title" content="搭建基于telegraph的无限网盘 - ZhengXi&#39;s Blog">
+  <meta property="og:description" content="
+本文转载自：https://blog.paddi.cc/index.php/archives/8/
+
+telegram里面用户是可以无限上传文件的，但是我们在国内无法直接访问telegram，所以有大佬开发了个项目，可以通过机器人获取te...">
+  
+  <meta property="og:url" content="https://zhengxi.io/搭建基于telegram的无限网盘/">
+  <meta property="og:site_name" content="ZhengXi&#39;s Blog">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="搭建基于telegraph的无限网盘">
+
+  <meta name="gridea:post_id" content="7Va9-ZK0r">
+
+  <link rel="canonical" href="https://zhengxi.io/搭建基于telegram的无限网盘">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.3/styles/a11y-light.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">Z</div>
+      <a href="/">ZhengXi&#39;s Blog</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+        
+        <a
+          href="https://github.com/iZhengXi"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >Github</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://travellings.link/"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >Travellings</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href=""
+          class="mx-2 text-base border-b border-transparent"
+          
+        ></a>
+        
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+        
+        <a
+          href="https://github.com/iZhengXi"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >Github</a>
+      
+        
+        <a
+          href="https://travellings.link/"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >Travellings</a>
+      
+        
+        <a
+          href=""
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        ></a>
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      <div class="max-w-2xl mx-auto px-6 md:px-2">
+        <div class="my-24 text-center">
+          <h1 class="text-2xl font-bold">搭建基于telegraph的无限网盘</h1>
+          <div class="post-title-bar mx-auto rounded mt-4"></div>
+          <div class="text-gray-400 mt-4">2022.03.13</div>
+          <div class="flex justify-center mt-4">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="p-4 md:p-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 flex relative">
+        <section class="post-content flex-1 default-post-content max-w-2xl">
+          <div v-pre>
+            <blockquote>
+<p>本文转载自：https://blog.paddi.cc/index.php/archives/8/</p>
+</blockquote>
+<p>telegram里面用户是可以无限上传文件的，但是我们在国内无法直接访问telegram，所以有大佬开发了个项目，可以通过机器人获取telegram里的文件直链，只需要一台vps即可</p>
+<p>原项目地址:<a href="https://github.com/EverythingSuckz/TG-FileStreamBot">点我直达</a></p>
+<p>如果嫌搭建麻烦可以直接用项目作者的机器人:<strong>@TG_FileStreamBot</strong></p>
+<p>测试文件:<strong>https://00s23-webgx4.wrench.gq/35822/test.mp4</strong></p>
+<!-- more -->
+<p>如果本文图片或者教程失效，请在本文评论区回复或者发送邮件到<strong>talk@live.cn</strong>提醒我<br>
+本文原创地址:https://blog.paddi.cc/index.php/archives/8/</p>
+<p>环境要求:</p>
+<ul>
+<li>python3</li>
+</ul>
+<p>首先我们通过git拉取项目:</p>
+<pre><code class="language-bash">git clone https://github.com/EverythingSuckz/TG-FileStreamBot
+</code></pre>
+<p>进入项目地址</p>
+<pre><code class="language-bash">cd TG-FileStreamBot
+virtualenv -p /usr/bin/python3 venv
+</code></pre>
+<p>如果这一步报错“Command 'virtualenv' not found, but can be installed with”，说明没有安装virtualenv,执行:</p>
+<pre><code class="language-bash">pip3 install virtualenv
+</code></pre>
+<p>安装好virtualenv后，再执行：</p>
+<pre><code class="language-bash">virtualenv -p /usr/bin/python3 venv
+. ./venv/bin/activate
+pip3 install -r requirements.txt
+</code></pre>
+<p><strong>然后我们telegram里面搜索botfather并添加机器人：</strong></p>
+<p><img src="https://vip1.loli.io/2022/03/13/vzWAi6ZU4NgeQMb.png" alt="botfather" loading="lazy">](http</p>
+<p>向bot发送**/newbot**指令来新建一个bot,以下带#号为bot回复的语句</p>
+<pre><code class="language-bash">#Alright, a new bot. How are we going to call it? Please choose a name for your bot.
+输入你的bot名称
+#Good. Now let's choose a username for your bot. It must end in `bot`. Like this, for example: TetrisBot or tetris_bot.
+然后输入你的bot用户名，之后你会用这个用户名搜索你的bot,bot名必须以_bot结尾,比如zhangsan_bot
+</code></pre>
+<p><strong>输入用户名后，botfather会回复给你一串机器人密钥，我们要保存好，图中圈出来的部分就是密钥</strong></p>
+<p><img src="https://vip2.loli.io/2022/03/13/ivG3ICLbljDJR1y.png" alt="图中红框圈的部分即为密钥" loading="lazy"></p>
+<p><strong>图中红框圈的部分即为密钥</strong></p>
+<p>接下来我们新建一个频道，公开频道或者私人频道都可以，再将我们新建的bot添加到频道中，并且给管理员权限，然后我们在频道中发一条消息，再将消息转发给一个叫**@missrose_bot** 的机器人，在ross机器人中回复我们发给它的信息**/id**，它会回复一个负数给你，那个就是你频道的id，id格式为**-100xxxxxxxxxx**如图：</p>
+<p><img src="https://vip1.loli.io/2022/03/13/nvOpClHtJ8bZ9UE.png" alt="图中红框为频道Id" loading="lazy"></p>
+<p><strong>图中红框为频道Id</strong></p>
+<p>我们再到浏览器打开https://my.telegram.org/，登录我们的telegram账号，注册获取一个app id和app hash，这一步就不详细写了，按流程走就行了</p>
+<p>现在我们拥有一个<strong>机器人密钥</strong>，一个<strong>app id</strong>和一个<strong>app hash</strong>和一个<strong>频道id</strong></p>
+<p>然后在项目目录下新建一个名为**.env<strong>的文件，注意不要忘记前面那个</strong>.**</p>
+<p>按照以下格式编辑.env文件，注意#号后面的内容不要输入到文件中:</p>
+<pre><code class="language-bash">API_ID=     #这里写你的app id
+API_HASH=   #这里写你的app hash
+BOT_TOKEN=  #这里写你的机器人密钥
+BIN_CHANNEL=  #这里写你的频道id
+PORT=         #这里写你想要使用的端口号
+FQDN=         #这里填你的域名
+HAS_SSL=False  #这里是ssl选项，最好填默认的False
+</code></pre>
+<p>编辑好后，保存，我们再在ssh内执行</p>
+<pre><code class="language-bash">python3 -m WebStreamer
+</code></pre>
+<p>现在我们只要把tg内的文件转发给我们新建的机器人，或者上传文件给机器人，机器人就会返回一条文件直链供我们下载，下载文件会经过我们的vps中转，如图<br>
+<img src="https://vip1.loli.io/2022/03/13/PelwE7LIWMkNvGK.png" alt="发送文件会返回文件直链" loading="lazy"></p>
+<p><strong>发送文件会返回文件直链</strong></p>
+
+          </div>
+          <div class="py-4 text-gray-600 flex items-center justify-between">
+            <div class="">
+              <div class="text-sm text-gray-300">最后更新于: </div>
+              <div class="text-base font-medium">2022.06.25</div>
+            </div>
+            <!-- <div class="flex items-center text-sm text-gray-600">
+              <i class="ri-eye-line"></i> <span class="ml-2">{{ views }}</span>
+            </div> -->
+          </div>
+          <div>
+            <div id="disqus_thread"></div>
+          </div>
+        </section>
+        
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+    <script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://zhengxiblog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+  
+  
+    
+  
+</body>
+</html>

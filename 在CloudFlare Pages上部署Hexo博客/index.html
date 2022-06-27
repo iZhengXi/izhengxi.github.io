@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #262626; --link-color: #262626;">
+<head>
+  <meta charset="UTF-8">
+  <title>在CloudFlare Pages上部署Hexo博客 - ZhengXi&#39;s Blog</title>
+
+  <link rel="icon" href="">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="ZhengXi&#39;s Blog - Atom Feed" href="https://zhengxi.io/atom.xml">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7835998003747351"
+     crossorigin="anonymous"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6430c4dac5e43670548d34fbc3b1755c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/5_jiF_J8a');
+    ga('set', 'dimension2', 'post/F3SEyCOS1');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //     'dimension2': 'postId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/5_jiF_J8a',
+    //   'postId': 'post/F3SEyCOS1',
+    // });
+  </script>
+
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="我的初衷是完全使用Github写博客，目前可以的方案有（免备案）：
+
+Github Actions+Github Pages
+CloudFlare Pages
+
+目前这两种方案都可以实现自动部署，且完全使用Github写博客。考虑到速度和稳...">
+
+  <meta property="og:title" content="在CloudFlare Pages上部署Hexo博客 - ZhengXi&#39;s Blog">
+  <meta property="og:description" content="我的初衷是完全使用Github写博客，目前可以的方案有（免备案）：
+
+Github Actions+Github Pages
+CloudFlare Pages
+
+目前这两种方案都可以实现自动部署，且完全使用Github写博客。考虑到速度和稳...">
+  
+  <meta property="og:url" content="https://zhengxi.io/在CloudFlare Pages上部署Hexo博客/">
+  <meta property="og:site_name" content="ZhengXi&#39;s Blog">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="在CloudFlare Pages上部署Hexo博客">
+
+  <meta name="gridea:post_id" content="F3SEyCOS1">
+
+  <link rel="canonical" href="https://zhengxi.io/在CloudFlare Pages上部署Hexo博客">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.3/styles/a11y-light.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">Z</div>
+      <a href="/">ZhengXi&#39;s Blog</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+        
+        <a
+          href="https://github.com/iZhengXi"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >Github</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://travellings.link/"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >Travellings</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href=""
+          class="mx-2 text-base border-b border-transparent"
+          
+        ></a>
+        
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+        
+        <a
+          href="https://github.com/iZhengXi"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >Github</a>
+      
+        
+        <a
+          href="https://travellings.link/"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >Travellings</a>
+      
+        
+        <a
+          href=""
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        ></a>
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      <div class="max-w-2xl mx-auto px-6 md:px-2">
+        <div class="my-24 text-center">
+          <h1 class="text-2xl font-bold">在CloudFlare Pages上部署Hexo博客</h1>
+          <div class="post-title-bar mx-auto rounded mt-4"></div>
+          <div class="text-gray-400 mt-4">2022.01.28</div>
+          <div class="flex justify-center mt-4">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="p-4 md:p-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 flex relative">
+        <section class="post-content flex-1 default-post-content max-w-2xl">
+          <div v-pre>
+            <p>我的初衷是完全使用Github写博客，目前可以的方案有（<strong>免备案</strong>）：</p>
+<ul>
+<li>Github Actions+Github Pages</li>
+<li>CloudFlare Pages</li>
+</ul>
+<p>目前这两种方案都可以实现自动部署，且完全使用Github写博客。考虑到速度和稳定性，我决定将博客部署到CloudFlare Pages。</p>
+<!-- more -->
+<p><a name="nuxQC"></a></p>
+<h1 id="1-本地hexo站点搭建">1、本地Hexo站点搭建</h1>
+<p>以Keep主题为例，在本地搭建Hexo站点。首先安装<a href="https://nodejs.org/en/">Node.js</a>和<a href="https://git-scm.com/">Git</a>。<br />之后在本地新建站点文件夹，并安装<code>Hexo</code>。</p>
+<pre><code class="language-bash">npm install -g hexo-cli # 全局安装hexo
+hexo init howarzheng # howarzheng是站点文件夹
+cd howarzheng
+npm install
+hexo g
+hexo s # 之后根据提示在浏览器中打开localhost:4000即可预览本地站点。
+
+# 将Hexo站点的默认主题landscape更换为keep
+# 如果你在使用 Hexo 5.0 或更高版本，最简单的安装方式是通过 npm。本示例通过npm进行安装keep主题。
+cd howarzheng # 在Hexo站点根文件夹通过npm安装主题
+npm install hexo-theme-keep # 之后可在站点根文件夹~/node_modules中看到安装的keep主题。
+
+# 也可以通过 git clone 克隆整个仓库来安装keep主题：
+cd howarzheng
+git clone https://github.com/XPoet/hexo-theme-keep themes/keep
+</code></pre>
+<p>安装好<code>keep</code>主题后，在站点根文件夹新建<code>_config.keep.yml</code>主题配置文件，并按照<a href="https://keep-docs.xpoet.cn/">keep主题</a>配置说明配置即可。</p>
+<blockquote>
+<p>只要存在于 <code>_config.keep.yml </code>的配置都是高优先级，修改keep主题文件夹里的<code> _config.yml</code> 是无效的。</p>
+</blockquote>
+<p><a name="vzSrN"></a></p>
+<h1 id="2-将本地hexo站点推送至github">2、将本地Hexo站点推送至Github</h1>
+<p><strong>生成SSH key：</strong><br />SSH key是一种身份凭证，用于将本地Hexo推送至Github。SSH key包含公钥和私钥，公钥存储在Github，私钥存储在本地。</p>
+<pre><code class="language-bash"># 配置用户名和邮箱
+ git config --global user.name &quot;HowarZheng
+ git config --global user.email &quot;howar.zheng@gmail.com
+ 
+  生成 ssh 密钥
+ssh-keygen -t rsa -C &quot;howar.zheng@gmail.com&quot; # 输入如下命令后直接三次回车即可。
+# 执行上述命令之后，会生成 id_rsa 和 id_rsa.pub 两个文件，id_rsa是私钥，id_rsa.pub是公钥。
+</code></pre>
+<p><strong>添加SSH key到Github：</strong><br />登录Github账号，点击个人头像。接着点击设置-SSH and keys。<br /><img src="https://vip1.loli.io/2022/01/28/jNMdx7sG2KkOg41.png" alt="image.png" loading="lazy"><br />之后点击 New SSH key。<br /><img src="https://vip2.loli.io/2022/01/28/wUuYET86rlCgBOM.png" alt="image.png" loading="lazy"><br />Title随意，key输入本地~/.ssh/id_rsa.pub(公钥)内容。<br /><img src="https://vip1.loli.io/2022/01/28/TtzeOHIG8DBQWCP.png" alt="image.png" loading="lazy"><br />之后在本地检查SSH key是否生效。</p>
+<pre><code class="language-bash">$ ssh -T git@github.com
+</code></pre>
+<p><br /> 直接输入 yes 回车，如果提示以下内容说明已配置成功。</p>
+<pre><code class="language-bash">Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.
+</code></pre>
+<p><strong>推送本地Hexo站点到Github远程仓库：</strong></p>
+<pre><code class="language-bash">cd howarzheng
+git init
+git add .
+git commit -m &quot;版本备注&quot;
+git remote add origin git@github.com:HowarZheng/howarzheng.git # 关联远程仓库。 origin是远程仓库的简写，可以自定义。
+git push origin master --force # 确保本地版本是最新的时候，直接使本地仓库强制覆盖远程仓库。
+
+# 获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）
+git pull --rebase origin master
+
+git push origin master # 之后推送时使用此命令即可。
+</code></pre>
+<p><a name="EuRnB"></a></p>
+<h1 id="3-部署hexo站点到cloudflare-pages">3、部署Hexo站点到CloudFlare Pages</h1>
+<p>首先登陆<a href="https://www.cloudflare.com/zh-cn/">CloudFlare</a>，点击左侧栏Pages，接着点击创建项目。<br /><img src="https://vip2.loli.io/2022/01/28/PTUFBevqs5IxAg1.png" alt="image.png" loading="lazy"><br />之后会让你关联Git仓库，可以是Github，也可以是GitLab。这里我们选Github。登录Github并授权后，选择需要部署的仓库和分支。<br /><img src="https://vip1.loli.io/2022/01/28/GP45vpLxHUzWyEM.png" alt="image.png" loading="lazy"><br />最后输入部署时的构建命令和其他参数，自动部署网站即可。<br />框架预设如何找不到<code>Hexo</code>的化，就选<code>none</code>。<br /><img src="https://vip1.loli.io/2022/01/28/GlwtIqnzLBPX6b7.png" alt="image.png" loading="lazy"><br />之后想要更新文章，只需要在Github仓库/source/_posts文件夹内修改文章或上传文章即可，最终将实现完全使用Github写博客。<br />CloudFlare Pages和Github Pages一样，可以自定义域名，并且CloudFlare Pages可以绑定10个域名。<br /><br /></p>
+<hr>
+<p>后期如果想要对博客进行大改，例如修改主题和安装插件，只需要将Github 仓库克隆到本地，修改完再push 到远程Github仓库即可。<br />​</p>
+<p><strong>CloudFlare使用限制（说明书）：</strong><a href="https://developers.cloudflare.com/pages/">https://developers.cloudflare.com/pages/</a><br /><img src="https://vip2.loli.io/2022/01/28/cSk2M85ENlZhTAv.png" alt="" loading="lazy"></p>
+<ul>
+<li>专业版（Pro）每月5000次构建发布，5个并发构建，20美元/月；</li>
+<li>商业版（Business）每月20000次构建发布，20个并发构建，200美元/月。</li>
+<li>其它限制为：单个文件大小 ≤25MB ，单个站点文件总数 ≤20000个。</li>
+</ul>
+<p><strong>​</strong></p>
+<p><strong>​</strong><br /></p>
+
+          </div>
+          <div class="py-4 text-gray-600 flex items-center justify-between">
+            <div class="">
+              <div class="text-sm text-gray-300">最后更新于: </div>
+              <div class="text-base font-medium">2022.06.25</div>
+            </div>
+            <!-- <div class="flex items-center text-sm text-gray-600">
+              <i class="ri-eye-line"></i> <span class="ml-2">{{ views }}</span>
+            </div> -->
+          </div>
+          <div>
+            <div id="disqus_thread"></div>
+          </div>
+        </section>
+        
+          <!-- <aside class="sticky toc-container flex-shrink-0 hidden md:block">
+            <div class="text-gray-600 mb-4">目 录</div>
+            <ul class="markdownIt-TOC">
+<li><a href="#1-%E6%9C%AC%E5%9C%B0hexo%E7%AB%99%E7%82%B9%E6%90%AD%E5%BB%BA">1、本地Hexo站点搭建</a></li>
+<li><a href="#2-%E5%B0%86%E6%9C%AC%E5%9C%B0hexo%E7%AB%99%E7%82%B9%E6%8E%A8%E9%80%81%E8%87%B3github">2、将本地Hexo站点推送至Github</a></li>
+<li><a href="#3-%E9%83%A8%E7%BD%B2hexo%E7%AB%99%E7%82%B9%E5%88%B0cloudflare-pages">3、部署Hexo站点到CloudFlare Pages</a></li>
+</ul>
+
+          </aside> -->
+        
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+    <script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://zhengxiblog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+  
+  
+    
+  
+</body>
+</html>
