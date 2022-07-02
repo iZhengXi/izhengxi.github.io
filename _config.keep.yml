@@ -208,8 +208,8 @@ pjax:
 # ---------------------------------------------------------------------------------------
 footer:
   since: 2015 # the starting year of your website, Can be null
-  icp: ✮萌ICP备20226088号✮ # ICP record number of your website, Can be null
-  upyun: https://console.upyun.com/register/?invite=SJuYWLnn8 # url
+  icp:  # ICP record number of your website, Can be null
+  upyun: # url
 
 # ---------------------------------------------------------------------------------------
 # Keep version (Please don't modify)
