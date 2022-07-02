@@ -5,8 +5,9 @@ tags:
   - STAR
   - TopHat2
 categories:
-  - 生物信息学 
+  - 生物信息学
   - RNA-seq转录组数据分析
+abbrlink: d6a63f5b
 date: 2022-06-12 11:32:06
 ---
 

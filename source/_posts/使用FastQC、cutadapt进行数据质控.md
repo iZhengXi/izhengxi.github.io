@@ -7,8 +7,9 @@ tags:
   - SRA
   - sratoolkit
 categories:
-  - 生物信息学 
+  - 生物信息学
   - RNA-seq转录组数据分析
+abbrlink: 11cd419b
 date: 2022-06-12 10:32:06
 ---
 
