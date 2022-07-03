@@ -43,6 +43,12 @@ date: 2022-07-03 18:32:13
 
 在这里编辑twikoo版本即可。
 
+
+
+<!-- more -->
+
+
+
 之后还需要更新云函数版本为相应的twikoo版本。
 
 > 登录[环境-云函数](https://console.cloud.tencent.com/tcb/scf/index)，点击 twikoo，点击函数代码，打开 `package.json` 文件，将 `"twikoo-func": "x.x.x"` 其中的版本号修改为最新版本号，点击“保存并安装依赖”即可。
