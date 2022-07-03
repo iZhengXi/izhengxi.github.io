@@ -16,7 +16,7 @@ Google Adsense是谷歌广告联盟，是个人站长获取收入的一种快速
 
 注册好Google Adsense后，点击左边菜单栏网站，添加个人网站。
 
-![](https://static.gridea.dev/335395751264780883/5JX9OlkuD.png)
+![](https://vip2.loli.io/2022/07/03/LInGPlhOoQ7j6ik.png)
 
 随后将广告代码添加到网站所有页面的`<head></head>`之间。
 

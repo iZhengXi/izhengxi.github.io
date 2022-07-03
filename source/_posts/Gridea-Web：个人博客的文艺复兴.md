@@ -21,7 +21,7 @@ Gridea是一个静态博客客户端，可快速构建静态博客站点，并�
 
 Gridea Web官网：https://web.gridea.dev/
 
-![](https://static.gridea.dev/335395751264780883/ZPph82Zuz.png)
+![](https://vip2.loli.io/2022/07/03/xgyeLS3wXUMroAl.png)
 
 Gridea Web吸引我的tips：
 

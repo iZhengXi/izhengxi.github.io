@@ -15,7 +15,7 @@ Linux Shell Bash常见退出码。
 <!-- more -->
 
 
-![](https://static.gridea.dev/335395751264780883/TfWEKvC-h.png)
+![](https://vip2.loli.io/2022/07/03/m21jnPM9azcl6Ay.png)
 
 **例如：**
 

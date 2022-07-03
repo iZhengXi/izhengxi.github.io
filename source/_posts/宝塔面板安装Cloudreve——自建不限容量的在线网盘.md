@@ -2,7 +2,7 @@
 title: 宝塔面板安装Cloudreve——自建不限容量的在线网盘
 tags:
   - 宝塔
-  - clouddreve
+  - cloudreve
   - 网盘
 categories:
   - 网站建设

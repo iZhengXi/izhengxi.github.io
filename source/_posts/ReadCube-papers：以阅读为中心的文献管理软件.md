@@ -19,7 +19,7 @@ date: 2022-07-02 11:32:06
 
 papers是目前用过的最好的文献管理软件。这是它的官网地址：https://www.papersapp.com/
 
-![](https://static.gridea.dev/335395751264780883/gLVTGnBRr.png)
+![](https://vip2.loli.io/2022/07/03/93gTicV4NIqbuHf.png)
 
 目前该软件可以免费试用30天（不需要信用卡）。
 
@@ -31,15 +31,15 @@ papers与流行的文献管理软件EndNote有着本质的区别，它是以阅�
 
 首先，你需要导入文献，你可以导入常规的PDF、bib、ris格式，当导入PDF格式的文献后，papers能够自动抓取文献的信息，如期刊、标题、作者、年份等。
 
-![](https://static.gridea.dev/335395751264780883/MV9aWqjHW.png)
+![](https://vip2.loli.io/2022/07/03/VYiW9CIXJaEOcGy.png)
 
 导入以后，我们可以看到文献的基本信息。左下角是文献的预览情况，若不喜欢可以关闭预览功能。在右边可以看到文献的基本信息，包括题目、摘要等。对于重要的文献我们还可以标星，可以添加tags和lists，方便日后文献的检索。
 
-![](https://vip2.loli.io/2022/06/25/KAfo2kM6r1Tmb4U.png)
+![](https://vip2.loli.io/2022/07/03/vy4mb2RjZeHsp86.png)
 
 papers还有一些非常实用的功能，例如自动加载文献补充数据。
 
-![](https://vip2.loli.io/2022/06/25/dvXx9wKrQsODgmu.png)
+![](https://vip2.loli.io/2022/07/03/8dz5HesXqwrR9Sn.png)
 
 如果仅仅是以上这些，那papers将不值得分享。
 

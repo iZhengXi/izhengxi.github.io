@@ -17,7 +17,7 @@ abbrlink: cfc1a17e
 
 <!-- more -->
 
-![](https://static.gridea.dev/335395751264780883/FfSvWM4MV.png)
+![](https://vip2.loli.io/2022/07/03/DJklmeuRFKt6Q3f.png)
 
 经过查询资料以后，造成该报错的原因是代理服务器和WSL之间的网络端口存在冲突，目前有两种解决方案。
 

@@ -12,4 +12,4 @@ date: 2022-06-28 10:32:06
 ```bash
 sudo apt install vim
 ```
-![](https://static.gridea.dev/335395751264780883/S_pSmi6iM.png)
+![](https://vip2.loli.io/2022/07/03/P28TM3ZVObGwS1d.png)

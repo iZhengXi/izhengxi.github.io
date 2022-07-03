@@ -1,5 +1,5 @@
 ---
-title: hisa2安装报错，提示：`GLIBCXX_3.4.26' not found
+title: hisat2安装报错，提示：`GLIBCXX_3.4.26' not found
 tags:
   - HISAT2
   - RNA-seq
