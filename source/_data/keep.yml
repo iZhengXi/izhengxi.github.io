@@ -167,10 +167,10 @@ comment:
   # Gitalk
   # See: https://github.com/gitalk/gitalk
   gitalk:
-    github_id: iZhengXi
-    repository: zhengxi.io.comments
-    client_id: 1b319e23348b3a7c7953
-    client_secret: eea64f2e6eafe1e5a67e4fcc3cbf6f8369b1121b
+    github_id: 
+    repository: 
+    client_id: 
+    client_secret: 
 
   # Twikoo
   # See: https://github.com/imaegoo/twikoo
@@ -208,7 +208,7 @@ pjax:
 # Footer settings
 # ---------------------------------------------------------------------------------------
 footer:
-  since: 2015 # the starting year of your website, Can be null
+  since: 2017 # the starting year of your website, Can be null
   icp:  # ICP record number of your website, Can be null
   upyun: # url
 
