@@ -1,12 +1,15 @@
 ---
-title: WSL报错“The attempted operation is not supported for the type of object referenced”解决方案
+title: >-
+  WSL报错“The attempted operation is not supported for the type of object
+  referenced”解决方案
 tags:
   - WSL
   - Linux
   - NoLsp
 categories:
   - 生物信息学
-date: 2022-06-030 10:32:06
+date: '2022-06-030 10:32:06'
+abbrlink: cfc1a17e
 ---
 
 

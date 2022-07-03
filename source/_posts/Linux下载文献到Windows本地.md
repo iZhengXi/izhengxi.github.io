@@ -4,8 +4,9 @@ tags:
   - Linux
   - Windows
 categories:
-  - 生物信息学 
-date: 2022-06-25 10:32:06 
+  - 生物信息学
+abbrlink: 6e25baeb
+date: 2022-06-25 10:32:06
 ---
 
 **使用Xshell:**

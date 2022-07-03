@@ -5,7 +5,8 @@ tags:
   - Shell
   - Bash
 categories:
-  - 生物信息学 
+  - 生物信息学
+abbrlink: 4a35db18
 date: 2022-06-29 10:32:06
 ---
 Linux Shell Bash常见退出码。

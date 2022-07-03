@@ -4,7 +4,8 @@ tags:
   - Ubuntu
   - Vim
 categories:
-  - 生物信息学 
+  - 生物信息学
+abbrlink: 1bc845de
 date: 2022-06-28 10:32:06
 ---
 
