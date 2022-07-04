@@ -65,4 +65,10 @@ npm update hexo-theme-keep
 # Or update to latest master branch:
 cd themes/keep
 git pull
+
+# If you modified theme source code:
+git add .
+git stash
+git pull
+git stash pop
 ```
