@@ -55,7 +55,7 @@ social_contact:
   links:
     github: https://github.com/iZhengXi
     twitter: https://twitter.com/realZhengXi # your twitter URL
-    email: mailto:z.x@outlook.jp
+    email: mailto:x@zhengxi.io
 
 # ---------------------------------------------------------------------------------------
 # Navigation menu
@@ -66,7 +66,7 @@ menu:
   Categories: /categories
   Tags: /tags
   Links: /links
-  # About: /about
+  About: /about
   # Travellings: https://travellings.link/
   # Changelog: /changelog
   # ......

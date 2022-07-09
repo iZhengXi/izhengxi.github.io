@@ -6,4 +6,4 @@ comment: true
 ---
 # 个人简历
 一个有趣的人。
-联系方式：z.x#outlook.jp(#替换为@)
+联系方式：x#zhengxi.io(#替换为@)
