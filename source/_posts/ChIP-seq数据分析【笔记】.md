@@ -193,7 +193,7 @@ ann_stats.log # peak分布统计情况
 mamba install meme
 ```
 
-> motif的搜索算法在1994年左右就比较成熟，主要是EM算法和Gibson sampling，可以去看刘小乐老师主讲的*[Harvard STAT115](https://canvas.harvard.edu/courses/39391)*课程。
+> motif的搜索算法在1994年左右就比较成熟，主要是EM算法和Gibson sampling，可以去看刘小乐老师主讲的[Harvard STAT115](https://canvas.harvard.edu/courses/39391)课程。
 
 **motif鉴定的具体步骤：**
 
