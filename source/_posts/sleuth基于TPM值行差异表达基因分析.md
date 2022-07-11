@@ -16,6 +16,12 @@ kallisto等alignment-free转录本定量软件，会给出`TPM`值的定量结�
 
 > https://github.com/pachterlab/sleuth
 
+
+
+<!-- more -->
+
+
+
 github上的R包其安装方式比较特殊, 具体过程如下
 
 ```R
