@@ -4,7 +4,8 @@ tags:
   - sleuth
 categories:
   - 生物信息学
-  - 	RNA-seq转录组数据分析
+  - RNA-seq转录组数据分析
+abbrlink: 5fc2336c
 date: 2022-07-11 09:32:06
 ---
 

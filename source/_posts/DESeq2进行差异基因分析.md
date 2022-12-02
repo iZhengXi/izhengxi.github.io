@@ -5,7 +5,8 @@ tags:
   - RNA-seq
 categories:
   - 生物信息学
-  - 	RNA-seq转录组数据分析
+  - RNA-seq转录组数据分析
+abbrlink: 9672ce57
 date: 2022-07-04 09:32:06
 ---
 

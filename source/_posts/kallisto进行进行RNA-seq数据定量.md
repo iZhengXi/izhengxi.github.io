@@ -4,7 +4,8 @@ tags:
   - kallisto
 categories:
   - 生物信息学
-  - 	RNA-seq转录组数据分析
+  - RNA-seq转录组数据分析
+abbrlink: 9eb2d377
 date: 2022-07-10 09:32:06
 ---
 

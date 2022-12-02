@@ -4,7 +4,8 @@ tags:
   - ChIP-seq
 categories:
   - 生物信息学
-  - 	ChIP-seq数据分析
+  - ChIP-seq数据分析
+abbrlink: e569e32e
 date: 2022-07-06 09:32:06
 ---
 > 这是北大生信大佬孟浩巍生信课程[《高级生信系列课程：表观遗传学数据分析》](https://ke.qq.com/course/5409096)的学习笔记。

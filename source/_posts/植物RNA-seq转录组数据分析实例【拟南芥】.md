@@ -7,7 +7,8 @@ tags:
   - featureCounts
 categories:
   - 生物信息学
-  - 	RNA-seq转录组数据分析
+  - RNA-seq转录组数据分析
+abbrlink: 6287a87d
 date: 2022-07-05 09:32:06
 ---
 **目的：**分析拟南芥Col-0在22℃和37℃ 30 min的差异表达基因。
